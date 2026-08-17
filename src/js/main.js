@@ -1,6 +1,6 @@
 /**
  * Alaya Realty — Institutional Platform Scripts
- * Modern ES2024+ Vanilla JS Architecture
+ * Modern ES2024+ Interactive & Animation Architecture
  */
 
 /**
@@ -29,7 +29,7 @@ export function showToast(message, title = 'Notification', type = 'info') {
   toast.innerHTML = `
     <span class="material-symbols-outlined text-metallic-gold text-2xl">${iconMap[type] || 'info'}</span>
     <div class="flex-grow">
-      <h4 class="font-bold text-sm uppercase tracking-wider text-surface-bright mb-1">${title}</h4>
+      <h4 class="font-bold text-xs uppercase tracking-widest text-surface-bright mb-1">${title}</h4>
       <p class="text-xs text-surface-variant/90 leading-relaxed">${message}</p>
     </div>
     <button class="text-surface-variant hover:text-white transition-colors" aria-label="Close">
@@ -49,8 +49,109 @@ export function showToast(message, title = 'Notification', type = 'info') {
   setTimeout(removeToast, 4500);
 }
 
-// Make globally available
 window.showToast = showToast;
+
+/**
+ * Slim Header Scroll Behavior & Active Link Management
+ */
+export function initHeader() {
+  const header = document.getElementById('main-header');
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  // Mark current active nav link
+  const currentPath = window.location.pathname.toLowerCase();
+  document.querySelectorAll('.nav-link-anim').forEach(link => {
+    const href = link.getAttribute('href')?.toLowerCase() || '';
+    if ((currentPath === '/' && (href === '/' || href.includes('index.html'))) ||
+        (currentPath !== '/' && href.length > 1 && currentPath.includes(href.replace('.html', '')))) {
+      link.classList.add('active', 'text-metallic-gold', 'font-bold');
+      link.classList.remove('text-on-surface-variant');
+    }
+  });
+}
+
+/**
+ * Scroll Reveal Animations (Intersection Observer)
+ */
+export function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('[data-animate]');
+  if (!animatedElements.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        // Once revealed, optional: unobserve if we only want it once
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  animatedElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * Number Counter Animation for Stats
+ */
+export function initCounters() {
+  const counters = document.querySelectorAll('[data-counter]');
+  if (!counters.length) return;
+
+  const countObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.dataset.counter);
+        const prefix = el.dataset.counterPrefix || '';
+        const suffix = el.dataset.counterSuffix || '';
+        const decimals = parseInt(el.dataset.counterDecimals || '0', 10);
+        const duration = 1800; // ms
+        const startTime = performance.now();
+
+        const updateCount = (now) => {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = (target * easeOut);
+
+          el.textContent = `${prefix}${current.toLocaleString('en-US', {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+          })}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.textContent = `${prefix}${target.toLocaleString('en-US', {
+              minimumFractionDigits: decimals,
+              maximumFractionDigits: decimals
+            })}${suffix}`;
+          }
+        };
+
+        requestAnimationFrame(updateCount);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  counters.forEach(c => countObserver.observe(c));
+}
 
 /**
  * Partner Consultation Modal Handler
@@ -145,7 +246,6 @@ export function initVedaParkExplorer() {
 
   if (!plotGrid && !roiCalculator) return;
 
-  // Generate 88 realistic plots data across 4 sectors
   const plots = [];
   const sectors = ['A', 'B', 'C', 'D'];
   const facings = ['North (Vaastu)', 'East (Morning Light)', 'North-East (Ishanya)', 'North-West'];
@@ -154,13 +254,12 @@ export function initVedaParkExplorer() {
   for (let i = 1; i <= 88; i++) {
     const sector = sectors[Math.floor((i - 1) / 22)];
     const size = sizes[(i * 7) % sizes.length];
-    // status distribution: mostly available, some reserved, some sold
     let status = 'available';
     if (i % 5 === 0) status = 'sold';
     else if (i % 7 === 0) status = 'reserved';
 
-    const baseRatePerSqFt = 4250; // INR per sq.ft
-    const price = (size * baseRatePerSqFt) / 10000000; // in Cr
+    const baseRatePerSqFt = 4250;
+    const price = (size * baseRatePerSqFt) / 10000000;
 
     plots.push({
       id: i,
@@ -174,7 +273,6 @@ export function initVedaParkExplorer() {
     });
   }
 
-  // Render plot grid if present
   if (plotGrid) {
     plotGrid.innerHTML = plots.map(p => {
       let statusClass = 'bg-surface-container hover:border-metallic-gold border border-outline-variant/40 text-primary cursor-pointer';
@@ -204,7 +302,6 @@ export function initVedaParkExplorer() {
       `;
     }).join('');
 
-    // Plot click listener
     plotGrid.addEventListener('click', (e) => {
       const btn = e.target.closest('.plot-cell');
       if (!btn || btn.disabled) return;
@@ -213,44 +310,42 @@ export function initVedaParkExplorer() {
       const plot = plots.find(p => p.id === plotId);
       if (!plot) return;
 
-      // Highlight active cell
-      plotGrid.querySelectorAll('.plot-cell').forEach(c => c.classList.remove('ring-2', 'ring-metallic-gold', 'bg-metallic-gold/10'));
-      btn.classList.add('ring-2', 'ring-metallic-gold', 'bg-metallic-gold/10');
+      plotGrid.querySelectorAll('.plot-cell').forEach(c => c.classList.remove('ring-2', 'ring-metallic-gold', 'bg-metallic-gold/15'));
+      btn.classList.add('ring-2', 'ring-metallic-gold', 'bg-metallic-gold/15');
 
-      // Update detail card
       if (plotDetailCard) {
         plotDetailCard.innerHTML = `
           <div class="bg-surface-container-low p-6 border border-metallic-gold/40 fade-in">
             <div class="flex justify-between items-start border-b border-outline-variant/30 pb-4 mb-4">
               <div>
-                <span class="font-label-caps text-xs text-metallic-gold uppercase tracking-widest">${plot.sector}</span>
-                <h4 class="font-headline-md text-2xl text-forest-deep mt-1">${plot.plotNumber}</h4>
+                <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest">${plot.sector}</span>
+                <h4 class="font-headline text-2xl text-forest-deep mt-1">${plot.plotNumber}</h4>
               </div>
-              <span class="px-3 py-1 text-xs font-label-caps uppercase tracking-wider ${plot.status === 'available' ? 'bg-metallic-gold/20 text-forest-deep border border-metallic-gold' : 'bg-outline-variant/30 text-outline'}">
+              <span class="px-3 py-1 text-xs font-body uppercase font-bold tracking-wider ${plot.status === 'available' ? 'bg-metallic-gold/20 text-forest-deep border border-metallic-gold' : 'bg-outline-variant/30 text-outline'}">
                 ${plot.status}
               </span>
             </div>
             <div class="grid grid-cols-2 gap-4 text-sm mb-6">
               <div>
-                <p class="text-xs text-outline uppercase font-label-caps">Plot Area</p>
+                <p class="text-xs text-outline uppercase font-body">Plot Area</p>
                 <p class="font-data-mono font-bold text-base text-primary">${plot.size.toLocaleString()} sq.ft.</p>
               </div>
               <div>
-                <p class="text-xs text-outline uppercase font-label-caps">Estimated Value</p>
+                <p class="text-xs text-outline uppercase font-body">Estimated Value</p>
                 <p class="font-data-mono font-bold text-base text-forest-deep">₹${plot.priceCr} Cr</p>
               </div>
               <div>
-                <p class="text-xs text-outline uppercase font-label-caps">Orientation</p>
-                <p class="font-body-md text-on-surface">${plot.facing}</p>
+                <p class="text-xs text-outline uppercase font-body">Orientation</p>
+                <p class="font-body text-on-surface">${plot.facing}</p>
               </div>
               <div>
-                <p class="text-xs text-outline uppercase font-label-caps">Clubhouse</p>
-                <p class="font-body-md text-on-surface">${plot.clubhouseDist}</p>
+                <p class="text-xs text-outline uppercase font-body">Clubhouse</p>
+                <p class="font-body text-on-surface">${plot.clubhouseDist}</p>
               </div>
             </div>
             <button 
               id="reserve-selected-plot-btn" 
-              class="w-full bg-forest-deep text-surface-bright py-3 text-xs font-label-caps uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2"
+              class="w-full bg-forest-deep text-surface-bright py-3 text-xs font-body uppercase font-bold tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 btn-luxury"
             >
               <span>Enquire for ${plot.plotNumber}</span>
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -271,13 +366,11 @@ export function initVedaParkExplorer() {
         });
       }
 
-      // Sync select input if exists
       if (plotSelectInput) {
         plotSelectInput.value = plot.plotNumber;
       }
     });
 
-    // Auto-select first available plot
     const firstAvail = plots.find(p => p.status === 'available');
     if (firstAvail) {
       const firstBtn = plotGrid.querySelector(`[data-plot-id="${firstAvail.id}"]`);
@@ -285,7 +378,6 @@ export function initVedaParkExplorer() {
     }
   }
 
-  // Interactive ROI Calculator Logic
   if (roiCalculator) {
     const sizeSelect = roiCalculator.querySelector('#calc-plot-size');
     const horizonSlider = roiCalculator.querySelector('#calc-horizon');
@@ -305,7 +397,7 @@ export function initVedaParkExplorer() {
       if (horizonLabel) horizonLabel.textContent = `${years} Year${years > 1 ? 's' : ''}`;
       if (cagrLabel) cagrLabel.textContent = `${(cagr * 100).toFixed(0)}% YoY`;
 
-      const currentVal = size * 4250; // Current base price ₹4,250/sqft
+      const currentVal = size * 4250;
       const futureVal = currentVal * Math.pow(1 + cagr, years);
       const gain = futureVal - currentVal;
 
@@ -426,30 +518,31 @@ export function initPropertiesMarketplace() {
 
     if (filtered.length === 0) {
       container.innerHTML = `
-        <div class="col-span-12 py-16 text-center bg-surface-container-low border border-outline/10">
+        <div class="col-span-12 py-16 text-center bg-surface-container-low border border-outline/10" data-animate="fade-up">
           <span class="material-symbols-outlined text-4xl text-outline mb-2">search_off</span>
-          <h3 class="font-headline-md text-xl text-forest-deep mb-2">No Matching Assets Found</h3>
+          <h3 class="font-headline text-xl text-forest-deep mb-2">No Matching Assets Found</h3>
           <p class="text-sm text-on-surface-variant max-w-md mx-auto mb-4">We maintain confidential off-market institutional mandates not listed publicly.</p>
-          <button data-open-partner-modal class="bg-forest-deep text-surface-bright px-6 py-3 font-label-caps uppercase text-xs">Request Bespoke Mandate</button>
+          <button data-open-partner-modal class="bg-forest-deep text-surface-bright px-6 py-3 font-body uppercase text-xs font-bold btn-luxury">Request Bespoke Mandate</button>
         </div>
       `;
       initPartnerModal();
       return;
     }
 
-    container.innerHTML = filtered.map(item => {
+    container.innerHTML = filtered.map((item, index) => {
       const isLarge = item.isFeatured;
+      const delay = (index + 1) * 100;
       return `
-        <article class="${isLarge ? 'md:col-span-8' : 'md:col-span-4'} group relative bg-paper-dark border border-outline/10 flex flex-col ${isLarge ? 'md:flex-row' : ''} overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300">
+        <article data-animate="fade-up" data-delay="${delay}" class="${isLarge ? 'md:col-span-8' : 'md:col-span-4'} group relative bg-paper-dark border border-outline/10 flex flex-col ${isLarge ? 'md:flex-row' : ''} overflow-hidden card-hover-lift">
           <div class="${isLarge ? 'w-full md:w-1/2' : 'w-full'} relative h-64 ${isLarge ? 'md:h-auto' : ''} overflow-hidden">
             <img 
               src="${item.image}" 
               alt="${item.title}" 
-              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
+              class="w-full h-full object-cover img-zoom-hover" 
               loading="lazy"
             />
             <div class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm px-3 py-1 border border-metallic-gold/30">
-              <span class="font-label-caps text-[10px] text-forest-deep uppercase tracking-widest">${item.categoryLabel}</span>
+              <span class="font-body text-[10px] font-bold text-forest-deep uppercase tracking-widest">${item.categoryLabel}</span>
             </div>
             <div class="absolute top-4 right-4 bg-forest-deep text-surface-bright px-3 py-1 font-data-mono text-[10px]">
               ${item.status}
@@ -461,19 +554,19 @@ export function initPropertiesMarketplace() {
                 <span class="material-symbols-outlined text-sm">location_on</span>
                 <span class="font-data-mono text-xs uppercase">${item.location}</span>
               </div>
-              <h2 class="font-headline-md ${isLarge ? 'text-2xl' : 'text-xl'} text-forest-deep mb-3 leading-tight group-hover:text-metallic-gold transition-colors">
+              <h2 class="font-headline ${isLarge ? 'text-2xl' : 'text-xl'} text-forest-deep mb-3 leading-tight group-hover:text-metallic-gold transition-colors">
                 ${item.title}
               </h2>
-              <p class="font-body-md text-sm text-on-surface-variant mb-4 line-clamp-2">
+              <p class="font-body text-sm text-on-surface-variant mb-4 line-clamp-2">
                 ${item.description}
               </p>
               <div class="grid grid-cols-2 gap-3 py-3 border-y border-outline/10 text-xs mb-4">
                 <div>
-                  <span class="block font-label-caps text-[10px] text-outline uppercase">Scale</span>
+                  <span class="block font-body text-[10px] text-outline uppercase">Scale</span>
                   <span class="font-data-mono font-bold text-forest-deep">${item.scale}</span>
                 </div>
                 <div>
-                  <span class="block font-label-caps text-[10px] text-outline uppercase">Exp. Yield / ROI</span>
+                  <span class="block font-body text-[10px] text-outline uppercase">Exp. Yield / ROI</span>
                   <span class="font-data-mono font-bold text-metallic-gold">${item.yieldPct}% CAGR</span>
                 </div>
               </div>
@@ -483,7 +576,7 @@ export function initPropertiesMarketplace() {
               <a 
                 href="${item.link !== '#' ? item.link : 'javascript:void(0)'}" 
                 ${item.link === '#' ? 'data-open-partner-modal' : ''}
-                class="inline-flex items-center gap-1 font-label-caps text-xs text-forest-deep uppercase tracking-widest hover:text-metallic-gold transition-colors"
+                class="inline-flex items-center gap-1 font-body text-xs font-bold text-forest-deep uppercase tracking-widest hover:text-metallic-gold transition-colors"
               >
                 <span>${item.link !== '#' ? 'View Asset Dossier' : 'Request Private Dossier'}</span>
                 <span class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -495,9 +588,9 @@ export function initPropertiesMarketplace() {
     }).join('');
 
     initPartnerModal();
+    initScrollAnimations();
   };
 
-  // Filter Buttons
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => {
@@ -511,13 +604,11 @@ export function initPropertiesMarketplace() {
     });
   });
 
-  // Search Input
   searchInput?.addEventListener('input', (e) => {
     searchQuery = e.target.value.toLowerCase().trim();
     render();
   });
 
-  // Sort Select
   sortSelect?.addEventListener('change', (e) => {
     currentSort = e.target.value;
     render();
@@ -549,6 +640,7 @@ export function initInsightsFilter() {
       articles.forEach(article => {
         if (topic === 'all' || article.dataset.articleTopic.includes(topic)) {
           article.style.display = '';
+          article.classList.add('fade-in');
         } else {
           article.style.display = 'none';
         }
@@ -561,7 +653,6 @@ export function initInsightsFilter() {
  * Form Submit Helpers with Instant Toast Feedback
  */
 export function initFormHandlers() {
-  // Newsletter Form
   document.querySelectorAll('.newsletter-form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -578,7 +669,6 @@ export function initFormHandlers() {
     });
   });
 
-  // Site Visit & Contact Forms
   const siteVisitForm = document.getElementById('site-visit-form');
   if (siteVisitForm) {
     siteVisitForm.addEventListener('submit', (e) => {
@@ -595,7 +685,6 @@ export function initFormHandlers() {
     });
   }
 
-  // Share and Copy Link buttons
   document.querySelectorAll('[data-copy-link]').forEach(btn => {
     btn.addEventListener('click', () => {
       navigator.clipboard?.writeText(window.location.href);
@@ -603,7 +692,6 @@ export function initFormHandlers() {
     });
   });
 
-  // Brochure Download Buttons
   document.querySelectorAll('[data-download-brochure]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -617,8 +705,11 @@ export function initFormHandlers() {
   });
 }
 
-// Global Document Lifecycle Initialization
+// Global Initialization
 document.addEventListener('DOMContentLoaded', () => {
+  initHeader();
+  initScrollAnimations();
+  initCounters();
   initPartnerModal();
   initMobileNav();
   initVedaParkExplorer();

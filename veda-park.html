@@ -40,8 +40,8 @@
           spacing: {
             "margin-edge": "5vw",
             "gutter": "24px",
-            "section-v-lg": "120px",
-            "section-v-md": "80px",
+            "section-v-lg": "100px",
+            "section-v-md": "60px",
             "stack-sm": "12px",
             "stack-md": "24px",
             "stack-lg": "40px"
@@ -59,32 +59,32 @@
 </head>
 <body class="antialiased min-h-screen bg-surface selection:bg-metallic-gold/30 selection:text-primary">
 
-  <!-- Header -->
-  <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50 transition-all duration-300">
-    <a class="flex-shrink-0 flex items-center gap-3" href="/index.html">
-      <img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+  <!-- Slim Top Global Header -->
+  <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge header-slim bg-surface/90 backdrop-blur-md z-50 transition-all duration-300" id="main-header">
+    <a class="flex-shrink-0 flex items-center gap-3 group" href="/index.html">
+      <img alt="Alaya Realty" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
     </a>
     
-    <nav class="hidden md:flex gap-8 items-center font-body text-sm font-medium tracking-widest uppercase">
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/properties.html">Opportunities</a>
-      <a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1" href="/veda-park.html">Veda Park</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/advisory.html">Advisory</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/insights.html">Insights</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/about.html">About</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/contact.html">Contact</a>
+    <nav class="hidden md:flex gap-7 items-center font-body text-xs font-semibold tracking-widest uppercase">
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/properties.html">Opportunities</a>
+      <a class="text-metallic-gold font-bold nav-link-anim active" href="/veda-park.html">Veda Park</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/advisory.html">Advisory</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/insights.html">Insights</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/about.html">About</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/contact.html">Contact</a>
     </nav>
     
-    <div class="hidden lg:flex items-center gap-4">
-      <button data-download-brochure="Veda Park Plotted Development Prospectus" class="inline-flex items-center justify-center px-5 py-2.5 border border-forest-deep text-forest-deep font-body text-xs font-semibold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-all">
-        <span class="material-symbols-outlined text-sm mr-1.5">download</span> Prospectus
+    <div class="hidden lg:flex items-center gap-3">
+      <button data-download-brochure="Veda Park Plotted Development Prospectus" class="inline-flex items-center justify-center px-3.5 py-1.5 border border-forest-deep text-forest-deep font-body text-[11px] font-bold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-all btn-luxury">
+        <span class="material-symbols-outlined text-xs mr-1">download</span> Prospectus
       </button>
-      <button data-open-partner-modal class="inline-flex items-center justify-center px-6 py-3 bg-forest-deep text-surface-bright font-body text-xs font-semibold uppercase tracking-widest hover:bg-primary transition-all">
+      <button data-open-partner-modal class="inline-flex items-center justify-center px-4 py-2 bg-forest-deep text-surface-bright font-body text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all btn-luxury">
         Book Private Visit
       </button>
     </div>
 
-    <button id="mobile-menu-toggle" class="md:hidden text-primary p-2">
-      <span class="material-symbols-outlined text-3xl">menu</span>
+    <button id="mobile-menu-toggle" class="md:hidden text-primary p-1.5">
+      <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </header>
 
@@ -97,7 +97,7 @@
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
       </div>
-      <nav class="flex flex-col gap-6 text-sm font-semibold tracking-widest uppercase">
+      <nav class="flex flex-col gap-6 text-xs font-bold tracking-widest uppercase">
         <a class="text-forest-deep hover:text-metallic-gold py-1" href="/properties.html">Opportunities</a>
         <a class="text-metallic-gold font-bold py-1" href="/veda-park.html">Veda Park Plotted</a>
         <a class="text-forest-deep hover:text-metallic-gold py-1" href="/advisory.html">Advisory Framework</a>
@@ -107,7 +107,7 @@
       </nav>
     </div>
     <div class="border-t border-outline-variant/20 pt-6">
-      <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-semibold hover:bg-primary transition-colors">
+      <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors btn-luxury">
         Speak to a Partner
       </button>
     </div>
@@ -115,31 +115,31 @@
 
   <main class="flex-grow">
     <!-- Cinematic Hero -->
-    <section class="relative w-full h-[640px] md:h-[720px] flex items-end px-margin-edge pb-16">
-      <div class="absolute inset-0 z-0">
-        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPs4KEO-0ufYE-xfELYLlDlEpFsb1eKjF0jSY7pVqOp1ODlZAZfqHfqnfV4c3HHTje6ZXEo6dC5dP3aUH8ndXEcme5U73DX2FaLKOL7D9x_F58pZo5sV1XpyjfAkZiaafunI9abksElemkLK6X8J7oahfqg9jJArZjx6xg6nAYmOk11lS4G7YIzATXo6XsKxpV5FtwAVjRi_YuNiR-gWP5EKsgE5NxvTJJOINFdzTmzthUTMUZba7D')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/40 to-transparent"></div>
+    <section class="relative w-full h-[600px] md:h-[680px] flex items-end px-margin-edge pb-16 overflow-hidden">
+      <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="w-full h-full bg-cover bg-center hero-ambient-zoom" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPs4KEO-0ufYE-xfELYLlDlEpFsb1eKjF0jSY7pVqOp1ODlZAZfqHfqnfV4c3HHTje6ZXEo6dC5dP3aUH8ndXEcme5U73DX2FaLKOL7D9x_F58pZo5sV1XpyjfAkZiaafunI9abksElemkLK6X8J7oahfqg9jJArZjx6xg6nAYmOk11lS4G7YIzATXo6XsKxpV5FtwAVjRi_YuNiR-gWP5EKsgE5NxvTJJOINFdzTmzthUTMUZba7D')"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/45 to-transparent"></div>
       </div>
       
       <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8 text-surface-bright">
         <div class="max-w-2xl">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="border border-surface-bright/30 px-3 py-1 font-body text-xs font-bold tracking-widest uppercase bg-forest-deep/60 backdrop-blur-sm text-metallic-gold">
+          <div data-animate="fade-down" class="flex items-center gap-3 mb-3">
+            <span class="border border-surface-bright/30 px-3 py-1 font-body text-xs font-bold tracking-widest uppercase bg-forest-deep/60 backdrop-blur-sm text-metallic-gold badge-floating">
               NOW SELLING • RERA APPROVED
             </span>
             <span class="font-data-mono text-xs text-surface-variant/80">Khandwa Road, Indore</span>
           </div>
-          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-surface-bright mb-3">Veda Park</h1>
-          <p class="font-body text-base md:text-lg text-surface-variant/90 leading-relaxed">
+          <h1 data-animate="fade-up" data-delay="100" class="font-display text-4xl sm:text-5xl md:text-6xl text-surface-bright mb-3">Veda Park</h1>
+          <p data-animate="fade-up" data-delay="200" class="font-body text-base md:text-lg text-surface-variant/90 leading-relaxed">
             A master-planned gated sanctuary of 88 freehold residential plots with broad internal boulevards, central clubhouse, and clear title ownership in Indore's highest-appreciation corridor.
           </p>
         </div>
 
-        <div class="flex flex-wrap sm:flex-nowrap gap-4">
-          <button data-download-brochure="Veda Park" class="px-6 py-3.5 bg-surface-bright text-forest-deep text-xs font-bold uppercase tracking-widest hover:bg-metallic-gold hover:text-white transition-all shadow-md">
+        <div data-animate="fade-up" data-delay="300" class="flex flex-wrap sm:flex-nowrap gap-3">
+          <button data-download-brochure="Veda Park" class="px-6 py-3 bg-surface-bright text-forest-deep text-xs font-bold uppercase tracking-widest hover:bg-metallic-gold hover:text-white transition-all shadow-md btn-luxury">
             Download Prospectus
           </button>
-          <a href="#site-visit-form" class="px-6 py-3.5 bg-metallic-gold text-primary text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-all shadow-md">
+          <a href="#site-visit-form" class="px-6 py-3 bg-metallic-gold text-primary text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-all shadow-md btn-luxury">
             Book Site Visit
           </a>
         </div>
@@ -150,10 +150,10 @@
     <div class="max-w-7xl mx-auto px-margin-edge py-section-v-lg grid grid-cols-1 lg:grid-cols-12 gap-gutter">
       
       <!-- Left Column (Primary Content) -->
-      <div class="lg:col-span-8 flex flex-col gap-16">
+      <div class="lg:col-span-8 flex flex-col gap-14">
         
         <!-- 1. Overview & Key Facts -->
-        <section>
+        <section data-animate="fade-up">
           <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
             <span class="font-display text-3xl text-metallic-gold font-bold">01</span>
             <h2 class="font-headline text-3xl text-forest-deep">Master Planned Overview</h2>
@@ -163,34 +163,34 @@
           </p>
 
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div class="p-6 bg-paper-dark border border-outline/10">
+            <div class="p-6 bg-paper-dark border border-outline/10 card-hover-lift">
               <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Plot Sizes</span>
               <span class="font-data-mono text-xl font-bold text-forest-deep block">2,400–10k</span>
               <span class="font-body text-[11px] text-on-surface-variant">Sq. Ft. Dimensions</span>
             </div>
-            <div class="p-6 bg-paper-dark border border-outline/10">
+            <div class="p-6 bg-paper-dark border border-outline/10 card-hover-lift">
               <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Scale</span>
-              <span class="font-data-mono text-xl font-bold text-forest-deep block">88</span>
+              <span class="font-data-mono text-xl font-bold text-forest-deep block" data-counter="88">88</span>
               <span class="font-body text-[11px] text-on-surface-variant">Exclusive Plots</span>
             </div>
-            <div class="p-6 bg-paper-dark border border-outline/10">
+            <div class="p-6 bg-paper-dark border border-outline/10 card-hover-lift">
               <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Title & Tenure</span>
               <span class="font-data-mono text-xl font-bold text-forest-deep block">Freehold</span>
               <span class="font-body text-[11px] text-on-surface-variant">100% Clear Title</span>
             </div>
-            <div class="p-6 bg-paper-dark border border-outline/10">
+            <div class="p-6 bg-paper-dark border border-outline/10 card-hover-lift">
               <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Base Price</span>
-              <span class="font-data-mono text-xl font-bold text-metallic-gold block">₹4,250</span>
+              <span class="font-data-mono text-xl font-bold text-metallic-gold block" data-counter="4250" data-counter-prefix="₹">₹4,250</span>
               <span class="font-body text-[11px] text-on-surface-variant">Per Sq. Ft. Onwards</span>
             </div>
           </div>
         </section>
 
         <!-- 2. INTERACTIVE PLOT MAP & AVAILABILITY EXPLORER -->
-        <section class="bg-paper-dark border border-outline/20 p-8">
+        <section data-animate="fade-up" class="bg-paper-dark border border-outline/20 p-8 shadow-md">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b border-outline-variant/30 pb-4">
             <div>
-              <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Live Availability Matrix</span>
+              <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Live Availability Matrix</span>
               <h3 class="font-headline text-2xl text-forest-deep">Interactive Plot Visualizer (88 Plots)</h3>
             </div>
             <div class="flex items-center gap-4 text-xs font-data-mono">
@@ -206,7 +206,7 @@
 
           <!-- Plot Grid (4 Sectors: A, B, C, D) -->
           <div id="plot-grid-container" class="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-11 gap-2 mb-8 max-h-[360px] overflow-y-auto pr-1">
-            <!-- Rendered by JS -->
+            <!-- Rendered by JS with interactive states -->
           </div>
 
           <!-- Dynamic Selected Plot Detail Preview -->
@@ -216,11 +216,11 @@
         </section>
 
         <!-- 3. INTERACTIVE ROI & APPRECIATION CALCULATOR -->
-        <section id="veda-roi-calculator" class="bg-forest-deep text-surface-bright p-8 border border-outline/20">
+        <section id="veda-roi-calculator" data-animate="fade-up" class="bg-forest-deep text-surface-bright p-8 border border-outline/20 shadow-xl">
           <div class="flex items-center gap-3 mb-6 border-b border-surface-bright/20 pb-4">
             <span class="material-symbols-outlined text-metallic-gold text-3xl">trending_up</span>
             <div>
-              <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block">Yield Underwriting</span>
+              <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest block">Yield Underwriting</span>
               <h3 class="font-headline text-2xl text-surface-bright">Projected Land Appreciation Calculator</h3>
             </div>
           </div>
@@ -282,7 +282,7 @@
         </section>
 
         <!-- 4. Location Context & Infrastructure -->
-        <section>
+        <section data-animate="fade-up">
           <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
             <span class="font-display text-3xl text-metallic-gold font-bold">02</span>
             <h2 class="font-headline text-3xl text-forest-deep">A Corridor on the Move</h2>
@@ -308,41 +308,41 @@
               </li>
             </ul>
 
-            <div class="h-64 md:h-full min-h-[260px] bg-paper-dark border border-outline/20 relative overflow-hidden">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Qrl3yxwOyX05UodvEmi1yvv65dJnZpHWbDBhGiDj5tnT4ZBi4p5r0hjQNA4UMU5wgqpjF_dN_rLVXGMdgsvhL_HGqMbgsKTyyvS8F9MD8Kus2m6f2VYSg9G-QbpnBIl9iRyIhKMCHpo74MWpqBncBcMmDW6qCXw2hrQ8je156pHYJFEhpeb94It9j9Yw6Jl2ExHNL2VDD_7MiACswyEds_X27cxtFSJ9x169zntuPG_HweCfzqYu" alt="Location Map" class="w-full h-full object-cover"/>
+            <div class="h-64 md:h-full min-h-[260px] bg-paper-dark border border-outline/20 relative overflow-hidden card-hover-lift">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Qrl3yxwOyX05UodvEmi1yvv65dJnZpHWbDBhGiDj5tnT4ZBi4p5r0hjQNA4UMU5wgqpjF_dN_rLVXGMdgsvhL_HGqMbgsKTyyvS8F9MD8Kus2m6f2VYSg9G-QbpnBIl9iRyIhKMCHpo74MWpqBncBcMmDW6qCXw2hrQ8je156pHYJFEhpeb94It9j9Yw6Jl2ExHNL2VDD_7MiACswyEds_X27cxtFSJ9x169zntuPG_HweCfzqYu" alt="Location Map" class="w-full h-full object-cover img-zoom-hover"/>
             </div>
           </div>
         </section>
 
         <!-- 5. Community Amenities -->
-        <section>
+        <section data-animate="fade-up">
           <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
             <span class="font-display text-3xl text-metallic-gold font-bold">03</span>
             <h2 class="font-headline text-3xl text-forest-deep">Institutional Infrastructure & Amenities</h2>
           </div>
 
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm font-body">
-            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3 card-hover-lift">
               <span class="material-symbols-outlined text-metallic-gold">corporate_fare</span>
               <span>Central Clubhouse & Lounge</span>
             </div>
-            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3 card-hover-lift">
               <span class="material-symbols-outlined text-metallic-gold">pool</span>
               <span>Semi-Olympic Swimming Pool</span>
             </div>
-            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3 card-hover-lift">
               <span class="material-symbols-outlined text-metallic-gold">shield</span>
               <span>24x7 Multi-Tier CCTV Security</span>
             </div>
-            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3 card-hover-lift">
               <span class="material-symbols-outlined text-metallic-gold">park</span>
               <span>Landscaped Parks & Jogging Track</span>
             </div>
-            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3 card-hover-lift">
               <span class="material-symbols-outlined text-metallic-gold">bolt</span>
               <span>100% Underground Electrification</span>
             </div>
-            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3 card-hover-lift">
               <span class="material-symbols-outlined text-metallic-gold">water_drop</span>
               <span>Dual Water Supply & STP Systems</span>
             </div>
@@ -352,8 +352,8 @@
 
       <!-- Right Column (Sticky Site Visit Inquiry Sidebar) -->
       <div class="lg:col-span-4 relative">
-        <div class="sticky top-28 p-8 border border-outline-variant/30 bg-surface shadow-xl">
-          <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block mb-1">Direct Allocation</span>
+        <div data-animate="fade-left" class="sticky top-24 p-8 border border-outline-variant/30 bg-surface shadow-xl">
+          <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest block mb-1">Direct Allocation</span>
           <h3 class="font-headline text-2xl text-forest-deep mb-2">Schedule Your Site Visit</h3>
           <p class="font-body text-xs text-on-surface-variant mb-6 leading-relaxed">
             An Alaya Realty partner will personally host you on-site, review plot availability, and walk you through master plan dimensions.
@@ -381,12 +381,12 @@
               <input type="tel" name="phone" required placeholder="+91 98260 XXXXX" class="w-full bg-surface-container-low border border-outline/20 px-3 py-2 text-xs focus:border-forest-deep focus:outline-none"/>
             </div>
 
-            <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2">
+            <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 btn-luxury">
               <span>Confirm Site Visit Itinerary</span>
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
 
-            <a href="https://wa.me/919876543210?text=Hello%20Alaya%20Realty,%20I%20would%20like%20to%20inquire%20about%20Veda%20Park%20plotted%20development." target="_blank" class="w-full border border-forest-deep/40 text-forest-deep py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-forest-deep/5 transition-colors flex items-center justify-center gap-2">
+            <a href="https://wa.me/919876543210?text=Hello%20Alaya%20Realty,%20I%20would%20like%20to%20inquire%20about%20Veda%20Park%20plotted%20development." target="_blank" class="w-full border border-forest-deep/40 text-forest-deep py-2.5 text-xs font-bold uppercase tracking-widest text-center hover:bg-forest-deep/5 transition-colors flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-sm text-emerald-600">chat</span>
               <span>Instant WhatsApp Concierge</span>
             </a>
@@ -399,14 +399,14 @@
   <!-- Global Footer -->
   <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge">
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-outline/20 pb-12 mb-8">
-      <div class="md:col-span-4">
+      <div class="md:col-span-4" data-animate="fade-up">
         <div class="font-display text-3xl text-metallic-gold mb-4">Alaya Realty</div>
         <p class="font-body text-sm text-surface-variant/70 leading-relaxed mb-6">
           Institutional excellence in real estate advisory. We guide investors, corporate entities, and family offices toward rigorous, insight-backed property decisions.
         </p>
       </div>
 
-      <div class="md:col-span-2">
+      <div class="md:col-span-2" data-animate="fade-up" data-delay="100">
         <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Opportunities</p>
         <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
           <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Marketplace</a>
@@ -416,7 +416,7 @@
         </div>
       </div>
 
-      <div class="md:col-span-2">
+      <div class="md:col-span-2" data-animate="fade-up" data-delay="200">
         <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Advisory & Firm</p>
         <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
           <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Due Diligence Model</a>
@@ -426,12 +426,12 @@
         </div>
       </div>
 
-      <div class="md:col-span-4">
+      <div class="md:col-span-4" data-animate="fade-up" data-delay="300">
         <p class="font-body-md text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Quarterly Intelligence Briefing</p>
         <p class="font-body-md text-xs text-surface-variant/70 mb-4">Receive sovereign-grade market underwriting and corridor reports directly.</p>
         <form class="newsletter-form flex gap-2">
           <input type="email" required placeholder="institutional.investor@domain.com" class="bg-primary/50 border border-outline/30 px-3 py-2 text-xs text-surface-bright flex-grow focus:outline-none focus:border-metallic-gold"/>
-          <button type="submit" class="bg-metallic-gold text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-colors">
+          <button type="submit" class="bg-metallic-gold text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-colors btn-luxury">
             Subscribe
           </button>
         </form>
@@ -456,7 +456,7 @@
       </button>
 
       <div class="mb-6">
-        <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block mb-1">Direct Partner Access</span>
+        <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest block mb-1">Direct Partner Access</span>
         <h3 class="font-headline text-2xl text-forest-deep">Consult a Managing Principal</h3>
         <p class="font-body text-xs text-on-surface-variant mt-1">Inquire specifically regarding Veda Park plot allocations or portfolio structuring.</p>
       </div>
@@ -485,7 +485,7 @@
             <option value="6000+">6,000+ sq.ft. (Signature Estate)</option>
           </select>
         </div>
-        <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2">
+        <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 btn-luxury">
           <span>Request Partner Consultation</span>
           <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </button>

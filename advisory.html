@@ -40,8 +40,8 @@
           spacing: {
             "margin-edge": "5vw",
             "gutter": "24px",
-            "section-v-lg": "120px",
-            "section-v-md": "80px",
+            "section-v-lg": "100px",
+            "section-v-md": "60px",
             "stack-sm": "12px",
             "stack-md": "24px",
             "stack-lg": "40px"
@@ -59,29 +59,29 @@
 </head>
 <body class="antialiased min-h-screen bg-surface selection:bg-metallic-gold/30 selection:text-primary">
 
-  <!-- Header -->
-  <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50 transition-all duration-300">
-    <a class="flex-shrink-0 flex items-center gap-3" href="/index.html">
-      <img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+  <!-- Slim Top Global Header -->
+  <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge header-slim bg-surface/90 backdrop-blur-md z-50 transition-all duration-300" id="main-header">
+    <a class="flex-shrink-0 flex items-center gap-3 group" href="/index.html">
+      <img alt="Alaya Realty" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
     </a>
     
-    <nav class="hidden md:flex gap-8 items-center font-body text-sm font-medium tracking-widest uppercase">
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/properties.html">Opportunities</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/veda-park.html">Veda Park</a>
-      <a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1" href="/advisory.html">Advisory</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/insights.html">Insights</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/about.html">About</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/contact.html">Contact</a>
+    <nav class="hidden md:flex gap-7 items-center font-body text-xs font-semibold tracking-widest uppercase">
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/properties.html">Opportunities</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/veda-park.html">Veda Park</a>
+      <a class="text-metallic-gold font-bold nav-link-anim active" href="/advisory.html">Advisory</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/insights.html">Insights</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/about.html">About</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/contact.html">Contact</a>
     </nav>
     
-    <div class="hidden lg:flex items-center gap-4">
-      <button data-open-partner-modal class="inline-flex items-center justify-center px-6 py-3 bg-forest-deep text-surface-bright font-body text-xs font-semibold uppercase tracking-widest hover:bg-primary transition-all">
+    <div class="hidden lg:flex items-center gap-3">
+      <button data-open-partner-modal class="inline-flex items-center justify-center px-4 py-2 bg-forest-deep text-surface-bright font-body text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all duration-300 btn-luxury">
         Speak to a partner
       </button>
     </div>
 
-    <button id="mobile-menu-toggle" class="md:hidden text-primary p-2">
-      <span class="material-symbols-outlined text-3xl">menu</span>
+    <button id="mobile-menu-toggle" class="md:hidden text-primary p-1.5">
+      <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </header>
 
@@ -94,7 +94,7 @@
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
       </div>
-      <nav class="flex flex-col gap-6 text-sm font-semibold tracking-widest uppercase">
+      <nav class="flex flex-col gap-6 text-xs font-bold tracking-widest uppercase">
         <a class="text-forest-deep hover:text-metallic-gold py-1" href="/properties.html">Opportunities</a>
         <a class="text-forest-deep hover:text-metallic-gold py-1" href="/veda-park.html">Veda Park Plotted</a>
         <a class="text-metallic-gold font-bold py-1" href="/advisory.html">Advisory Framework</a>
@@ -104,7 +104,7 @@
       </nav>
     </div>
     <div class="border-t border-outline-variant/20 pt-6">
-      <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-semibold hover:bg-primary transition-colors">
+      <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors btn-luxury">
         Speak to a Partner
       </button>
     </div>
@@ -112,20 +112,20 @@
 
   <main class="flex-grow">
     <!-- Hero Section -->
-    <section class="px-margin-edge py-20 md:py-28 flex flex-col items-center justify-center text-center relative overflow-hidden bg-forest-deep text-surface-bright">
-      <div class="absolute inset-0 z-0 opacity-15">
-        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaLClH0hXiQkaBvUikcnQcvVd_xihz_TjlsxXThQ6pB3u4WEo0FFOAz5coSKf5JD5frEF3-vUDiDVQslhod5DB4jG3BrQLpYkHranWhWt5DzzUhSOTA3kdHF-h0chA2gl0-ni9RUz_76w9PVW0TsAjDL5O_VpBIli_CTLaMNNYRfK_r7xaAkjRhyfbI2cUSQ1T6fqxXRWAjygQ0oIT4KFYqUWbhfnF063iPE2qkCfzytTmJnNIEbCD')"></div>
+    <section class="px-margin-edge py-16 md:py-24 flex flex-col items-center justify-center text-center relative overflow-hidden bg-forest-deep text-surface-bright">
+      <div class="absolute inset-0 z-0 opacity-15 overflow-hidden">
+        <div class="w-full h-full bg-cover bg-center hero-ambient-zoom" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaLClH0hXiQkaBvUikcnQcvVd_xihz_TjlsxXThQ6pB3u4WEo0FFOAz5coSKf5JD5frEF3-vUDiDVQslhod5DB4jG3BrQLpYkHranWhWt5DzzUhSOTA3kdHF-h0chA2gl0-ni9RUz_76w9PVW0TsAjDL5O_VpBIli_CTLaMNNYRfK_r7xaAkjRhyfbI2cUSQ1T6fqxXRWAjygQ0oIT4KFYqUWbhfnF063iPE2qkCfzytTmJnNIEbCD')"></div>
       </div>
       
-      <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6">
-        <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.25em]">Institutional Advisory Services</span>
-        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-surface-bright">
+      <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-5">
+        <span data-animate="fade-down" class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.25em]">Institutional Advisory Services</span>
+        <h1 data-animate="fade-up" data-delay="100" class="font-display text-4xl sm:text-5xl md:text-6xl text-surface-bright">
           Invest With Clarity.
         </h1>
-        <p class="font-body text-base md:text-lg text-surface-variant/85 max-w-2xl leading-relaxed">
+        <p data-animate="fade-up" data-delay="200" class="font-body text-base md:text-lg text-surface-variant/85 max-w-2xl leading-relaxed">
           We bring institutional discipline and quantitative rigor to private wealth. Our advisory model demystifies opaque markets, ensuring every rupee is allocated with conviction, legal protection, and long-term liquidity.
         </p>
-        <button data-open-partner-modal class="mt-4 bg-metallic-gold text-primary font-body text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-surface-bright transition-all shadow-lg">
+        <button data-animate="fade-up" data-delay="300" data-open-partner-modal class="mt-2 bg-metallic-gold text-primary font-body text-xs font-bold uppercase tracking-widest px-8 py-3.5 hover:bg-surface-bright transition-all shadow-lg btn-luxury">
           Initiate Advisory Mandate
         </button>
       </div>
@@ -134,15 +134,15 @@
     <!-- Advisory Framework Section -->
     <section class="px-margin-edge py-section-v-lg bg-surface">
       <div class="max-w-7xl mx-auto">
-        <div class="max-w-3xl mb-16 border-b border-outline/10 pb-6">
-          <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Underwriting Blueprint</span>
+        <div data-animate="fade-up" class="max-w-3xl mb-14 border-b border-outline/10 pb-6">
+          <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Underwriting Blueprint</span>
           <h2 class="font-headline text-3xl md:text-4xl text-forest-deep mb-3">The 6-Pillar Alaya Advisory Framework</h2>
           <p class="font-body text-base text-on-surface-variant">A systematic approach to evaluating real estate opportunities, mitigating legal and zoning risks, and structuring high-conviction portfolios.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Pillar 1 -->
-          <div class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between hover:border-metallic-gold transition-colors">
+          <div data-animate="fade-up" data-delay="100" class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between card-hover-lift">
             <div>
               <span class="font-display text-4xl text-metallic-gold font-bold block mb-4">01</span>
               <h3 class="font-headline text-2xl text-forest-deep mb-3">Market Intelligence</h3>
@@ -156,7 +156,7 @@
           </div>
 
           <!-- Pillar 2 -->
-          <div class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between hover:border-metallic-gold transition-colors">
+          <div data-animate="fade-up" data-delay="200" class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between card-hover-lift">
             <div>
               <span class="font-display text-4xl text-metallic-gold font-bold block mb-4">02</span>
               <h3 class="font-headline text-2xl text-forest-deep mb-3">Location & Corridor Analysis</h3>
@@ -170,7 +170,7 @@
           </div>
 
           <!-- Pillar 3 -->
-          <div class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between hover:border-metallic-gold transition-colors">
+          <div data-animate="fade-up" data-delay="300" class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between card-hover-lift">
             <div>
               <span class="font-display text-4xl text-metallic-gold font-bold block mb-4">03</span>
               <h3 class="font-headline text-2xl text-forest-deep mb-3">Pricing & Comparables</h3>
@@ -184,7 +184,7 @@
           </div>
 
           <!-- Pillar 4 -->
-          <div class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between hover:border-metallic-gold transition-colors">
+          <div data-animate="fade-up" data-delay="400" class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between card-hover-lift">
             <div>
               <span class="font-display text-4xl text-metallic-gold font-bold block mb-4">04</span>
               <h3 class="font-headline text-2xl text-forest-deep mb-3">30-Year Title Due Diligence</h3>
@@ -198,7 +198,7 @@
           </div>
 
           <!-- Pillar 5 -->
-          <div class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between hover:border-metallic-gold transition-colors">
+          <div data-animate="fade-up" data-delay="500" class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between card-hover-lift">
             <div>
               <span class="font-display text-4xl text-metallic-gold font-bold block mb-4">05</span>
               <h3 class="font-headline text-2xl text-forest-deep mb-3">Financial Modeling</h3>
@@ -212,7 +212,7 @@
           </div>
 
           <!-- Pillar 6 -->
-          <div class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between hover:border-metallic-gold transition-colors">
+          <div data-animate="fade-up" data-delay="600" class="bg-paper-dark p-8 border border-outline/10 flex flex-col justify-between card-hover-lift">
             <div>
               <span class="font-display text-4xl text-metallic-gold font-bold block mb-4">06</span>
               <h3 class="font-headline text-2xl text-forest-deep mb-3">Exit & Liquidity Strategy</h3>
@@ -231,13 +231,13 @@
     <!-- Engagement Models -->
     <section class="py-section-v-lg px-margin-edge bg-paper-dark border-t border-outline/10">
       <div class="max-w-7xl mx-auto">
-        <div class="max-w-3xl mb-12">
-          <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Mandate Structuring</span>
+        <div data-animate="fade-up" class="max-w-3xl mb-12">
+          <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Mandate Structuring</span>
           <h2 class="font-headline text-3xl md:text-4xl text-forest-deep">Client Engagement Models</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-surface p-8 border border-outline/15 flex flex-col justify-between">
+          <div data-animate="fade-up" data-delay="100" class="bg-surface p-8 border border-outline/15 flex flex-col justify-between card-hover-lift">
             <div>
               <h3 class="font-headline text-2xl text-forest-deep mb-2">Single Asset Acquisition</h3>
               <p class="font-data-mono text-xs text-metallic-gold mb-4 uppercase">Direct Property Mandate</p>
@@ -245,13 +245,13 @@
                 Comprehensive advisory for evaluating, negotiating, and acquiring specific plotted land, commercial buildings, or industrial acreage.
               </p>
             </div>
-            <button data-open-partner-modal class="w-full py-3 border border-forest-deep text-forest-deep text-xs font-bold uppercase tracking-wider hover:bg-forest-deep hover:text-surface transition-colors">
+            <button data-open-partner-modal class="w-full py-3 border border-forest-deep text-forest-deep text-xs font-bold uppercase tracking-wider hover:bg-forest-deep hover:text-surface transition-colors btn-luxury">
               Inquire Mandate
             </button>
           </div>
 
-          <div class="bg-surface p-8 border-2 border-forest-deep flex flex-col justify-between shadow-xl relative">
-            <span class="absolute -top-3 left-6 bg-forest-deep text-surface-bright text-[10px] font-bold uppercase tracking-widest px-3 py-1">Most Requested</span>
+          <div data-animate="fade-up" data-delay="200" class="bg-surface p-8 border-2 border-forest-deep flex flex-col justify-between shadow-xl relative card-hover-lift">
+            <span class="absolute -top-3 left-6 bg-forest-deep text-surface-bright text-[10px] font-bold uppercase tracking-widest px-3 py-1 badge-floating">Most Requested</span>
             <div>
               <h3 class="font-headline text-2xl text-forest-deep mb-2">Family Office Retainer</h3>
               <p class="font-data-mono text-xs text-metallic-gold mb-4 uppercase">Generational Wealth Mandate</p>
@@ -259,12 +259,12 @@
                 Continuous fiduciary oversight of private real estate holdings, land bank consolidation, risk monitoring, and strategic portfolio reallocation.
               </p>
             </div>
-            <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs font-bold uppercase tracking-wider hover:bg-primary transition-colors">
+            <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs font-bold uppercase tracking-wider hover:bg-primary transition-colors btn-luxury">
               Consult Principal
             </button>
           </div>
 
-          <div class="bg-surface p-8 border border-outline/15 flex flex-col justify-between">
+          <div data-animate="fade-up" data-delay="300" class="bg-surface p-8 border border-outline/15 flex flex-col justify-between card-hover-lift">
             <div>
               <h3 class="font-headline text-2xl text-forest-deep mb-2">Due Diligence Audit</h3>
               <p class="font-data-mono text-xs text-metallic-gold mb-4 uppercase">Independent Verification</p>
@@ -272,7 +272,7 @@
                 Third-party forensic analysis of title integrity, municipal permissions, valuation accuracy, and structural risks prior to executing major contracts.
               </p>
             </div>
-            <button data-open-partner-modal class="w-full py-3 border border-forest-deep text-forest-deep text-xs font-bold uppercase tracking-wider hover:bg-forest-deep hover:text-surface transition-colors">
+            <button data-open-partner-modal class="w-full py-3 border border-forest-deep text-forest-deep text-xs font-bold uppercase tracking-wider hover:bg-forest-deep hover:text-surface transition-colors btn-luxury">
               Commission Audit
             </button>
           </div>
@@ -282,12 +282,12 @@
 
     <!-- Consultation CTA -->
     <section class="py-section-v-lg px-margin-edge bg-forest-deep text-surface-bright text-center flex flex-col items-center">
-      <div class="max-w-3xl">
+      <div data-animate="zoom-in" class="max-w-3xl">
         <h2 class="font-display text-4xl md:text-5xl text-surface-bright mb-4">Ready to allocate capital with conviction?</h2>
         <p class="font-body text-base text-surface-variant/80 mb-8 max-w-xl mx-auto">
           Schedule a private consultation with Arjun Singh or Elena Rostova to discuss your real estate acquisition goals.
         </p>
-        <button data-open-partner-modal class="bg-metallic-gold text-primary text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-surface-bright transition-all shadow-lg">
+        <button data-open-partner-modal class="bg-metallic-gold text-primary text-xs font-bold uppercase tracking-widest px-8 py-3.5 hover:bg-surface-bright transition-all shadow-lg btn-luxury">
           Schedule Mandate Discussion
         </button>
       </div>
@@ -297,14 +297,14 @@
   <!-- Global Footer -->
   <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge">
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-outline/20 pb-12 mb-8">
-      <div class="md:col-span-4">
+      <div class="md:col-span-4" data-animate="fade-up">
         <div class="font-display text-3xl text-metallic-gold mb-4">Alaya Realty</div>
         <p class="font-body text-sm text-surface-variant/70 leading-relaxed mb-6">
           Institutional excellence in real estate advisory. We guide investors, corporate entities, and family offices toward rigorous, insight-backed property decisions.
         </p>
       </div>
 
-      <div class="md:col-span-2">
+      <div class="md:col-span-2" data-animate="fade-up" data-delay="100">
         <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Opportunities</p>
         <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
           <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Marketplace</a>
@@ -314,7 +314,7 @@
         </div>
       </div>
 
-      <div class="md:col-span-2">
+      <div class="md:col-span-2" data-animate="fade-up" data-delay="200">
         <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Advisory & Firm</p>
         <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
           <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Due Diligence Model</a>
@@ -324,12 +324,12 @@
         </div>
       </div>
 
-      <div class="md:col-span-4">
+      <div class="md:col-span-4" data-animate="fade-up" data-delay="300">
         <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Quarterly Intelligence Briefing</p>
         <p class="font-body text-xs text-surface-variant/70 mb-4">Receive sovereign-grade market underwriting and corridor reports directly.</p>
         <form class="newsletter-form flex gap-2">
           <input type="email" required placeholder="institutional.investor@domain.com" class="bg-primary/50 border border-outline/30 px-3 py-2 text-xs text-surface-bright flex-grow focus:outline-none focus:border-metallic-gold"/>
-          <button type="submit" class="bg-metallic-gold text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-colors">
+          <button type="submit" class="bg-metallic-gold text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-colors btn-luxury">
             Subscribe
           </button>
         </form>
@@ -354,7 +354,7 @@
       </button>
 
       <div class="mb-6">
-        <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block mb-1">Direct Partner Access</span>
+        <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest block mb-1">Direct Partner Access</span>
         <h3 class="font-headline text-2xl text-forest-deep">Consult a Managing Principal</h3>
         <p class="font-body text-xs text-on-surface-variant mt-1">Discuss private property acquisitions, custom mandates, or portfolio evaluations.</p>
       </div>
@@ -382,7 +382,7 @@
             <option value="due-diligence">30-Year Forensic Title & Due Diligence Audit</option>
           </select>
         </div>
-        <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2">
+        <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 btn-luxury">
           <span>Request Partner Consultation</span>
           <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </button>
