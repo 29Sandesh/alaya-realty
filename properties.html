@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investment Marketplace & Opportunities | Alaya Realty</title>
+  <meta name="description" content="Explore curated institutional real estate opportunities in Indore, MP. Freehold plotted land, Grade-A pre-leased commercial, and industrial logistics parcels."/>
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="/src/css/main.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#fdf9eb",
+            "surface-dim": "#dedacc",
+            "surface-bright": "#fdf9eb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8f4e6",
+            "surface-container": "#f2eee0",
+            "surface-container-high": "#ece8da",
+            "surface-container-highest": "#e6e2d5",
+            "on-surface": "#1d1c14",
+            "on-surface-variant": "#45474b",
+            "inverse-surface": "#323127",
+            "inverse-on-surface": "#f5f1e3",
+            "outline": "#76777b",
+            "outline-variant": "#c6c6cb",
+            "primary": "#010306",
+            "primary-container": "#1a1d23",
+            "secondary": "#745a34",
+            "paper-dark": "#E6E1D1",
+            "metallic-gold": "#A68B5B",
+            "forest-deep": "#081F18"
+          },
+          spacing: {
+            "margin-edge": "5vw",
+            "gutter": "24px",
+            "section-v-lg": "120px",
+            "section-v-md": "80px",
+            "stack-sm": "12px",
+            "stack-md": "24px",
+            "stack-lg": "40px"
+          },
+          fontFamily: {
+            "display": ["EB Garamond", "serif"],
+            "headline": ["EB Garamond", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"],
+            "data-mono": ["Hanken Grotesk", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="antialiased min-h-screen bg-surface selection:bg-metallic-gold/30 selection:text-primary">
+
+  <!-- Header -->
+  <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50 transition-all duration-300">
+    <a class="flex-shrink-0 flex items-center gap-3" href="/index.html">
+      <img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+    </a>
+    
+    <nav class="hidden md:flex gap-8 items-center font-body text-sm font-medium tracking-widest uppercase">
+      <a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1" href="/properties.html">Opportunities</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/veda-park.html">Veda Park</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/advisory.html">Advisory</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/insights.html">Insights</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/about.html">About</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/contact.html">Contact</a>
+    </nav>
+    
+    <div class="hidden lg:flex items-center gap-4">
+      <button data-open-partner-modal class="inline-flex items-center justify-center px-6 py-3 bg-forest-deep text-surface-bright font-body text-xs font-semibold uppercase tracking-widest hover:bg-primary transition-all duration-300">
+        Speak to a partner
+      </button>
+    </div>
+
+    <button id="mobile-menu-toggle" class="md:hidden text-primary p-2">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-surface border-l border-outline-variant/30 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between shadow-2xl">
+    <div>
+      <div class="flex justify-between items-center mb-8 border-b border-outline-variant/20 pb-4">
+        <span class="font-headline text-2xl text-forest-deep">Alaya Realty</span>
+        <button id="mobile-drawer-close" class="text-outline hover:text-primary">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 text-sm font-semibold tracking-widest uppercase">
+        <a class="text-metallic-gold font-bold py-1" href="/properties.html">Opportunities</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/veda-park.html">Veda Park Plotted</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/advisory.html">Advisory Framework</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/insights.html">Research & Insights</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/about.html">About Us</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/contact.html">Contact Office</a>
+      </nav>
+    </div>
+    <div class="border-t border-outline-variant/20 pt-6">
+      <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-semibold hover:bg-primary transition-colors">
+        Speak to a Partner
+      </button>
+    </div>
+  </div>
+
+  <main class="flex-grow flex flex-col">
+    <!-- Hero Banner -->
+    <section class="relative w-full py-20 bg-forest-deep text-surface-bright px-margin-edge overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-25">
+        <div class="bg-cover bg-center w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBv3neyrVI5Mxewd0J34Tm1nK8VzBCOU8W_XkxjnahP4QuQRuY5_mlad6AA7DTuOhrfwQoE23AS8gy-IykJstcN50UG7NEA_nfg4LCj32GPP_PEx25ANKhlZdyB5D6C-EkOxvkFHYqfvrG7dLfPQSVUk5FHzls-eGFpXTIrlkqFbRS5_0G63rxb-ilEFPfgdmlPYD7NWiL-RL18ZAsWdi9ZjJ-7sSS-U3gVCeuWjZKLV5tEBvSKXpxt')"></div>
+      </div>
+      
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.2em] mb-2 block">Curated Investment Portfolio</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-surface-bright mb-4">
+          Opportunities Worth Considering.
+        </h1>
+        <p class="font-body text-base md:text-lg text-surface-variant/85 max-w-2xl mx-auto">
+          A rigorously vetted portfolio of plotted developments, prime commercial office floors, and industrial logistics parcels across Central India's highest-growth corridors.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Bar & Search Utility -->
+    <section class="w-full bg-surface border-b border-outline/10 py-6 px-margin-edge sticky top-24 z-40 backdrop-blur-md bg-surface/95">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <!-- Asset Filter Tabs -->
+        <div class="flex flex-wrap gap-2 items-center w-full md:w-auto">
+          <button data-asset-filter="all" class="font-body text-xs font-bold uppercase tracking-wider px-4 py-2 border-b-2 border-forest-deep text-forest-deep transition-all">
+            All Assets
+          </button>
+          <button data-asset-filter="plotted" class="font-body text-xs uppercase tracking-wider px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-forest-deep transition-all">
+            Plotted Land
+          </button>
+          <button data-asset-filter="commercial" class="font-body text-xs uppercase tracking-wider px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-forest-deep transition-all">
+            Commercial Yield
+          </button>
+          <button data-asset-filter="industrial" class="font-body text-xs uppercase tracking-wider px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-forest-deep transition-all">
+            Industrial Logistics
+          </button>
+          <button data-asset-filter="residential" class="font-body text-xs uppercase tracking-wider px-4 py-2 border-b-2 border-transparent text-on-surface-variant hover:text-forest-deep transition-all">
+            Bespoke Estates
+          </button>
+        </div>
+
+        <!-- Search & Sort Controls -->
+        <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+          <div class="relative flex-grow md:flex-grow-0 min-w-[220px]">
+            <span class="absolute left-3 top-2.5 material-symbols-outlined text-outline text-lg">search</span>
+            <input 
+              id="property-search-input" 
+              type="text" 
+              placeholder="Search by name, corridor, or scale..." 
+              class="w-full bg-surface-container-low border border-outline/20 pl-9 pr-3 py-2 text-xs font-body focus:border-forest-deep focus:outline-none"
+            />
+          </div>
+
+          <div class="relative min-w-[170px]">
+            <select id="property-sort-select" class="w-full bg-surface-container-low border border-outline/20 px-3 py-2 text-xs font-body focus:border-forest-deep focus:outline-none cursor-pointer">
+              <option value="recommended">Sort: Recommended</option>
+              <option value="yield-desc">Exp. Yield (High to Low)</option>
+              <option value="size-desc">Scale (Largest First)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marketplace Grid Section -->
+    <section class="py-12 px-margin-edge bg-surface flex-grow">
+      <div class="max-w-7xl mx-auto">
+        <div id="marketplace-grid" class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <!-- Dynamic JS rendered items will mount here -->
+        </div>
+
+        <!-- Off-Market Institutional Advisory Callout -->
+        <div class="mt-16 bg-paper-dark border border-outline/20 p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div class="max-w-2xl">
+            <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Confidential Listings</span>
+            <h3 class="font-headline text-2xl md:text-3xl text-forest-deep mb-2">Seeking Off-Market Institutional Mandates?</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+              We manage discrete acquisitions of large-scale land banks, distressed commercial assets, and warehousing parcels under strict non-disclosure agreements.
+            </p>
+          </div>
+          <button data-open-partner-modal class="flex-shrink-0 bg-forest-deep text-surface-bright px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors">
+            Request Private Briefing
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-outline/20 pb-12 mb-8">
+      <div class="md:col-span-4">
+        <div class="font-display text-3xl text-metallic-gold mb-4">Alaya Realty</div>
+        <p class="font-body text-sm text-surface-variant/70 leading-relaxed mb-6">
+          Institutional excellence in real estate advisory. We guide investors, corporate entities, and family offices toward rigorous, insight-backed property decisions.
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Opportunities</p>
+        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Marketplace</a>
+          <a href="/veda-park.html" class="hover:text-metallic-gold transition-colors">Veda Park Plotted</a>
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Commercial Towers</a>
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Industrial Land</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Advisory & Firm</p>
+        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
+          <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Due Diligence Model</a>
+          <a href="/about.html" class="hover:text-metallic-gold transition-colors">Senior Leadership</a>
+          <a href="/insights.html" class="hover:text-metallic-gold transition-colors">Research Journal</a>
+          <a href="/contact.html" class="hover:text-metallic-gold transition-colors">Contact Partner</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-4">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Quarterly Intelligence Briefing</p>
+        <p class="font-body text-xs text-surface-variant/70 mb-4">Receive sovereign-grade market underwriting and corridor reports directly.</p>
+        <form class="newsletter-form flex gap-2">
+          <input type="email" required placeholder="institutional.investor@domain.com" class="bg-primary/50 border border-outline/30 px-3 py-2 text-xs text-surface-bright flex-grow focus:outline-none focus:border-metallic-gold"/>
+          <button type="submit" class="bg-metallic-gold text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-center text-xs text-surface-variant/50 gap-4">
+      <p>© 2026 Alaya Realty Advisory LLP. All rights reserved. Indore, Madhya Pradesh, India.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-surface-bright transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-surface-bright transition-colors">Fiduciary Disclosures</a>
+        <a href="#" class="hover:text-surface-bright transition-colors">Terms of Mandate</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Partner Consultation Modal -->
+  <div id="partner-modal" class="fixed inset-0 modal-backdrop hidden items-center justify-center p-4 z-50">
+    <div class="bg-surface max-w-lg w-full p-8 border border-outline/20 relative shadow-2xl fade-in">
+      <button data-close-partner-modal class="absolute top-4 right-4 text-outline hover:text-primary">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="mb-6">
+        <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block mb-1">Direct Partner Access</span>
+        <h3 class="font-headline text-2xl text-forest-deep">Consult a Managing Principal</h3>
+        <p class="font-body text-xs text-on-surface-variant mt-1">Discuss private property acquisitions, custom mandates, or portfolio evaluations.</p>
+      </div>
+
+      <form id="partner-modal-form" class="flex flex-col gap-4">
+        <div>
+          <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Full Name</label>
+          <input type="text" name="name" required placeholder="e.g. Arjun Mehra" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Contact Number</label>
+            <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Email Address</label>
+            <input type="email" name="email" required placeholder="investor@example.com" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+          </div>
+        </div>
+        <div>
+          <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Target Asset Mandate</label>
+          <select name="asset_class" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none">
+            <option value="all">All Opportunities / Portfolio</option>
+            <option value="veda-park">Veda Park Plotted Development</option>
+            <option value="commercial">Grade-A Commercial Office</option>
+            <option value="industrial">Industrial Logistics Land</option>
+          </select>
+        </div>
+        <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2">
+          <span>Request Partner Consultation</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

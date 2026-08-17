@@ -1,0 +1,15 @@
+{
+  "name": "alaya-realty",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Alaya Realty - Institutional Real Estate Advisory and Investment Platform",
+  "scripts": {
+    "dev": "vite --port 7999 --host",
+    "build": "vite build",
+    "preview": "vite preview --port 7999"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

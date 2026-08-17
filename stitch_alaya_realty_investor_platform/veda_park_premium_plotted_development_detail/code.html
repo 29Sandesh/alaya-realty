@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Veda Park Property Detail - Alaya Realty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#5a431f",
+                        "on-tertiary": "#ffffff",
+                        "paper-dark": "#E6E1D1",
+                        "error-container": "#ffdad6",
+                        "forest-deep": "#081F18",
+                        "on-secondary-fixed": "#291800",
+                        "surface-container-highest": "#e6e2d5",
+                        "on-tertiary-fixed": "#012017",
+                        "on-tertiary-fixed-variant": "#2f4d41",
+                        "tertiary-container": "#022218",
+                        "on-primary-fixed": "#191c22",
+                        "background": "#fdf9eb",
+                        "inverse-primary": "#c4c6ce",
+                        "tertiary": "#000302",
+                        "secondary": "#745a34",
+                        "outline": "#76777b",
+                        "on-tertiary-container": "#6c8c7e",
+                        "on-primary": "#ffffff",
+                        "primary": "#010306",
+                        "surface-container-low": "#f8f4e6",
+                        "metallic-gold": "#A68B5B",
+                        "inverse-on-surface": "#f5f1e3",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1d1c14",
+                        "on-secondary-container": "#795e38",
+                        "surface-container-high": "#ece8da",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e1e2ea",
+                        "primary-container": "#1a1d23",
+                        "primary-fixed-dim": "#c4c6ce",
+                        "on-primary-container": "#82858c",
+                        "tertiary-fixed": "#c8eada",
+                        "tertiary-fixed-dim": "#adcebf",
+                        "surface-container": "#f2eee0",
+                        "secondary-fixed": "#ffddb1",
+                        "on-background": "#1d1c14",
+                        "surface-variant": "#e6e2d5",
+                        "surface": "#fdf9eb",
+                        "inverse-surface": "#323127",
+                        "on-surface-variant": "#45474b",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#44474d",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c6c6cb",
+                        "secondary-fixed-dim": "#e3c193",
+                        "surface-dim": "#dedacc",
+                        "secondary-container": "#fedaaa",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fdf9eb",
+                        "surface-tint": "#5c5e65"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-v-lg": "120px",
+                        "stack-sm": "12px",
+                        "stack-lg": "40px",
+                        "gutter": "24px",
+                        "section-v-md": "80px",
+                        "stack-md": "24px",
+                        "margin-edge": "5vw"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "data-mono": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "data-mono": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+        .editorial-border {
+            border: 1px solid rgba(118, 119, 123, 0.15); /* outline/15 */
+        }
+        .tonal-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .data-table-row {
+            border-bottom: 1px solid rgba(118, 119, 123, 0.2);
+        }
+        .input-line {
+            border-bottom: 2px solid theme('colors.outline');
+            transition: border-color 0.3s ease;
+        }
+        .input-line:focus {
+            outline: none;
+            border-bottom-color: theme('colors.primary');
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen font-body-md">
+<!-- TopNavBar (Master Global Header) -->
+<header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50">
+<a class="flex-shrink-0" href="#">
+<img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+</a>
+<nav class="hidden md:flex gap-8 items-center font-body-md text-body-md tracking-wider uppercase">
+<a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1 cursor-pointer transition-transform duration-200 active:scale-95" href="#">Properties</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="#">Investment Opportunities</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="#">Advisory</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="#">Insights</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="#">About Us</a>
+</nav>
+<div class="hidden lg:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary-container text-on-secondary font-label-caps text-label-caps uppercase tracking-widest hover:bg-forest-deep transition-colors duration-300" href="#">Talk to an Advisor</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<main class="flex-grow">
+<!-- Cinematic Hero -->
+<section class="relative w-full h-[819px] min-h-[600px] flex items-end px-margin-edge pb-section-v-md">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A breathtaking, cinematic aerial view of a sprawling, high-end residential plot development nestled in lush greenery. The lighting is golden hour, casting long, elegant shadows and highlighting the meticulous infrastructure. The aesthetic is luxurious, aspirational, and highly polished, reflecting an institutional-grade investment property with a neutral and warm color palette featuring earthy greens and deep golds." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPs4KEO-0ufYE-xfELYLlDlEpFsb1eKjF0jSY7pVqOp1ODlZAZfqHfqnfV4c3HHTje6ZXEo6dC5dP3aUH8ndXEcme5U73DX2FaLKOL7D9x_F58pZo5sV1XpyjfAkZiaafunI9abksElemkLK6X8J7oahfqg9jJArZjx6xg6nAYmOk11lS4G7YIzATXo6XsKxpV5FtwAVjRi_YuNiR-gWP5EKsgE5NxvTJJOINFdzTmzthUTMUZba7D')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full md:w-8/12 lg:w-6/12 text-surface-bright">
+<span class="inline-block border border-surface-bright/30 px-3 py-1 font-label-caps tracking-wider mb-6 backdrop-blur-sm bg-primary/20">NOW SELLING</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-surface-bright mb-4">Veda Park</h1>
+<p class="font-body-lg text-body-lg text-surface-bright/90 max-w-xl">
+                    Premium residential plots on Khandwa Road, Indore. A gated plotted development planned around wide internal roads, generous green belts, and a central clubhouse.
+                </p>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<div class="max-w-[1440px] mx-auto px-margin-edge py-section-v-lg grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Primary Content -->
+<div class="md:col-span-8 flex flex-col gap-section-v-md">
+<!-- Overview -->
+<section>
+<div class="flex items-baseline gap-4 mb-8 border-b border-outline-variant/30 pb-4">
+<span class="font-headline-lg text-outline/30">01</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Overview</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        A gated plotted development off Khandwa Road, planned around wide internal roads, generous green belts, and a central clubhouse. Freehold, clear-title land with Vaastu-compliant layouts — ready for your villa, farmhouse, or long-term investment in one of Indore's fastest-growing corridors.
+                    </p>
+</section>
+<!-- Key Facts Grid -->
+<section>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-6 bg-paper-dark tonal-shadow flex flex-col gap-2">
+<span class="font-label-caps text-on-surface-variant">Plot Sizes</span>
+<span class="font-data-mono text-xl text-primary font-bold">2,400 - 10,000</span>
+<span class="font-label-caps text-outline">Sq. Ft.</span>
+</div>
+<div class="p-6 bg-paper-dark tonal-shadow flex flex-col gap-2">
+<span class="font-label-caps text-on-surface-variant">Total Plots</span>
+<span class="font-data-mono text-xl text-primary font-bold">88</span>
+<span class="font-label-caps text-outline">Exclusive Plots</span>
+</div>
+<div class="p-6 bg-paper-dark tonal-shadow flex flex-col gap-2">
+<span class="font-label-caps text-on-surface-variant">Tenure</span>
+<span class="font-data-mono text-xl text-primary font-bold">Freehold</span>
+<span class="font-label-caps text-outline">Clear Title</span>
+</div>
+<div class="p-6 bg-paper-dark tonal-shadow flex flex-col gap-2">
+<span class="font-label-caps text-on-surface-variant">Location</span>
+<span class="font-data-mono text-xl text-primary font-bold">Khandwa Road</span>
+<span class="font-label-caps text-outline">Indore</span>
+</div>
+</div>
+</section>
+<!-- Location Context -->
+<section>
+<div class="flex items-baseline gap-4 mb-8 border-b border-outline-variant/30 pb-4">
+<span class="font-headline-lg text-outline/30">02</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">A corridor on the move.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<ul class="flex flex-col gap-0 border-t border-outline-variant/30">
+<li class="py-4 border-b border-outline-variant/30 flex justify-between items-center">
+<span class="font-body-md">On Khandwa Road</span>
+<span class="font-data-mono text-outline">Primary growth corridor</span>
+</li>
+<li class="py-4 border-b border-outline-variant/30 flex justify-between items-center">
+<span class="font-body-md">Entry gate</span>
+<span class="font-data-mono text-outline">Towards Simrol</span>
+</li>
+<li class="py-4 border-b border-outline-variant/30 flex justify-between items-center">
+<span class="font-body-md">Proximity</span>
+<span class="font-data-mono text-outline text-right max-w-[200px]">Close to hospitals, schools, and shopping centres</span>
+</li>
+<li class="py-4 border-b border-outline-variant/30 flex justify-between items-center">
+<span class="font-body-md">Neighborhood</span>
+<span class="font-data-mono text-outline text-right max-w-[200px]">Near existing Veda Homes, Datoda</span>
+</li>
+</ul>
+</div>
+<div class="h-64 md:h-full min-h-[300px] bg-surface-variant border border-outline-variant/30 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A clean, minimalist, highly stylized architectural map showing the location of Veda Park in relation to key infrastructure on Khandwa Road, Indore. The map uses a premium corporate palette of deep forest greens, subtle golds, and crisp whites. Sharp, precise lines indicate roads and highways. The aesthetic is institutional, reflecting an editorial design approach suitable for high-net-worth real estate presentations." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5Qrl3yxwOyX05UodvEmi1yvv65dJnZpHWbDBhGiDj5tnT4ZBi4p5r0hjQNA4UMU5wgqpjF_dN_rLVXGMdgsvhL_HGqMbgsKTyyvS8F9MD8Kus2m6f2VYSg9G-QbpnBIl9iRyIhKMCHpo74MWpqBncBcMmDW6qCXw2hrQ8je156pHYJFEhpeb94It9j9Yw6Jl2ExHNL2VDD_7MiACswyEds_X27cxtFSJ9x169zntuPG_HweCfzqYu')"></div>
+</div>
+</div>
+</section>
+<!-- Investment Perspective -->
+<section class="bg-forest-deep text-surface-bright p-8 md:p-12">
+<div class="flex items-baseline gap-4 mb-8 border-b border-surface-bright/20 pb-4">
+<span class="font-headline-lg text-surface-bright/30">03</span>
+<h2 class="font-headline-lg text-headline-lg text-surface-bright">Why invest in Veda Park</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<p class="font-body-md text-body-md text-surface-bright/80 mb-6">
+                                Strong fundamentals make this one of Indore's most promising plotted investments on the Khandwa Road corridor.
+                            </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-metallic-gold">trending_up</span>
+<div>
+<h4 class="font-body-md font-bold mb-1">10–15% Expected YoY appreciation</h4>
+<p class="text-sm text-surface-bright/60">Entering a fast-developing Khandwa Road corridor early positions the plot for strong long-term appreciation.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-metallic-gold">shield_lock</span>
+<div>
+<h4 class="font-body-md font-bold mb-1">Clear-title ownership</h4>
+<p class="text-sm text-surface-bright/60">Freehold land with clear title and society boundary walls — straightforward, secure ownership.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-metallic-gold">location_on</span>
+<div>
+<h4 class="font-body-md font-bold mb-1">Prime location</h4>
+<p class="text-sm text-surface-bright/60">Directly on Khandwa Road with an entry gate towards Simrol — connected, visible, and appreciating.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative h-48 md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-luminosity" data-alt="A conceptual, abstract image representing real estate investment growth. The composition features sharp geometric lines, subtle golden upward trends, and minimalist architectural elements set against a dark, sophisticated forest-green background. The lighting is subtle and ambient, conveying stability, wealth, and institutional trust in a highly polished editorial style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSUqHwwi1K4V77E1-33SGGt-ukp5_97_5J2eIuc2isihrWXYGnO7VxBNr653PgT4tF9S11RJ5oa1eeptNnakA23B05P207RZu9lCYuMWWxmroZulQcya9lTT9lsqbPmrs8QRoT3foHz-ZWWTr8yFVB9n61SWvczSSnmPHbaiT60M6Im6jCAAdtZqrNOWhl6ac6mLA9-d_yNM_IAEVhHvuMz2cPhD5SOvZy4PIt5cdOVz2phMxTDxvV')"></div>
+</div>
+</div>
+</section>
+<!-- Amenities -->
+<section>
+<div class="flex items-baseline gap-4 mb-8 border-b border-outline-variant/30 pb-4">
+<span class="font-headline-lg text-outline/30">04</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Everything a community needs.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-on-surface-variant font-body-md">
+<ul class="flex flex-col gap-4 list-disc pl-5">
+<li>Clubhouse &amp; community centre</li>
+<li>Swimming pool</li>
+<li>Children's play areas</li>
+<li>Landscaped green spaces</li>
+<li>Temple</li>
+</ul>
+<ul class="flex flex-col gap-4 list-disc pl-5">
+<li>24x7 security &amp; CCTV</li>
+<li>Car parking</li>
+<li>Power backup</li>
+<li>Water supply &amp; electric connections</li>
+<li>Vaastu-compliant plot orientation</li>
+</ul>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Enquiry -->
+<div class="md:col-span-4 relative">
+<div class="sticky top-32 p-8 border border-outline-variant/30 bg-surface">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Schedule your site visit</h3>
+<p class="font-body-md text-on-surface-variant text-sm mb-8">An Alaya Realty partner will personally walk you through Veda Park and help you pick the right plot for your plans.</p>
+<ul class="flex flex-col gap-3 mb-8 text-sm text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span> Freehold, clear-title plots</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span> Prime Khandwa Road location</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span> Guided by an Alaya Realty partner</li>
+</ul>
+<form class="flex flex-col gap-6">
+<div class="flex flex-col">
+<label class="font-label-caps text-on-surface-variant mb-2">Full Name</label>
+<input class="bg-transparent input-line py-2" placeholder="e.g. Jonathan Doe" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-on-surface-variant mb-2">Contact Number</label>
+<input class="bg-transparent input-line py-2" placeholder="+91" type="tel"/>
+</div>
+<button class="mt-4 w-full bg-forest-deep text-surface-bright py-4 font-label-caps uppercase tracking-wider hover:bg-primary-container transition-colors" type="button">
+                            Enquire on WhatsApp
+                        </button>
+<button class="w-full border border-forest-deep text-forest-deep py-4 font-label-caps uppercase tracking-wider hover:bg-forest-deep/5 transition-colors" type="button">
+                            Call us now
+                        </button>
+<p class="text-xs text-outline text-center mt-2 font-data-mono">Plots move fast on Khandwa Road. Message a partner directly for current availability.</p>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-forest-deep dark:bg-primary text-surface-bright font-body-md text-body-md border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge gap-stack-lg">
+<div class="font-display-lg text-display-lg text-metallic-gold mb-8">
+            Alaya Realty
+        </div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-outline/20 pb-12 mb-4">
+<div class="flex flex-col gap-4">
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Properties</a>
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Investment Opportunities</a>
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Advisory</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Insights</a>
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">About Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Regulatory Disclosures</a>
+<a class="text-surface-variant/70 hover:text-surface-bright hover:text-metallic-gold transition-colors duration-300" href="#">Investor Relations</a>
+</div>
+</div>
+<div class="text-surface-variant/50 text-sm">
+            © 2024 Alaya Realty. All rights reserved. Institutional excellence in real estate advisory.
+        </div>
+</footer>
+</body></html>

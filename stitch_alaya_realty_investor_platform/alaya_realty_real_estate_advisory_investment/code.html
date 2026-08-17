@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alaya Realty | Institutional Excellence in Real Estate Advisory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=EB+Garamond:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fdf9eb",
+                        "outline": "#76777b",
+                        "outline-variant": "#c6c6cb",
+                        "on-tertiary-container": "#6c8c7e",
+                        "surface-tint": "#5c5e65",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#44474d",
+                        "paper-dark": "#E6E1D1",
+                        "secondary-fixed-dim": "#e3c193",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#795e38",
+                        "inverse-primary": "#c4c6ce",
+                        "secondary-container": "#fedaaa",
+                        "surface-dim": "#dedacc",
+                        "primary-fixed-dim": "#c4c6ce",
+                        "surface-container-low": "#f8f4e6",
+                        "primary-container": "#1a1d23",
+                        "on-primary-container": "#82858c",
+                        "tertiary-fixed-dim": "#adcebf",
+                        "tertiary-container": "#022218",
+                        "surface-container-high": "#ece8da",
+                        "on-background": "#1d1c14",
+                        "surface-bright": "#fdf9eb",
+                        "on-tertiary-fixed": "#012017",
+                        "surface-variant": "#e6e2d5",
+                        "on-secondary-fixed-variant": "#5a431f",
+                        "on-tertiary-fixed-variant": "#2f4d41",
+                        "primary": "#010306",
+                        "metallic-gold": "#A68B5B",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e6e2d5",
+                        "inverse-surface": "#323127",
+                        "on-surface": "#1d1c14",
+                        "secondary-fixed": "#ffddb1",
+                        "secondary": "#745a34",
+                        "on-secondary-fixed": "#291800",
+                        "inverse-on-surface": "#f5f1e3",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e1e2ea",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f2eee0",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#000302",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#191c22",
+                        "forest-deep": "#081F18",
+                        "on-surface-variant": "#45474b",
+                        "background": "#fdf9eb",
+                        "tertiary-fixed": "#c8eada"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "section-v-lg": "120px",
+                        "section-v-md": "80px",
+                        "stack-lg": "40px",
+                        "margin-edge": "5vw",
+                        "stack-sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "data-mono": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "data-mono": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #fdf9eb; color: #1d1c14; }
+        h1, h2, h3, h4, h5, h6, .font-display-lg, .font-headline-lg, .font-headline-md { font-family: 'EB Garamond', serif; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle editorial grid overlay for design alignment (can be removed in production) */
+        /* body::before {
+            content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+            background-image: repeating-linear-gradient(to right, transparent, transparent calc(100%/12 - 1px), rgba(0,0,0,0.02) calc(100%/12 - 1px), rgba(0,0,0,0.02) calc(100%/12));
+            display: none;
+        } */
+    </style>
+</head>
+<body class="antialiased min-h-screen bg-surface selection:bg-metallic-gold/30 selection:text-primary">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50">
+<a class="flex-shrink-0" href="#">
+<img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+</a>
+<nav class="hidden md:flex gap-8 items-center font-body-md text-body-md tracking-wider uppercase">
+<a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1 cursor-pointer transition-transform duration-200 active:scale-95" href="/projects">Projects</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/services">Services</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/blog">Insights</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/about">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/contact">Contact</a>
+</nav>
+<div class="hidden lg:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary-container text-on-secondary font-label-caps text-label-caps uppercase tracking-widest hover:bg-forest-deep transition-colors duration-300" href="/contact">Speak to a partner</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<main>
+<!-- 1. HERO -->
+<section class="relative min-h-[90vh] flex items-center pt-24 pb-section-v-lg px-margin-edge">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full" data-alt="A breathtaking, cinematic wide shot of a modern, ultra-luxury Indian architectural development at dusk. The scene is illuminated by warm, inviting high-end architectural lighting that contrasts elegantly against the deep twilight sky. The building features sleek lines, expansive glass facades, and sophisticated landscaping. The overall mood is prestigious, institutional, and highly polished, embodying trust and long-term value, using a rich palette of deep shadows and golden light accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCWlV0ZtIOWcyuycSOkle1bD5Dnyh_Bwnfp5KQ5iWBCArFaO6mIqg09yfxRRM5tJkadN_cQ1ooDcklbhpaPZLx6mNRKzimpa_HH6vWHZL9CZIm-RU_J-ogIWul1EJh_GqtCuNYCFswLdXhBRRmKh9-61WKv4chW9uGTRdXUqFn2h98lsoj-9_y3XeqZobHMKx3IxraxVFrpotCMd06LgHbMzvCwILzBQmAwOkobo6WVMgwOkIn4zUN')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-forest-deep/90 via-forest-deep/60 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter text-on-secondary">
+<div class="md:col-span-8 lg:col-span-7 flex flex-col gap-stack-lg">
+<p class="font-label-caps text-label-caps text-metallic-gold uppercase tracking-widest border-l-2 border-metallic-gold pl-4">Indore • Madhya Pradesh • India</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-secondary">Real Estate Decisions,<br/>Backed by Insight.</h1>
+<p class="font-body-lg text-body-lg text-surface-variant/90 max-w-2xl leading-relaxed">Strategic real estate advisory for investors, businesses and families seeking clarity, quality and long-term value in the Indian market.</p>
+<div class="flex flex-col sm:flex-row gap-6 pt-4">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-metallic-gold text-on-primary font-label-caps text-label-caps uppercase tracking-widest hover:bg-white hover:text-forest-deep transition-all duration-300" href="/services">Explore more</a>
+<a class="inline-flex items-center justify-center px-8 py-4 border border-outline-variant/30 text-on-secondary font-label-caps text-label-caps uppercase tracking-widest hover:bg-white/10 transition-all duration-300 group" href="/contact">
+                            Get in touch
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. INVESTMENT OPPORTUNITIES -->
+<section class="py-section-v-lg px-margin-edge bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-stack-lg">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Opportunities Worth Considering.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">We curate high-conviction real estate opportunities, applying rigorous due diligence to ensure alignment with sophisticated investment mandates.</p>
+</div>
+<a class="inline-flex items-center text-metallic-gold font-label-caps text-label-caps uppercase tracking-widest hover:text-primary transition-colors group" href="/projects">
+                        View All Opportunities
+                        <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Featured Property Card -->
+<div class="lg:col-span-8 group cursor-pointer">
+<div class="relative h-[600px] overflow-hidden bg-paper-dark border border-outline/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A high-resolution, institutional-quality aerial photograph of an expansive premium plotted development site named Veda Park in Indore. The image showcases manicured infrastructure, broad internal roads, and lush green landscaping ready for custom luxury villas. The lighting is bright and clear, emphasizing meticulous planning and substantial investment potential. The aesthetic is clean, structured, and highly professional, utilizing the brand's warm off-white and deep green tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdMQLzK0Ju_jVo4AI4E5pzeVsQ1ot9rjEJdtS4AZxGJBbQnwm_LfA1UnZTmJQhYKiib8VRN2KFVCASKZfVL3YwDLoWpRTxoFmF4tw5Cca1gCGhsQyGKV4J-QLdMuyZHDo_l6uNChfRzCWW7z_tUAhIozm6OfEUIKMlWQY6WCcdYGd-_zJTVKbXK6D3hu98s0utL5rWxrTYcY1mLgJIlfMZyAbDWhkwoqbcXqNurZGbAHOeUgDMDPa3')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/20 to-transparent opacity-80"></div>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="px-3 py-1 bg-surface text-primary font-label-caps text-label-caps uppercase tracking-widest text-[10px]">Featured</span>
+<span class="px-3 py-1 border border-surface/30 text-surface font-label-caps text-label-caps uppercase tracking-widest text-[10px] backdrop-blur-sm">Now Selling</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div class="text-on-secondary">
+<p class="font-data-mono text-data-mono text-metallic-gold mb-2">Khandwa Road, Indore</p>
+<h3 class="font-headline-md text-headline-md mb-2">Veda Park</h3>
+<p class="font-body-md text-body-md text-surface-variant/80">Premium Plotted Development</p>
+</div>
+<div class="hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-metallic-gold text-on-primary transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-4 border-t border-outline/10 pt-4">
+<div>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-1">Asset Class</p>
+<p class="font-data-mono text-data-mono text-primary">Residential Land</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-1">Scale</p>
+<p class="font-data-mono text-data-mono text-primary">88 Plots</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-1">Size Range</p>
+<p class="font-data-mono text-data-mono text-primary">2,400–10k sq.ft.</p>
+</div>
+</div>
+</div>
+<!-- Secondary Opportunity -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 group cursor-pointer flex flex-col">
+<div class="relative flex-1 min-h-[250px] overflow-hidden bg-paper-dark border border-outline/10 mb-4">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, professional architectural rendering of a modern commercial office space in a prime business district. The scene features high ceilings, expansive floor-to-ceiling glass windows allowing abundant natural light, and sophisticated, minimalist interior details. The setting implies a high-yield corporate investment opportunity, rendered in a crisp, editorial style with a muted, elegant color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3hQTjrE-siFUkyFC4Ncjn9mURbU_SEuv2wQxKtGQ8-7Vhy4GPKxIQtAOkpeLGKPYZx8cC5uhFt0aXHC_BiIJL1OsLaHFqcRB9n8bH3jhk1z5LBN5y58rgYi9CcEHV2LKikj92LF5EI__JrFds7UtfGv_zn4lEHyB66Z-rYzcifobqPkeIMBR25_N-CwjJd8YdHkdyF8lZu22Oq2fNvchdpl18ygkz4KVfP9G5UIzMckEiotcCBsDH')"></div>
+<div class="absolute top-4 left-4">
+<span class="px-2 py-1 border border-forest-deep/30 bg-surface/80 text-primary font-label-caps text-[10px] uppercase tracking-widest backdrop-blur-sm">Placeholder</span>
+</div>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg font-medium text-primary mb-1">[Placeholder Project]</h4>
+<p class="font-data-mono text-data-mono text-outline mb-3">[Location] • [Asset Class]</p>
+<a class="inline-flex items-center text-metallic-gold font-label-caps text-[11px] uppercase tracking-widest group-hover:text-primary transition-colors" href="#">
+                                    Explore Asset
+                                    <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="p-6 bg-paper-dark border border-outline/10 flex flex-col justify-center">
+<span class="material-symbols-outlined text-metallic-gold text-3xl mb-4">analytics</span>
+<h4 class="font-body-lg text-body-lg font-medium text-primary mb-2">Institutional Mandates</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">We provide tailored acquisition strategies for institutional clients and family offices seeking specific yield profiles.</p>
+<a class="inline-flex items-center text-forest-deep font-label-caps text-[11px] uppercase tracking-widest border-b border-forest-deep pb-0.5 self-start hover:text-metallic-gold hover:border-metallic-gold transition-colors" href="/contact">Contact Advisory Team</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-forest-deep dark:bg-primary border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge gap-stack-lg">
+<div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row justify-between gap-12">
+<div class="max-w-sm">
+<div class="font-display-lg text-display-lg text-metallic-gold mb-6 text-4xl">Alaya Realty</div>
+<p class="font-body-md text-body-md text-surface-variant/70">Institutional excellence in real estate advisory. We guide investors, businesses, and families toward rigorous, insight-backed property decisions.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-16">
+<div class="flex flex-col gap-4">
+<p class="font-label-caps text-label-caps text-surface-bright uppercase tracking-widest mb-2">Navigation</p>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/projects">Projects</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/services">Services</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/blog">Insights</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label-caps text-label-caps text-surface-bright uppercase tracking-widest mb-2">Company</p>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/about">About</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/blog">Insights</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/contact">Contact</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/brochure">Brochure</a>
+</div>
+<div class="flex flex-col gap-4 col-span-2 md:col-span-1">
+<p class="font-label-caps text-label-caps text-surface-bright uppercase tracking-widest mb-2">Legal</p>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="#">Regulatory Disclosures</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto w-full pt-8 border-t border-outline/20 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-surface-variant/50 text-sm">© 2026 Alaya Realty. All rights reserved. Indore, India</p>
+<div class="flex gap-4 text-surface-variant/50">
+<span class="material-symbols-outlined hover:text-metallic-gold transition-colors cursor-pointer">language</span>
+<span class="material-symbols-outlined hover:text-metallic-gold transition-colors cursor-pointer">mail</span>
+</div>
+</div>
+</footer>
+</body></html>

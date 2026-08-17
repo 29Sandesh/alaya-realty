@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Partner Consultation | Alaya Realty Indore HQ</title>
+  <meta name="description" content="Connect directly with Managing Principals at Alaya Realty. Schedule private property consultations, portfolio reviews, or site visits in Indore."/>
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="/src/css/main.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#fdf9eb",
+            "surface-dim": "#dedacc",
+            "surface-bright": "#fdf9eb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8f4e6",
+            "surface-container": "#f2eee0",
+            "surface-container-high": "#ece8da",
+            "surface-container-highest": "#e6e2d5",
+            "on-surface": "#1d1c14",
+            "on-surface-variant": "#45474b",
+            "inverse-surface": "#323127",
+            "inverse-on-surface": "#f5f1e3",
+            "outline": "#76777b",
+            "outline-variant": "#c6c6cb",
+            "primary": "#010306",
+            "primary-container": "#1a1d23",
+            "secondary": "#745a34",
+            "paper-dark": "#E6E1D1",
+            "metallic-gold": "#A68B5B",
+            "forest-deep": "#081F18"
+          },
+          spacing: {
+            "margin-edge": "5vw",
+            "gutter": "24px",
+            "section-v-lg": "120px",
+            "section-v-md": "80px",
+            "stack-sm": "12px",
+            "stack-md": "24px",
+            "stack-lg": "40px"
+          },
+          fontFamily: {
+            "display": ["EB Garamond", "serif"],
+            "headline": ["EB Garamond", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"],
+            "data-mono": ["Hanken Grotesk", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="antialiased min-h-screen bg-surface selection:bg-metallic-gold/30 selection:text-primary">
+
+  <!-- Header -->
+  <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50 transition-all duration-300">
+    <a class="flex-shrink-0 flex items-center gap-3" href="/index.html">
+      <img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+    </a>
+    
+    <nav class="hidden md:flex gap-8 items-center font-body text-sm font-medium tracking-widest uppercase">
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/properties.html">Opportunities</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/veda-park.html">Veda Park</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/advisory.html">Advisory</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/insights.html">Insights</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/about.html">About</a>
+      <a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1" href="/contact.html">Contact</a>
+    </nav>
+    
+    <div class="hidden lg:flex items-center gap-4">
+      <button data-open-partner-modal class="inline-flex items-center justify-center px-6 py-3 bg-forest-deep text-surface-bright font-body text-xs font-semibold uppercase tracking-widest hover:bg-primary transition-all">
+        Speak to a partner
+      </button>
+    </div>
+
+    <button id="mobile-menu-toggle" class="md:hidden text-primary p-2">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-surface border-l border-outline-variant/30 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between shadow-2xl">
+    <div>
+      <div class="flex justify-between items-center mb-8 border-b border-outline-variant/20 pb-4">
+        <span class="font-headline text-2xl text-forest-deep">Alaya Realty</span>
+        <button id="mobile-drawer-close" class="text-outline hover:text-primary">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 text-sm font-semibold tracking-widest uppercase">
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/properties.html">Opportunities</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/veda-park.html">Veda Park Plotted</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/advisory.html">Advisory Framework</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/insights.html">Research & Insights</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/about.html">About Us</a>
+        <a class="text-metallic-gold font-bold py-1" href="/contact.html">Contact Office</a>
+      </nav>
+    </div>
+    <div class="border-t border-outline-variant/20 pt-6">
+      <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-semibold hover:bg-primary transition-colors">
+        Speak to a Partner
+      </button>
+    </div>
+  </div>
+
+  <main class="flex-grow">
+    <!-- Header Section -->
+    <section class="py-16 md:py-24 px-margin-edge text-center max-w-4xl mx-auto">
+      <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.25em] block mb-2">Partner Office & Mandates</span>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-forest-deep mb-4">
+        Initiate a Conversation.
+      </h1>
+      <p class="font-body text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+        Whether you are evaluating a specific acquisition, seeking confidential land banking advisory, or scheduling a site visit, our senior principals are at your disposal.
+      </p>
+    </section>
+
+    <!-- Main Grid: Form + Office Coordinates -->
+    <div class="max-w-7xl mx-auto px-margin-edge pb-section-v-lg grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Consultation Form (Left 7 cols) -->
+      <div class="lg:col-span-7 bg-paper-dark p-8 md:p-12 border border-outline/20 shadow-lg">
+        <h2 class="font-headline text-2xl md:text-3xl text-forest-deep mb-2">Institutional Advisory Inquiry</h2>
+        <p class="font-body text-xs text-on-surface-variant mb-8">
+          Complete the mandate details below. A Managing Principal will review your submission and contact you within 4 business hours.
+        </p>
+
+        <form id="contact-mandate-form" class="flex flex-col gap-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Full Name *</label>
+              <input type="text" name="name" required placeholder="e.g. Vikramaditya Singhania" class="w-full bg-surface border border-outline/20 px-4 py-3 text-sm focus:border-forest-deep focus:outline-none"/>
+            </div>
+            <div>
+              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Family Office / Organization</label>
+              <input type="text" name="organization" placeholder="e.g. Singhania Capital" class="w-full bg-surface border border-outline/20 px-4 py-3 text-sm focus:border-forest-deep focus:outline-none"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Contact Number *</label>
+              <input type="tel" name="phone" required placeholder="+91 98260 XXXXX" class="w-full bg-surface border border-outline/20 px-4 py-3 text-sm focus:border-forest-deep focus:outline-none"/>
+            </div>
+            <div>
+              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Email Address *</label>
+              <input type="email" name="email" required placeholder="principal@domain.com" class="w-full bg-surface border border-outline/20 px-4 py-3 text-sm focus:border-forest-deep focus:outline-none"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Primary Interest</label>
+              <select name="interest" class="w-full bg-surface border border-outline/20 px-4 py-3 text-sm focus:border-forest-deep focus:outline-none">
+                <option value="veda-park">Veda Park Plotted Development</option>
+                <option value="commercial">Grade-A Pre-Leased Commercial</option>
+                <option value="industrial">Industrial Land / Logistics Park</option>
+                <option value="due-diligence">Forensic Due Diligence Audit</option>
+                <option value="general">Bespoke Advisory Mandate</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Capital Outlay Bracket</label>
+              <select name="budget" class="w-full bg-surface border border-outline/20 px-4 py-3 text-sm focus:border-forest-deep focus:outline-none">
+                <option value="1cr-3cr">₹1.0 Cr – ₹3.0 Cr</option>
+                <option value="3cr-10cr">₹3.0 Cr – ₹10.0 Cr</option>
+                <option value="10cr-50cr">₹10.0 Cr – ₹50.0 Cr</option>
+                <option value="50cr+">₹50.0 Cr+ (Institutional)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Mandate Overview & Objectives</label>
+            <textarea name="message" rows="4" placeholder="Describe the asset profile, corridor preference, or diligence requirements you wish to discuss..." class="w-full bg-surface border border-outline/20 px-4 py-3 text-sm focus:border-forest-deep focus:outline-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-forest-deep text-surface-bright py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-md">
+            <span>Submit Mandate to Principals</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Office Coordinates & Direct Partner Access (Right 5 cols) -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        <!-- Indore HQ Card -->
+        <div class="bg-forest-deep text-surface-bright p-8 border border-outline/20 flex flex-col justify-between">
+          <div>
+            <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block mb-2">Central India Office</span>
+            <h3 class="font-headline text-2xl text-surface-bright mb-4">Indore Headquarters</h3>
+            
+            <div class="space-y-4 text-sm text-surface-variant/80 font-body">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-metallic-gold text-xl">location_on</span>
+                <div>
+                  <p class="font-bold text-surface-bright">Alaya Sovereign Chambers</p>
+                  <p>Level 9, Vijay Nagar Main Road, AB Road</p>
+                  <p>Indore, Madhya Pradesh 452010, India</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-metallic-gold text-xl">call</span>
+                <div>
+                  <p class="font-bold text-surface-bright">Direct Advisory Desk</p>
+                  <p>+91 (0731) 498 7000</p>
+                  <p>+91 98260 11223 (Principal Hotline)</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-metallic-gold text-xl">mail</span>
+                <div>
+                  <p class="font-bold text-surface-bright">Partner Communications</p>
+                  <p>advisory@alayarealty.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-surface-bright/20 flex gap-4">
+            <a href="https://wa.me/919876543210" target="_blank" class="flex-1 bg-metallic-gold text-primary py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-surface-bright transition-colors flex items-center justify-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
+            </a>
+            <a href="tel:+919826011223" class="flex-1 border border-surface-bright/30 text-surface-bright py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-white/10 transition-colors flex items-center justify-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">call</span> Call Desk
+            </a>
+          </div>
+        </div>
+
+        <!-- Working Hours & Discretion Policy -->
+        <div class="bg-surface-container-low p-6 border border-outline/15 text-xs text-on-surface-variant space-y-3 font-body">
+          <div class="flex justify-between items-center border-b border-outline/10 pb-2">
+            <span class="font-bold uppercase text-forest-deep">Office Hours</span>
+            <span class="font-data-mono">Mon–Sat: 09:30 – 19:00 IST</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-outline/10 pb-2">
+            <span class="font-bold uppercase text-forest-deep">In-Person Consultation</span>
+            <span class="font-data-mono">By Prior Appointment Only</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-bold uppercase text-forest-deep">Discretion Standard</span>
+            <span class="font-data-mono">NDA Executed on Request</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-outline/20 pb-12 mb-8">
+      <div class="md:col-span-4">
+        <div class="font-display text-3xl text-metallic-gold mb-4">Alaya Realty</div>
+        <p class="font-body text-sm text-surface-variant/70 leading-relaxed mb-6">
+          Institutional excellence in real estate advisory. We guide investors, corporate entities, and family offices toward rigorous, insight-backed property decisions.
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Opportunities</p>
+        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Marketplace</a>
+          <a href="/veda-park.html" class="hover:text-metallic-gold transition-colors">Veda Park Plotted</a>
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Commercial Towers</a>
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Industrial Land</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Advisory & Firm</p>
+        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
+          <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Due Diligence Model</a>
+          <a href="/about.html" class="hover:text-metallic-gold transition-colors">Senior Leadership</a>
+          <a href="/insights.html" class="hover:text-metallic-gold transition-colors">Research Journal</a>
+          <a href="/contact.html" class="hover:text-metallic-gold transition-colors">Contact Partner</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-4">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Quarterly Intelligence Briefing</p>
+        <p class="font-body text-xs text-surface-variant/70 mb-4">Receive sovereign-grade market underwriting and corridor reports directly.</p>
+        <form class="newsletter-form flex gap-2">
+          <input type="email" required placeholder="institutional.investor@domain.com" class="bg-primary/50 border border-outline/30 px-3 py-2 text-xs text-surface-bright flex-grow focus:outline-none focus:border-metallic-gold"/>
+          <button type="submit" class="bg-metallic-gold text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-center text-xs text-surface-variant/50 gap-4">
+      <p>© 2026 Alaya Realty Advisory LLP. All rights reserved. Indore, Madhya Pradesh, India.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-surface-bright transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-surface-bright transition-colors">Fiduciary Disclosures</a>
+        <a href="#" class="hover:text-surface-bright transition-colors">Terms of Mandate</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contact-mandate-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = form.querySelector('input[name="name"]')?.value || 'Valued Investor';
+          window.showToast(
+            `Mandate submitted successfully for ${name}. Managing Principal Arjun Singh will review and connect shortly.`,
+            'Mandate Registered',
+            'success'
+          );
+          form.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

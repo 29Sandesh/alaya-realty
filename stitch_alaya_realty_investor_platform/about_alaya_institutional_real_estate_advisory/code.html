@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Alaya Realty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#5a431f",
+                        "on-tertiary": "#ffffff",
+                        "paper-dark": "#E6E1D1",
+                        "error-container": "#ffdad6",
+                        "forest-deep": "#081F18",
+                        "on-secondary-fixed": "#291800",
+                        "surface-container-highest": "#e6e2d5",
+                        "on-tertiary-fixed": "#012017",
+                        "on-tertiary-fixed-variant": "#2f4d41",
+                        "tertiary-container": "#022218",
+                        "on-primary-fixed": "#191c22",
+                        "background": "#fdf9eb",
+                        "inverse-primary": "#c4c6ce",
+                        "tertiary": "#000302",
+                        "secondary": "#745a34",
+                        "outline": "#76777b",
+                        "on-tertiary-container": "#6c8c7e",
+                        "on-primary": "#ffffff",
+                        "primary": "#010306",
+                        "surface-container-low": "#f8f4e6",
+                        "metallic-gold": "#A68B5B",
+                        "inverse-on-surface": "#f5f1e3",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1d1c14",
+                        "on-secondary-container": "#795e38",
+                        "surface-container-high": "#ece8da",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e1e2ea",
+                        "primary-container": "#1a1d23",
+                        "primary-fixed-dim": "#c4c6ce",
+                        "on-primary-container": "#82858c",
+                        "tertiary-fixed": "#c8eada",
+                        "tertiary-fixed-dim": "#adcebf",
+                        "surface-container": "#f2eee0",
+                        "secondary-fixed": "#ffddb1",
+                        "on-background": "#1d1c14",
+                        "surface-variant": "#e6e2d5",
+                        "surface": "#fdf9eb",
+                        "inverse-surface": "#323127",
+                        "on-surface-variant": "#45474b",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#44474d",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c6c6cb",
+                        "secondary-fixed-dim": "#e3c193",
+                        "surface-dim": "#dedacc",
+                        "secondary-container": "#fedaaa",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fdf9eb",
+                        "surface-tint": "#5c5e65"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-v-lg": "120px",
+                        "stack-sm": "12px",
+                        "stack-lg": "40px",
+                        "gutter": "24px",
+                        "section-v-md": "80px",
+                        "stack-md": "24px",
+                        "margin-edge": "5vw"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "data-mono": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "data-mono": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-metallic-gold selection:text-primary">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50">
+<a class="flex-shrink-0" href="#">
+<img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+</a>
+<nav class="hidden md:flex gap-8 items-center font-body-md text-body-md tracking-wider uppercase">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/projects">Projects</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/services">Services</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/blog">Insights</a>
+<a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1 cursor-pointer transition-transform duration-200 active:scale-95" href="/about">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-metallic-gold transition-colors duration-300 cursor-pointer transition-transform duration-200 active:scale-95" href="/contact">Contact</a>
+</nav>
+<div class="hidden lg:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary-container text-on-secondary font-label-caps text-label-caps uppercase tracking-widest hover:bg-forest-deep transition-colors duration-300" href="/contact">Speak to a partner</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="py-section-v-lg px-margin-edge grid grid-cols-4 md:grid-cols-12 gap-gutter items-center min-h-[716px]">
+<div class="col-span-4 md:col-span-8 md:col-start-3 text-center flex flex-col gap-stack-lg">
+<span class="font-label-caps text-label-caps text-metallic-gold uppercase tracking-widest block">About Alaya Realty</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-forest-deep">Experience. Perspective. Accountability.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                    We are an institutionally minded real estate advisory firm serving discerning investors and families. Our approach is defined by rigor, transparency, and an unwavering commitment to client outcomes.
+                </p>
+</div>
+</section>
+<!-- Company Story / Asymmetric Image Layout -->
+<section class="py-section-v-md px-margin-edge bg-paper-dark">
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter items-center">
+<div class="col-span-4 md:col-span-5 flex flex-col gap-stack-md">
+<h2 class="font-headline-md text-headline-md text-forest-deep">Rooted in Excellence, Global in Perspective.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Founded in Indore, Alaya Realty emerged from a fundamental need: to bring institutional-grade advisory and operational transparency to the private real estate market. We recognized that significant transactions require more than just facilitation; they require strategic foresight.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Our journey has been defined by advising on complex acquisitions, structuring generational portfolios, and consistently prioritizing long-term value creation over transactional volume.
+                    </p>
+</div>
+<div class="col-span-4 md:col-span-6 md:col-start-7 mt-stack-lg md:mt-0 relative">
+<img class="w-full h-auto object-cover border border-outline/10" data-alt="A sophisticated architectural detail shot showing the sharp lines of a modern luxury building against a clear sky, communicating stability and institutional excellence. The image uses a high-contrast palette of deep blacks, stark whites, and warm sunlight, matching the 'Alaya Sovereign Editorial' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIQLkAE58fKF60QowpEpl7sTb2vtCmLN7zqAEvhtOXZGTCgEUhOYpCzSE9k5vzfAiF7t60tTHrfWDq8XW9_2DwBNhXjgs0lGpUEF98mdukczZkqBKu5BhEUNRrPWhDOvvPfSQhNsupLACXAV75U0sL1qCF9WxxvtwlU-qODxnhdmllZJpfuTdF_ew9xthK9XrMmrbD8kTgfQemCNrj56zTzzKTYcaqtEeqPEatdqUxmE1g2hNXNrWl"/>
+</div>
+</div>
+</section>
+<!-- Our Values Bento Grid -->
+<section class="py-section-v-lg px-margin-edge">
+<div class="text-center mb-section-v-md">
+<h2 class="font-headline-lg text-headline-lg text-forest-deep">Our Core Convictions</h2>
+</div>
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter">
+<div class="col-span-4 md:col-span-4 bg-surface-container-low p-8 border border-outline/10 hover:shadow-lg transition-shadow duration-300 flex flex-col gap-stack-sm group">
+<span class="font-display-lg text-display-lg text-metallic-gold opacity-30 group-hover:opacity-100 transition-opacity duration-300">01</span>
+<h3 class="font-headline-md text-headline-md text-forest-deep">Uncompromising Trust</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Trust is not granted; it is architected through consistency. We operate as fiduciaries, placing client interests unequivocally first in every negotiation and strategic recommendation.</p>
+</div>
+<div class="col-span-4 md:col-span-8 bg-forest-deep text-surface-bright p-8 md:p-12 border border-outline/10 flex flex-col justify-center gap-stack-md">
+<span class="font-label-caps text-label-caps text-metallic-gold uppercase tracking-widest block">The Alaya Standard</span>
+<h3 class="font-headline-lg text-headline-lg">Absolute Transparency</h3>
+<p class="font-body-lg text-body-lg text-surface-variant/80 max-w-2xl">
+                        In an opaque market, clarity is a competitive advantage. We provide unvarnished insights, rigorous diligence, and transparent fee structures. We believe that informed capital is secure capital.
+                    </p>
+</div>
+<div class="col-span-4 md:col-span-6 bg-surface-container-low p-8 border border-outline/10 flex flex-col gap-stack-sm group">
+<span class="font-display-lg text-display-lg text-metallic-gold opacity-30 group-hover:opacity-100 transition-opacity duration-300">02</span>
+<h3 class="font-headline-md text-headline-md text-forest-deep">Analytical Rigor</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our advisory is backed by quantitative depth. We do not rely on market sentiment; we rely on data-driven underwriting, comprehensive market analysis, and meticulous risk assessment.</p>
+</div>
+<div class="col-span-4 md:col-span-6 bg-surface-container-low p-8 border border-outline/10 flex flex-col gap-stack-sm group">
+<span class="font-display-lg text-display-lg text-metallic-gold opacity-30 group-hover:opacity-100 transition-opacity duration-300">03</span>
+<h3 class="font-headline-md text-headline-md text-forest-deep">Discreet Execution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We understand the value of privacy for our institutional and high-net-worth clientele. Every mandate is handled with the utmost discretion and professional confidentiality.</p>
+</div>
+</div>
+</section>
+<!-- Senior-Led Model -->
+<section class="py-section-v-lg px-margin-edge bg-forest-deep text-surface-bright relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center opacity-20" data-alt="Abstract, slow-moving shadows of tree branches and sharp geometric architectural lines projected onto a deep, dark forest green wall, conveying institutional stability, discretion, and quiet luxury."></div>
+<div class="relative z-10 grid grid-cols-4 md:grid-cols-12 gap-gutter items-center">
+<div class="col-span-4 md:col-span-8 md:col-start-3 text-center flex flex-col gap-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-metallic-gold">The Senior-Led Advantage</h2>
+<p class="font-body-lg text-body-lg text-surface-variant/90 max-w-3xl mx-auto">
+                        At Alaya, clients do not interface with junior associates. Every relationship, analysis, and negotiation is directly managed by a senior principal. This structural commitment ensures that our highest level of intellectual capital is applied to every mandate, minimizing execution risk and maximizing strategic impact.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Leadership / Team Section -->
+<section class="py-section-v-lg px-margin-edge">
+<div class="mb-section-v-md border-b border-outline/20 pb-4">
+<h2 class="font-headline-md text-headline-md text-forest-deep">Leadership</h2>
+</div>
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter">
+<!-- Team Member 1 -->
+<div class="col-span-4 md:col-span-6 flex flex-col gap-stack-md group">
+<div class="overflow-hidden bg-paper-dark border border-outline/10">
+<img class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A striking, editorial-style black and white portrait of a confident senior executive standing in a well-lit modern corporate boardroom. Soft window light emphasizes professionalism, maturity, and the authoritative, convicted tone of an institutional wealth management firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCniE0-X_e56moBh7jiFbGnJfR9pJJeZOy7AoS5hIrXRx5LeJ1TgCqcZTTvej_-ky0mopckvZEN6lEzx3UA64ICuk436dFj_A3WBVFLmmSpw1NnkyTXDW9U5f4YvGTJcDn3C6p7zdaYD-r7oxDxfnfth1Q1GSlnaHd79tbNA9GO3dlHUfBey0TDAZzkCLwIMnJE-pXHvl3P7lq9mLux006e2141bt2z-jVb4_NDAyCAQHocZkslt-Tw"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-forest-deep">Arjun Singh</h3>
+<span class="font-label-caps text-label-caps text-metallic-gold uppercase tracking-widest block mt-1">Managing Principal</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">
+                            With extensive experience in institutional real estate, Arjun directs the firm's strategic advisory practice. His background encompasses complex land acquisitions, large-scale commercial developments, and private portfolio structuring.
+                        </p>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="col-span-4 md:col-span-6 flex flex-col gap-stack-md group mt-stack-lg md:mt-24">
+<div class="overflow-hidden bg-paper-dark border border-outline/10">
+<img class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated, high-contrast portrait of a senior female financial advisor in a minimalist, light-filled architectural setting. The lighting is crisp and the mood conveys institutional excellence, accountability, and luxury editorial minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYx4r1qK3412ZDYYRRlpogDLGWfU0C7k0rZlcebzX4aW-72hlLZsv6673wGz9rgzlxj6K5vaANy5KHNCECxxCBlQHsPu9WLexnED-9_UiReWRlBU9-_hnIvrWnNwBxLlLGGgUqWQ4akZhFcpHXboAVfXzeSDdmOSfF6Cm7q318fAyQV1K809QxzFdmANJknWXhpntJAzwEDOJym5eCBk1SnZEwklokSj_0_ZQclPhLJQr2ZFzniqvp"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-forest-deep">Elena Rostova</h3>
+<span class="font-label-caps text-label-caps text-metallic-gold uppercase tracking-widest block mt-1">Head of Investment Strategy</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">
+                            Elena leads Alaya's underwriting and quantitative analysis divisions. Prior to joining Alaya, she managed private equity real estate funds, bringing rigorous financial modeling to every client engagement.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-v-lg px-margin-edge bg-surface-container-low border-t border-outline/10 text-center flex flex-col items-center gap-stack-lg">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-forest-deep max-w-4xl">Require institutional-grade advisory for your next acquisition?</h2>
+<button class="bg-forest-deep text-surface-bright font-label-caps text-label-caps uppercase py-5 px-10 tracking-wider hover:bg-primary transition-colors duration-300 flex items-center gap-2">
+                Start a Conversation <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-forest-deep dark:bg-primary border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge gap-stack-lg">
+<div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row justify-between gap-12">
+<div class="max-w-sm">
+<div class="font-display-lg text-display-lg text-metallic-gold mb-6 text-4xl">Alaya Realty</div>
+<p class="font-body-md text-body-md text-surface-variant/70">Institutional excellence in real estate advisory. We guide investors, businesses, and families toward rigorous, insight-backed property decisions.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-16">
+<div class="flex flex-col gap-4">
+<p class="font-label-caps text-label-caps text-surface-bright uppercase tracking-widest mb-2">Navigation</p>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/projects">Projects</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/services">Services</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/blog">Insights</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label-caps text-label-caps text-surface-bright uppercase tracking-widest mb-2">Company</p>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/about">About</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/blog">Insights</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/contact">Contact</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="/brochure">Brochure</a>
+</div>
+<div class="flex flex-col gap-4 col-span-2 md:col-span-1">
+<p class="font-label-caps text-label-caps text-surface-bright uppercase tracking-widest mb-2">Legal</p>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-surface-variant/70 hover:text-surface-bright transition-colors duration-300" href="#">Regulatory Disclosures</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto w-full pt-8 border-t border-outline/20 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-surface-variant/50 text-sm">© 2026 Alaya Realty. All rights reserved. Indore, India</p>
+<div class="flex gap-4 text-surface-variant/50">
+<span class="material-symbols-outlined hover:text-metallic-gold transition-colors cursor-pointer">language</span>
+<span class="material-symbols-outlined hover:text-metallic-gold transition-colors cursor-pointer">mail</span>
+</div>
+</div>
+</footer>
+</body></html>

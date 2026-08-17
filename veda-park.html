@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veda Park — Premium Plotted Development | Khandwa Road, Indore | Alaya Realty</title>
+  <meta name="description" content="Exclusive freehold residential plots (2,400 to 10,000 sq.ft.) on Khandwa Road, Indore. 88 clear-title plots with premium infrastructure, clubhouse, and high appreciation trajectory."/>
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="/src/css/main.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#fdf9eb",
+            "surface-dim": "#dedacc",
+            "surface-bright": "#fdf9eb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f8f4e6",
+            "surface-container": "#f2eee0",
+            "surface-container-high": "#ece8da",
+            "surface-container-highest": "#e6e2d5",
+            "on-surface": "#1d1c14",
+            "on-surface-variant": "#45474b",
+            "inverse-surface": "#323127",
+            "inverse-on-surface": "#f5f1e3",
+            "outline": "#76777b",
+            "outline-variant": "#c6c6cb",
+            "primary": "#010306",
+            "primary-container": "#1a1d23",
+            "secondary": "#745a34",
+            "paper-dark": "#E6E1D1",
+            "metallic-gold": "#A68B5B",
+            "forest-deep": "#081F18"
+          },
+          spacing: {
+            "margin-edge": "5vw",
+            "gutter": "24px",
+            "section-v-lg": "120px",
+            "section-v-md": "80px",
+            "stack-sm": "12px",
+            "stack-md": "24px",
+            "stack-lg": "40px"
+          },
+          fontFamily: {
+            "display": ["EB Garamond", "serif"],
+            "headline": ["EB Garamond", "serif"],
+            "body": ["Hanken Grotesk", "sans-serif"],
+            "data-mono": ["Hanken Grotesk", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="antialiased min-h-screen bg-surface selection:bg-metallic-gold/30 selection:text-primary">
+
+  <!-- Header -->
+  <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge h-24 bg-surface/90 backdrop-blur-md z-50 transition-all duration-300">
+    <a class="flex-shrink-0 flex items-center gap-3" href="/index.html">
+      <img alt="Alaya Realty" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+    </a>
+    
+    <nav class="hidden md:flex gap-8 items-center font-body text-sm font-medium tracking-widest uppercase">
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/properties.html">Opportunities</a>
+      <a class="text-metallic-gold font-bold border-b-2 border-metallic-gold pb-1" href="/veda-park.html">Veda Park</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/advisory.html">Advisory</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/insights.html">Insights</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/about.html">About</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors duration-300" href="/contact.html">Contact</a>
+    </nav>
+    
+    <div class="hidden lg:flex items-center gap-4">
+      <button data-download-brochure="Veda Park Plotted Development Prospectus" class="inline-flex items-center justify-center px-5 py-2.5 border border-forest-deep text-forest-deep font-body text-xs font-semibold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-all">
+        <span class="material-symbols-outlined text-sm mr-1.5">download</span> Prospectus
+      </button>
+      <button data-open-partner-modal class="inline-flex items-center justify-center px-6 py-3 bg-forest-deep text-surface-bright font-body text-xs font-semibold uppercase tracking-widest hover:bg-primary transition-all">
+        Book Private Visit
+      </button>
+    </div>
+
+    <button id="mobile-menu-toggle" class="md:hidden text-primary p-2">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-surface border-l border-outline-variant/30 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between shadow-2xl">
+    <div>
+      <div class="flex justify-between items-center mb-8 border-b border-outline-variant/20 pb-4">
+        <span class="font-headline text-2xl text-forest-deep">Alaya Realty</span>
+        <button id="mobile-drawer-close" class="text-outline hover:text-primary">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 text-sm font-semibold tracking-widest uppercase">
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/properties.html">Opportunities</a>
+        <a class="text-metallic-gold font-bold py-1" href="/veda-park.html">Veda Park Plotted</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/advisory.html">Advisory Framework</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/insights.html">Research & Insights</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/about.html">About Us</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/contact.html">Contact Office</a>
+      </nav>
+    </div>
+    <div class="border-t border-outline-variant/20 pt-6">
+      <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-semibold hover:bg-primary transition-colors">
+        Speak to a Partner
+      </button>
+    </div>
+  </div>
+
+  <main class="flex-grow">
+    <!-- Cinematic Hero -->
+    <section class="relative w-full h-[640px] md:h-[720px] flex items-end px-margin-edge pb-16">
+      <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPs4KEO-0ufYE-xfELYLlDlEpFsb1eKjF0jSY7pVqOp1ODlZAZfqHfqnfV4c3HHTje6ZXEo6dC5dP3aUH8ndXEcme5U73DX2FaLKOL7D9x_F58pZo5sV1XpyjfAkZiaafunI9abksElemkLK6X8J7oahfqg9jJArZjx6xg6nAYmOk11lS4G7YIzATXo6XsKxpV5FtwAVjRi_YuNiR-gWP5EKsgE5NxvTJJOINFdzTmzthUTMUZba7D')"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-deep/95 via-forest-deep/40 to-transparent"></div>
+      </div>
+      
+      <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8 text-surface-bright">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="border border-surface-bright/30 px-3 py-1 font-body text-xs font-bold tracking-widest uppercase bg-forest-deep/60 backdrop-blur-sm text-metallic-gold">
+              NOW SELLING • RERA APPROVED
+            </span>
+            <span class="font-data-mono text-xs text-surface-variant/80">Khandwa Road, Indore</span>
+          </div>
+          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-surface-bright mb-3">Veda Park</h1>
+          <p class="font-body text-base md:text-lg text-surface-variant/90 leading-relaxed">
+            A master-planned gated sanctuary of 88 freehold residential plots with broad internal boulevards, central clubhouse, and clear title ownership in Indore's highest-appreciation corridor.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap sm:flex-nowrap gap-4">
+          <button data-download-brochure="Veda Park" class="px-6 py-3.5 bg-surface-bright text-forest-deep text-xs font-bold uppercase tracking-widest hover:bg-metallic-gold hover:text-white transition-all shadow-md">
+            Download Prospectus
+          </button>
+          <a href="#site-visit-form" class="px-6 py-3.5 bg-metallic-gold text-primary text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-all shadow-md">
+            Book Site Visit
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Canvas -->
+    <div class="max-w-7xl mx-auto px-margin-edge py-section-v-lg grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      
+      <!-- Left Column (Primary Content) -->
+      <div class="lg:col-span-8 flex flex-col gap-16">
+        
+        <!-- 1. Overview & Key Facts -->
+        <section>
+          <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
+            <span class="font-display text-3xl text-metallic-gold font-bold">01</span>
+            <h2 class="font-headline text-3xl text-forest-deep">Master Planned Overview</h2>
+          </div>
+          <p class="font-body text-base text-on-surface-variant leading-relaxed mb-8">
+            Veda Park is envisioned as an institutional-caliber residential community on Khandwa Road. Designed with Vaastu-compliant parcel layouts, 40-foot internal arterial avenues, underground utility conduits, and mature landscaped green belts, it provides discerning investors and families a rare opportunity to acquire clear-title freehold land.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="p-6 bg-paper-dark border border-outline/10">
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Plot Sizes</span>
+              <span class="font-data-mono text-xl font-bold text-forest-deep block">2,400–10k</span>
+              <span class="font-body text-[11px] text-on-surface-variant">Sq. Ft. Dimensions</span>
+            </div>
+            <div class="p-6 bg-paper-dark border border-outline/10">
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Scale</span>
+              <span class="font-data-mono text-xl font-bold text-forest-deep block">88</span>
+              <span class="font-body text-[11px] text-on-surface-variant">Exclusive Plots</span>
+            </div>
+            <div class="p-6 bg-paper-dark border border-outline/10">
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Title & Tenure</span>
+              <span class="font-data-mono text-xl font-bold text-forest-deep block">Freehold</span>
+              <span class="font-body text-[11px] text-on-surface-variant">100% Clear Title</span>
+            </div>
+            <div class="p-6 bg-paper-dark border border-outline/10">
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider mb-1">Base Price</span>
+              <span class="font-data-mono text-xl font-bold text-metallic-gold block">₹4,250</span>
+              <span class="font-body text-[11px] text-on-surface-variant">Per Sq. Ft. Onwards</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. INTERACTIVE PLOT MAP & AVAILABILITY EXPLORER -->
+        <section class="bg-paper-dark border border-outline/20 p-8">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b border-outline-variant/30 pb-4">
+            <div>
+              <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Live Availability Matrix</span>
+              <h3 class="font-headline text-2xl text-forest-deep">Interactive Plot Visualizer (88 Plots)</h3>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-data-mono">
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-surface-container border border-metallic-gold"></span> Available</span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-outline-variant/40 border border-outline"></span> On Hold</span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-surface-dim/40 opacity-50"></span> Sold</span>
+            </div>
+          </div>
+
+          <p class="font-body text-xs text-on-surface-variant mb-6">
+            Click on any available plot below to view exact dimensions, orientation, pricing, and clubhouse proximity.
+          </p>
+
+          <!-- Plot Grid (4 Sectors: A, B, C, D) -->
+          <div id="plot-grid-container" class="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-11 gap-2 mb-8 max-h-[360px] overflow-y-auto pr-1">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Dynamic Selected Plot Detail Preview -->
+          <div id="selected-plot-details">
+            <!-- Mounted dynamically by JS -->
+          </div>
+        </section>
+
+        <!-- 3. INTERACTIVE ROI & APPRECIATION CALCULATOR -->
+        <section id="veda-roi-calculator" class="bg-forest-deep text-surface-bright p-8 border border-outline/20">
+          <div class="flex items-center gap-3 mb-6 border-b border-surface-bright/20 pb-4">
+            <span class="material-symbols-outlined text-metallic-gold text-3xl">trending_up</span>
+            <div>
+              <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block">Yield Underwriting</span>
+              <h3 class="font-headline text-2xl text-surface-bright">Projected Land Appreciation Calculator</h3>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <label class="block font-body text-xs text-surface-variant/80 uppercase mb-2">Plot Configuration</label>
+              <select id="calc-plot-size" class="w-full bg-primary/70 border border-surface-bright/30 p-3 text-sm text-surface-bright focus:outline-none focus:border-metallic-gold">
+                <option value="2400">2,400 sq.ft. (Standard Villa Plot)</option>
+                <option value="3200" selected>3,200 sq.ft. (Executive Plot)</option>
+                <option value="4500">4,500 sq.ft. (Premium Corner Estate)</option>
+                <option value="6000">6,000 sq.ft. (Signature Luxury Estate)</option>
+                <option value="10000">10,000 sq.ft. (Grand Manor Plot)</option>
+              </select>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs text-surface-variant/80 uppercase mb-2">
+                <span>Holding Horizon</span>
+                <span id="calc-horizon-val" class="text-metallic-gold font-bold">3 Years</span>
+              </div>
+              <input id="calc-horizon" type="range" min="1" max="5" value="3" step="1" class="w-full accent-metallic-gold cursor-pointer"/>
+              <div class="flex justify-between text-[10px] text-surface-variant/50 mt-1">
+                <span>1 Yr</span>
+                <span>3 Yrs</span>
+                <span>5 Yrs</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs text-surface-variant/80 uppercase mb-2">
+                <span>Projected CAGR</span>
+                <span id="calc-cagr-val" class="text-metallic-gold font-bold">14% YoY</span>
+              </div>
+              <input id="calc-cagr" type="range" min="10" max="20" value="14" step="1" class="w-full accent-metallic-gold cursor-pointer"/>
+              <div class="flex justify-between text-[10px] text-surface-variant/50 mt-1">
+                <span>10% (Cons.)</span>
+                <span>14% (Base)</span>
+                <span>20% (High)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calculation Outputs -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-surface-bright/20 bg-primary/40 p-6">
+            <div>
+              <span class="block text-xs font-body text-surface-variant/70 uppercase">Initial Capital Outlay</span>
+              <span id="calc-current-val" class="font-data-mono text-2xl font-bold text-surface-bright">₹1.36 Cr</span>
+            </div>
+            <div>
+              <span class="block text-xs font-body text-surface-variant/70 uppercase">Estimated Terminal Value</span>
+              <span id="calc-future-val" class="font-data-mono text-2xl font-bold text-metallic-gold">₹2.01 Cr</span>
+            </div>
+            <div>
+              <span class="block text-xs font-body text-surface-variant/70 uppercase">Net Projected Capital Gain</span>
+              <span id="calc-appreciation" class="font-data-mono text-2xl font-bold text-emerald-400">+₹65.0 Lakhs (48% ROI)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Location Context & Infrastructure -->
+        <section>
+          <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
+            <span class="font-display text-3xl text-metallic-gold font-bold">02</span>
+            <h2 class="font-headline text-3xl text-forest-deep">A Corridor on the Move</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <ul class="flex flex-col border-t border-outline/10 text-sm">
+              <li class="py-3 border-b border-outline/10 flex justify-between">
+                <span class="font-bold text-forest-deep">Main Highway Access</span>
+                <span class="font-data-mono text-outline">Direct Khandwa 4-Lane Rd</span>
+              </li>
+              <li class="py-3 border-b border-outline/10 flex justify-between">
+                <span class="font-bold text-forest-deep">Simrol / IIT Indore Corridor</span>
+                <span class="font-data-mono text-outline">12 Mins Transit</span>
+              </li>
+              <li class="py-3 border-b border-outline/10 flex justify-between">
+                <span class="font-bold text-forest-deep">Daly College & Residency Area</span>
+                <span class="font-data-mono text-outline">18 Mins Transit</span>
+              </li>
+              <li class="py-3 border-b border-outline/10 flex justify-between">
+                <span class="font-bold text-forest-deep">Choithram Hospital & Bypass</span>
+                <span class="font-data-mono text-outline">15 Mins Transit</span>
+              </li>
+            </ul>
+
+            <div class="h-64 md:h-full min-h-[260px] bg-paper-dark border border-outline/20 relative overflow-hidden">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Qrl3yxwOyX05UodvEmi1yvv65dJnZpHWbDBhGiDj5tnT4ZBi4p5r0hjQNA4UMU5wgqpjF_dN_rLVXGMdgsvhL_HGqMbgsKTyyvS8F9MD8Kus2m6f2VYSg9G-QbpnBIl9iRyIhKMCHpo74MWpqBncBcMmDW6qCXw2hrQ8je156pHYJFEhpeb94It9j9Yw6Jl2ExHNL2VDD_7MiACswyEds_X27cxtFSJ9x169zntuPG_HweCfzqYu" alt="Location Map" class="w-full h-full object-cover"/>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Community Amenities -->
+        <section>
+          <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
+            <span class="font-display text-3xl text-metallic-gold font-bold">03</span>
+            <h2 class="font-headline text-3xl text-forest-deep">Institutional Infrastructure & Amenities</h2>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm font-body">
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+              <span class="material-symbols-outlined text-metallic-gold">corporate_fare</span>
+              <span>Central Clubhouse & Lounge</span>
+            </div>
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+              <span class="material-symbols-outlined text-metallic-gold">pool</span>
+              <span>Semi-Olympic Swimming Pool</span>
+            </div>
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+              <span class="material-symbols-outlined text-metallic-gold">shield</span>
+              <span>24x7 Multi-Tier CCTV Security</span>
+            </div>
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+              <span class="material-symbols-outlined text-metallic-gold">park</span>
+              <span>Landscaped Parks & Jogging Track</span>
+            </div>
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+              <span class="material-symbols-outlined text-metallic-gold">bolt</span>
+              <span>100% Underground Electrification</span>
+            </div>
+            <div class="p-4 bg-surface-container-low border border-outline/10 flex items-center gap-3">
+              <span class="material-symbols-outlined text-metallic-gold">water_drop</span>
+              <span>Dual Water Supply & STP Systems</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column (Sticky Site Visit Inquiry Sidebar) -->
+      <div class="lg:col-span-4 relative">
+        <div class="sticky top-28 p-8 border border-outline-variant/30 bg-surface shadow-xl">
+          <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block mb-1">Direct Allocation</span>
+          <h3 class="font-headline text-2xl text-forest-deep mb-2">Schedule Your Site Visit</h3>
+          <p class="font-body text-xs text-on-surface-variant mb-6 leading-relaxed">
+            An Alaya Realty partner will personally host you on-site, review plot availability, and walk you through master plan dimensions.
+          </p>
+
+          <ul class="flex flex-col gap-2.5 mb-6 text-xs text-on-surface-variant border-b border-outline/10 pb-6">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span> Freehold, clear-title registry</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span> High-speed Khandwa Road growth corridor</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span> Dedicated partner consultation</li>
+          </ul>
+
+          <form id="site-visit-form" class="flex flex-col gap-4">
+            <div>
+              <label class="font-body text-[11px] font-bold text-outline uppercase block mb-1">Pre-Selected Plot #</label>
+              <input id="enquiry-plot-select" type="text" name="plot_number" value="VP-A-01" class="w-full bg-surface-container-low border border-outline/20 px-3 py-2 text-xs font-data-mono font-bold text-forest-deep focus:border-forest-deep focus:outline-none"/>
+            </div>
+
+            <div>
+              <label class="font-body text-[11px] font-bold text-outline uppercase block mb-1">Your Full Name</label>
+              <input type="text" name="name" required placeholder="e.g. Vikramaditya Singhania" class="w-full bg-surface-container-low border border-outline/20 px-3 py-2 text-xs focus:border-forest-deep focus:outline-none"/>
+            </div>
+
+            <div>
+              <label class="font-body text-[11px] font-bold text-outline uppercase block mb-1">Contact Number</label>
+              <input type="tel" name="phone" required placeholder="+91 98260 XXXXX" class="w-full bg-surface-container-low border border-outline/20 px-3 py-2 text-xs focus:border-forest-deep focus:outline-none"/>
+            </div>
+
+            <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2">
+              <span>Confirm Site Visit Itinerary</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+
+            <a href="https://wa.me/919876543210?text=Hello%20Alaya%20Realty,%20I%20would%20like%20to%20inquire%20about%20Veda%20Park%20plotted%20development." target="_blank" class="w-full border border-forest-deep/40 text-forest-deep py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-forest-deep/5 transition-colors flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-sm text-emerald-600">chat</span>
+              <span>Instant WhatsApp Concierge</span>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-outline/20 pb-12 mb-8">
+      <div class="md:col-span-4">
+        <div class="font-display text-3xl text-metallic-gold mb-4">Alaya Realty</div>
+        <p class="font-body text-sm text-surface-variant/70 leading-relaxed mb-6">
+          Institutional excellence in real estate advisory. We guide investors, corporate entities, and family offices toward rigorous, insight-backed property decisions.
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Opportunities</p>
+        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Marketplace</a>
+          <a href="/veda-park.html" class="hover:text-metallic-gold transition-colors">Veda Park Plotted</a>
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Commercial Towers</a>
+          <a href="/properties.html" class="hover:text-metallic-gold transition-colors">Industrial Land</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Advisory & Firm</p>
+        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
+          <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Due Diligence Model</a>
+          <a href="/about.html" class="hover:text-metallic-gold transition-colors">Senior Leadership</a>
+          <a href="/insights.html" class="hover:text-metallic-gold transition-colors">Research Journal</a>
+          <a href="/contact.html" class="hover:text-metallic-gold transition-colors">Contact Partner</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-4">
+        <p class="font-body-md text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Quarterly Intelligence Briefing</p>
+        <p class="font-body-md text-xs text-surface-variant/70 mb-4">Receive sovereign-grade market underwriting and corridor reports directly.</p>
+        <form class="newsletter-form flex gap-2">
+          <input type="email" required placeholder="institutional.investor@domain.com" class="bg-primary/50 border border-outline/30 px-3 py-2 text-xs text-surface-bright flex-grow focus:outline-none focus:border-metallic-gold"/>
+          <button type="submit" class="bg-metallic-gold text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-center text-xs text-surface-variant/50 gap-4">
+      <p>© 2026 Alaya Realty Advisory LLP. All rights reserved. Indore, Madhya Pradesh, India.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-surface-bright transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-surface-bright transition-colors">Fiduciary Disclosures</a>
+        <a href="#" class="hover:text-surface-bright transition-colors">Terms of Mandate</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Partner Consultation Modal -->
+  <div id="partner-modal" class="fixed inset-0 modal-backdrop hidden items-center justify-center p-4 z-50">
+    <div class="bg-surface max-w-lg w-full p-8 border border-outline/20 relative shadow-2xl fade-in">
+      <button data-close-partner-modal class="absolute top-4 right-4 text-outline hover:text-primary">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="mb-6">
+        <span class="font-body text-xs font-semibold text-metallic-gold uppercase tracking-widest block mb-1">Direct Partner Access</span>
+        <h3 class="font-headline text-2xl text-forest-deep">Consult a Managing Principal</h3>
+        <p class="font-body text-xs text-on-surface-variant mt-1">Inquire specifically regarding Veda Park plot allocations or portfolio structuring.</p>
+      </div>
+
+      <form id="partner-modal-form" class="flex flex-col gap-4">
+        <div>
+          <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Full Name</label>
+          <input type="text" name="name" required placeholder="e.g. Arjun Mehra" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Contact Number</label>
+            <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Email Address</label>
+            <input type="email" name="email" required placeholder="investor@example.com" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+          </div>
+        </div>
+        <div>
+          <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1">Target Plot Size</label>
+          <select name="allocation" class="w-full bg-surface-container-low border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none">
+            <option value="2400">2,400 sq.ft. (Standard Villa)</option>
+            <option value="3200">3,200 sq.ft. (Executive Villa)</option>
+            <option value="4500">4,500 sq.ft. (Corner Estate)</option>
+            <option value="6000+">6,000+ sq.ft. (Signature Estate)</option>
+          </select>
+        </div>
+        <button type="submit" class="mt-2 w-full bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2">
+          <span>Request Partner Consultation</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

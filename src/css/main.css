@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+  --color-surface: #fdf9eb;
+  --color-surface-dim: #dedacc;
+  --color-surface-bright: #fdf9eb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f8f4e6;
+  --color-surface-container: #f2eee0;
+  --color-surface-container-high: #ece8da;
+  --color-surface-container-highest: #e6e2d5;
+  --color-on-surface: #1d1c14;
+  --color-on-surface-variant: #45474b;
+  --color-inverse-surface: #323127;
+  --color-inverse-on-surface: #f5f1e3;
+  --color-outline: #76777b;
+  --color-outline-variant: #c6c6cb;
+  --color-primary: #010306;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1a1d23;
+  --color-on-primary-container: #82858c;
+  --color-secondary: #745a34;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fedaaa;
+  --color-on-secondary-container: #795e38;
+  --color-paper-dark: #E6E1D1;
+  --color-metallic-gold: #A68B5B;
+  --color-forest-deep: #081F18;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif, .display-font {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-metallic-gold);
+}
+
+/* Transitions and interactive states */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 30px rgba(8, 31, 24, 0.08);
+}
+
+/* Editorial underlines and borders */
+.editorial-border {
+  border-color: rgba(118, 119, 123, 0.15);
+}
+
+.gold-accent-line {
+  height: 2px;
+  background-color: var(--color-metallic-gold);
+}
+
+/* Modal animations */
+.modal-backdrop {
+  background: rgba(8, 31, 24, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Toast Notifications */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 320px;
+  max-width: 450px;
+  padding: 16px 20px;
+  background-color: var(--color-forest-deep);
+  color: #ffffff;
+  border-left: 3px solid var(--color-metallic-gold);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.toast-exit {
+  animation: toastSlideOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+/* Plot Map Grid */
+.plot-badge-available {
+  background-color: rgba(166, 139, 91, 0.15);
+  color: #745a34;
+  border: 1px solid rgba(166, 139, 91, 0.4);
+}
+
+.plot-badge-reserved {
+  background-color: rgba(118, 119, 123, 0.15);
+  color: #45474b;
+  border: 1px solid rgba(118, 119, 123, 0.3);
+}
+
+.plot-badge-sold {
+  background-color: rgba(8, 31, 24, 0.08);
+  color: #76777b;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
