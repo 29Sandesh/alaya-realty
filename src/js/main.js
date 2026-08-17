@@ -91,14 +91,13 @@ export function initScrollAnimations() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-revealed');
-        // Once revealed, optional: unobserve if we only want it once
         obs.unobserve(entry.target);
       }
     });
   }, {
     root: null,
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.10,
+    rootMargin: '0px 0px -30px 0px'
   });
 
   animatedElements.forEach(el => observer.observe(el));
@@ -199,7 +198,7 @@ export function initPartnerModal() {
       closeModal();
       form.reset();
       showToast(
-        `Thank you ${name}. Managing Principal Arjun Singh or Head of Strategy Elena Rostova will review your mandate and connect within 4 business hours.`,
+        `Thank you ${name}. Managing Principal Arjun Singh will review your Veda Park mandate and connect within 4 business hours.`,
         'Mandate Received',
         'success'
       );
@@ -236,7 +235,7 @@ export function initMobileNav() {
 }
 
 /**
- * Veda Park Interactive Plot Explorer & ROI Calculator
+ * Veda Park Interactive Plot Explorer & ROI Calculator (up to 30% returns)
  */
 export function initVedaParkExplorer() {
   const plotGrid = document.getElementById('plot-grid-container');
@@ -247,29 +246,38 @@ export function initVedaParkExplorer() {
   if (!plotGrid && !roiCalculator) return;
 
   const plots = [];
-  const sectors = ['A', 'B', 'C', 'D'];
-  const facings = ['North (Vaastu)', 'East (Morning Light)', 'North-East (Ishanya)', 'North-West'];
-  const sizes = [2400, 3200, 4500, 6000, 8500, 10000];
+  const dimensions = [
+    { label: '13.72m × 21.00m (3,100 sq.ft)', size: 3100 },
+    { label: '13.72m × 18.00m (2,658 sq.ft)', size: 2658 },
+    { label: '13.72m × 17.60m (2,600 sq.ft)', size: 2600 },
+    { label: '13.72m × 19.00m (2,805 sq.ft)', size: 2805 },
+    { label: 'Signature Corner (4,500 sq.ft)', size: 4500 },
+    { label: 'Grand Executive (6,200 sq.ft)', size: 6200 }
+  ];
 
-  for (let i = 1; i <= 88; i++) {
-    const sector = sectors[Math.floor((i - 1) / 22)];
-    const size = sizes[(i * 7) % sizes.length];
+  const facings = ['North (Vaastu Compliant)', 'East (Morning Light)', 'North-East (Ishanya)', 'North-West (Garden Facing)'];
+
+  // 84 numbered plots matching the architectural blueprint
+  for (let i = 1; i <= 84; i++) {
+    const dim = dimensions[i % dimensions.length];
     let status = 'available';
-    if (i % 5 === 0) status = 'sold';
-    else if (i % 7 === 0) status = 'reserved';
+    if (i % 6 === 0) status = 'sold';
+    else if (i % 8 === 0) status = 'reserved';
 
     const baseRatePerSqFt = 4250;
-    const price = (size * baseRatePerSqFt) / 10000000;
+    const price = (dim.size * baseRatePerSqFt) / 10000000;
+    const sectorLetter = i <= 20 ? 'A' : (i <= 44 ? 'B' : (i <= 66 ? 'C' : 'D'));
 
     plots.push({
       id: i,
-      plotNumber: `VP-${sector}-${String((i - 1) % 22 + 1).padStart(2, '0')}`,
-      sector: `Sector ${sector}`,
-      size: size,
+      plotNumber: `Plot ${String(i).padStart(2, '0')}`,
+      sector: `Sector ${sectorLetter}`,
+      dimensions: dim.label,
+      size: dim.size,
       facing: facings[i % facings.length],
       priceCr: price.toFixed(2),
       status: status,
-      clubhouseDist: `${100 + (i % 6) * 45}m`
+      clubhouseDist: `${80 + (i % 7) * 35}m`
     });
   }
 
@@ -318,7 +326,7 @@ export function initVedaParkExplorer() {
           <div class="bg-surface-container-low p-6 border border-metallic-gold/40 fade-in">
             <div class="flex justify-between items-start border-b border-outline-variant/30 pb-4 mb-4">
               <div>
-                <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest">${plot.sector}</span>
+                <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest">${plot.sector} • Concept Blueprint</span>
                 <h4 class="font-headline text-2xl text-forest-deep mt-1">${plot.plotNumber}</h4>
               </div>
               <span class="px-3 py-1 text-xs font-body uppercase font-bold tracking-wider ${plot.status === 'available' ? 'bg-metallic-gold/20 text-forest-deep border border-metallic-gold' : 'bg-outline-variant/30 text-outline'}">
@@ -327,27 +335,27 @@ export function initVedaParkExplorer() {
             </div>
             <div class="grid grid-cols-2 gap-4 text-sm mb-6">
               <div>
-                <p class="text-xs text-outline uppercase font-body">Plot Area</p>
-                <p class="font-data-mono font-bold text-base text-primary">${plot.size.toLocaleString()} sq.ft.</p>
+                <p class="text-xs text-outline uppercase font-body">Plot Dimensions</p>
+                <p class="font-data-mono font-bold text-xs text-primary">${plot.dimensions}</p>
               </div>
               <div>
-                <p class="text-xs text-outline uppercase font-body">Estimated Value</p>
+                <p class="text-xs text-outline uppercase font-body">Current Valuation</p>
                 <p class="font-data-mono font-bold text-base text-forest-deep">₹${plot.priceCr} Cr</p>
               </div>
               <div>
-                <p class="text-xs text-outline uppercase font-body">Orientation</p>
-                <p class="font-body text-on-surface">${plot.facing}</p>
+                <p class="text-xs text-outline uppercase font-body">Facing & Vaastu</p>
+                <p class="font-body text-xs text-on-surface">${plot.facing}</p>
               </div>
               <div>
-                <p class="text-xs text-outline uppercase font-body">Clubhouse</p>
-                <p class="font-body text-on-surface">${plot.clubhouseDist}</p>
+                <p class="text-xs text-outline uppercase font-body">Clubhouse Proximity</p>
+                <p class="font-body text-xs text-on-surface">${plot.clubhouseDist} (9.0M Blvd)</p>
               </div>
             </div>
             <button 
               id="reserve-selected-plot-btn" 
               class="w-full bg-forest-deep text-surface-bright py-3 text-xs font-body uppercase font-bold tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 btn-luxury"
             >
-              <span>Enquire for ${plot.plotNumber}</span>
+              <span>Enquire & Reserve ${plot.plotNumber}</span>
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
           </div>
@@ -355,19 +363,19 @@ export function initVedaParkExplorer() {
 
         const reserveBtn = document.getElementById('reserve-selected-plot-btn');
         reserveBtn?.addEventListener('click', () => {
-          const nameInput = document.querySelector('#site-visit-form input[type="text"]');
+          const nameInput = document.querySelector('#site-visit-form input[name="name"]');
           if (nameInput) {
             nameInput.scrollIntoView({ behavior: 'smooth' });
             nameInput.focus();
-            showToast(`Plot ${plot.plotNumber} (${plot.size} sq.ft) pre-selected for your site visit inquiry.`, 'Plot Selected', 'info');
+            showToast(`${plot.plotNumber} (${plot.dimensions}) selected for your private site visit.`, 'Plot Selected', 'info');
           } else {
-            showToast(`Inquiry initiated for Plot ${plot.plotNumber}.`, 'Selected', 'info');
+            showToast(`Inquiry initiated for ${plot.plotNumber}.`, 'Selected', 'info');
           }
         });
       }
 
       if (plotSelectInput) {
-        plotSelectInput.value = plot.plotNumber;
+        plotSelectInput.value = `${plot.plotNumber} (${plot.sector})`;
       }
     });
 
@@ -378,6 +386,7 @@ export function initVedaParkExplorer() {
     }
   }
 
+  // Appreciation Calculator supporting up to 30% returns
   if (roiCalculator) {
     const sizeSelect = roiCalculator.querySelector('#calc-plot-size');
     const horizonSlider = roiCalculator.querySelector('#calc-horizon');
@@ -390,12 +399,12 @@ export function initVedaParkExplorer() {
     const resultAppreciation = roiCalculator.querySelector('#calc-appreciation');
 
     const recalculate = () => {
-      const size = parseFloat(sizeSelect?.value || '3200');
+      const size = parseFloat(sizeSelect?.value || '2658');
       const years = parseInt(horizonSlider?.value || '3', 10);
-      const cagr = parseFloat(cagrSlider?.value || '14') / 100;
+      const cagr = parseFloat(cagrSlider?.value || '22') / 100;
 
       if (horizonLabel) horizonLabel.textContent = `${years} Year${years > 1 ? 's' : ''}`;
-      if (cagrLabel) cagrLabel.textContent = `${(cagr * 100).toFixed(0)}% YoY`;
+      if (cagrLabel) cagrLabel.textContent = `${(cagr * 100).toFixed(0)}% YoY Return`;
 
       const currentVal = size * 4250;
       const futureVal = currentVal * Math.pow(1 + cagr, years);
@@ -408,7 +417,10 @@ export function initVedaParkExplorer() {
 
       if (resultCurrentVal) resultCurrentVal.textContent = formatCr(currentVal);
       if (resultFutureVal) resultFutureVal.textContent = formatCr(futureVal);
-      if (resultAppreciation) resultAppreciation.textContent = `+${formatCr(gain)} (${((gain / currentVal) * 100).toFixed(0)}% ROI)`;
+      if (resultAppreciation) {
+        const totalPct = ((gain / currentVal) * 100).toFixed(0);
+        resultAppreciation.textContent = `+${formatCr(gain)} (+${totalPct}% Total Return)`;
+      }
     };
 
     sizeSelect?.addEventListener('change', recalculate);
@@ -419,202 +431,86 @@ export function initVedaParkExplorer() {
 }
 
 /**
- * Properties Marketplace Filter & Search Engine
+ * Properties Marketplace — Focusing Solely on Veda Park as Open Project
  */
 export function initPropertiesMarketplace() {
   const container = document.getElementById('marketplace-grid');
-  const filterButtons = document.querySelectorAll('[data-asset-filter]');
-  const searchInput = document.getElementById('property-search-input');
-  const sortSelect = document.getElementById('property-sort-select');
-
   if (!container) return;
 
-  const assets = [
-    {
-      id: 'veda-park',
-      title: 'Veda Park Plotted Development',
-      category: 'plotted',
-      categoryLabel: 'Plotted Development',
-      location: 'Khandwa Road, Indore',
-      status: 'Now Selling',
-      isFeatured: true,
-      scale: '88 Plots',
-      size: '2,400 – 10,000 sq.ft.',
-      price: '₹1.02 Cr onwards',
-      yieldPct: 14.5,
-      link: '/veda-park.html',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdMQLzK0Ju_jVo4AI4E5pzeVsQ1ot9rjEJdtS4AZxGJBbQnwm_LfA1UnZTmJQhYKiib8VRN2KFVCASKZfVL3YwDLoWpRTxoFmF4tw5Cca1gCGhsQyGKV4J-QLdMuyZHDo_l6uNChfRzCWW7z_tUAhIozm6OfEUIKMlWQY6WCcdYGd-_zJTVKbXK6D3hu98s0utL5rWxrTYcY1mLgJIlfMZyAbDWhkwoqbcXqNurZGbAHOeUgDMDPa3',
-      description: 'Gated plotted development planned around wide internal roads, generous green belts, and a central clubhouse with clear freehold titles.'
-    },
-    {
-      id: 'zenith-tower',
-      title: 'Zenith Institutional Business Tower',
-      category: 'commercial',
-      categoryLabel: 'Grade-A Commercial Office',
-      location: 'AB Road / Vijay Nagar, Indore',
-      status: 'Pre-Leased (Institutional Yield)',
-      isFeatured: false,
-      scale: '14 Floors / 185,000 sq.ft.',
-      size: '12,500 – 45,000 sq.ft.',
-      price: '₹18.5 Cr onwards',
-      yieldPct: 9.8,
-      link: '#',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA3hQTjrE-siFUkyFC4Ncjn9mURbU_SEuv2wQxKtGQ8-7Vhy4GPKxIQtAOkpeLGKPYZx8cC5uhFt0aXHC_BiIJL1OsLaHFqcRB9n8bH3jhk1z5LBN5y58rgYi9CcEHV2LKikj92LF5EI__JrFds7UtfGv_zn4lEHyB66Z-rYzcifobqPkeIMBR25_N-CwjJd8YdHkdyF8lZu22Oq2fNvchdpl18ygkz4KVfP9G5UIzMckEiotcCBsDH',
-      description: 'Fully pre-leased commercial tower with blue-chip IT and banking covenants offering stable 9.8% gross annual dividend yield.'
-    },
-    {
-      id: 'super-corridor-logistics',
-      title: 'Malwa Logistics & Industrial Gateway',
-      category: 'industrial',
-      categoryLabel: 'Industrial Logistics Land',
-      location: 'Pithampur Industrial Corridor, Indore',
-      status: 'Zoned & Clear Title',
-      isFeatured: false,
-      scale: '42 Acres Greenfield Parcel',
-      size: '5 – 42 Acres',
-      price: '₹28.0 Cr aggregate',
-      yieldPct: 16.2,
-      link: '/article-industrial.html',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbBQ39XBfH6RWsbmEVUAiidhwouLFqhBcWtkXfra3TUCkeOQI1iDI30i1kXEhifuNwwH7Qbz69Gp9ebL44nRGiDzFfoV3vF8qWayY-PYg_57cuzluB882vXv7Y3RPDLCELF3UuSjEPVnnIpN7nj7Odyi9neilaHvafVQS-9Of1CaBeqjNlRu4cWHOPeve-zX-3OCUttY26MPEUgg3MrBy6vG1o4C4mnlHgk9GjF8jRbXZ0407RxNpO',
-      description: 'Strategic logistics land with direct expressway frontage, 33kV dedicated power feeder access, and warehouse entitlement clearance.'
-    },
-    {
-      id: 'sovereign-estates',
-      title: 'The Sovereign Private Residences',
-      category: 'residential',
-      categoryLabel: 'Bespoke Luxury Villas',
-      location: 'Bicholi Mardana, Indore',
-      status: 'Exclusive Mandate',
-      isFeatured: false,
-      scale: '16 Ultra-Luxury Estates',
-      size: '6,200 – 12,000 sq.ft.',
-      price: '₹4.8 Cr – ₹11.5 Cr',
-      yieldPct: 11.2,
-      link: '#',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCWlV0ZtIOWcyuycSOkle1bD5Dnyh_Bwnfp5KQ5iWBCArFaO6mIqg09yfxRRM5tJkadN_cQ1ooDcklbhpaPZLx6mNRKzimpa_HH6vWHZL9CZIm-RU_J-ogIWul1EJh_GqtCuNYCFswLdXhBRRmKh9-61WKv4chW9uGTRdXUqFn2h98lsoj-9_y3XeqZobHMKx3IxraxVFrpotCMd06LgHbMzvCwILzBQmAwOkobo6WVMgwOkIn4zUN',
-      description: 'Private gated enclave of 16 bespoke luxury estates designed by award-winning architects with private lap pools and lush landscaped grounds.'
-    }
-  ];
-
-  let currentCategory = 'all';
-  let searchQuery = '';
-  let currentSort = 'recommended';
-
-  const render = () => {
-    let filtered = assets.filter(item => {
-      const matchCat = currentCategory === 'all' || item.category === currentCategory;
-      const matchSearch = !searchQuery || 
-        item.title.toLowerCase().includes(searchQuery) ||
-        item.location.toLowerCase().includes(searchQuery) ||
-        item.description.toLowerCase().includes(searchQuery);
-      return matchCat && matchSearch;
-    });
-
-    if (currentSort === 'yield-desc') {
-      filtered.sort((a, b) => b.yieldPct - a.yieldPct);
-    } else if (currentSort === 'size-desc') {
-      filtered.sort((a, b) => b.scale.localeCompare(a.scale));
-    }
-
-    if (filtered.length === 0) {
-      container.innerHTML = `
-        <div class="col-span-12 py-16 text-center bg-surface-container-low border border-outline/10" data-animate="fade-up">
-          <span class="material-symbols-outlined text-4xl text-outline mb-2">search_off</span>
-          <h3 class="font-headline text-xl text-forest-deep mb-2">No Matching Assets Found</h3>
-          <p class="text-sm text-on-surface-variant max-w-md mx-auto mb-4">We maintain confidential off-market institutional mandates not listed publicly.</p>
-          <button data-open-partner-modal class="bg-forest-deep text-surface-bright px-6 py-3 font-body uppercase text-xs font-bold btn-luxury">Request Bespoke Mandate</button>
+  // Sole active project: Veda Park with official masterplan blueprint
+  container.innerHTML = `
+    <!-- Sole Active Project: Veda Park -->
+    <article data-animate="fade-up" class="col-span-12 group bg-paper-dark border-2 border-metallic-gold/50 flex flex-col lg:flex-row overflow-hidden card-hover-lift shadow-xl">
+      <div class="w-full lg:w-7/12 relative min-h-[420px] lg:min-h-[520px] bg-forest-deep flex items-center justify-center p-4">
+        <img 
+          src="/images/veda-park-masterplan.webp" 
+          alt="Veda Park Master Plan Blueprint" 
+          class="w-full h-full max-h-[500px] object-contain img-zoom-hover" 
+        />
+        <div class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm px-3 py-1 border border-metallic-gold/30">
+          <span class="font-body text-[10px] font-bold text-forest-deep uppercase tracking-widest">SOLE ACTIVE PROJECT • MASTER PLAN BLUEPRINT</span>
         </div>
-      `;
-      initPartnerModal();
-      return;
-    }
-
-    container.innerHTML = filtered.map((item, index) => {
-      const isLarge = item.isFeatured;
-      const delay = (index + 1) * 100;
-      return `
-        <article data-animate="fade-up" data-delay="${delay}" class="${isLarge ? 'md:col-span-8' : 'md:col-span-4'} group relative bg-paper-dark border border-outline/10 flex flex-col ${isLarge ? 'md:flex-row' : ''} overflow-hidden card-hover-lift">
-          <div class="${isLarge ? 'w-full md:w-1/2' : 'w-full'} relative h-64 ${isLarge ? 'md:h-auto' : ''} overflow-hidden">
-            <img 
-              src="${item.image}" 
-              alt="${item.title}" 
-              class="w-full h-full object-cover img-zoom-hover" 
-              loading="lazy"
-            />
-            <div class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm px-3 py-1 border border-metallic-gold/30">
-              <span class="font-body text-[10px] font-bold text-forest-deep uppercase tracking-widest">${item.categoryLabel}</span>
-            </div>
-            <div class="absolute top-4 right-4 bg-forest-deep text-surface-bright px-3 py-1 font-data-mono text-[10px]">
-              ${item.status}
-            </div>
+        <div class="absolute top-4 right-4 bg-metallic-gold text-primary px-3 py-1 font-data-mono text-[10px] font-bold uppercase tracking-wider badge-floating">
+          Up to 30% Returns Potential
+        </div>
+      </div>
+      
+      <div class="w-full lg:w-5/12 p-8 md:p-10 flex flex-col justify-between bg-surface-container-low">
+        <div>
+          <div class="flex items-center gap-2 mb-2 text-metallic-gold font-body text-xs font-bold uppercase tracking-widest">
+            <span class="material-symbols-outlined text-sm">location_on</span>
+            <span>Khandwa Road Highway Corridor, Indore</span>
           </div>
-          <div class="${isLarge ? 'w-full md:w-1/2 p-8' : 'p-6'} flex flex-col flex-grow justify-between">
+          
+          <h2 class="font-headline text-3xl md:text-4xl text-forest-deep mb-3 leading-tight">
+            Veda Park Plotted Development
+          </h2>
+          
+          <p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
+            Our sole open acquisition project. A master-planned sanctuary of 84 freehold residential plots designed by Spacon Design with 9.0M & 10.5M wide boulevards, central green park, clubhouse, and direct gateway access to Simrol and IIT Indore corridor.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 py-4 border-y border-outline/15 text-xs mb-6 font-data-mono">
             <div>
-              <div class="flex items-center gap-2 mb-2 text-outline">
-                <span class="material-symbols-outlined text-sm">location_on</span>
-                <span class="font-data-mono text-xs uppercase">${item.location}</span>
-              </div>
-              <h2 class="font-headline ${isLarge ? 'text-2xl' : 'text-xl'} text-forest-deep mb-3 leading-tight group-hover:text-metallic-gold transition-colors">
-                ${item.title}
-              </h2>
-              <p class="font-body text-sm text-on-surface-variant mb-4 line-clamp-2">
-                ${item.description}
-              </p>
-              <div class="grid grid-cols-2 gap-3 py-3 border-y border-outline/10 text-xs mb-4">
-                <div>
-                  <span class="block font-body text-[10px] text-outline uppercase">Scale</span>
-                  <span class="font-data-mono font-bold text-forest-deep">${item.scale}</span>
-                </div>
-                <div>
-                  <span class="block font-body text-[10px] text-outline uppercase">Exp. Yield / ROI</span>
-                  <span class="font-data-mono font-bold text-metallic-gold">${item.yieldPct}% CAGR</span>
-                </div>
-              </div>
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">Projected Return</span>
+              <span class="text-base font-bold text-emerald-700">Up to 30% CAGR</span>
             </div>
-            <div class="flex items-center justify-between pt-2">
-              <span class="font-data-mono text-xs font-bold text-primary">${item.price}</span>
-              <a 
-                href="${item.link !== '#' ? item.link : 'javascript:void(0)'}" 
-                ${item.link === '#' ? 'data-open-partner-modal' : ''}
-                class="inline-flex items-center gap-1 font-body text-xs font-bold text-forest-deep uppercase tracking-widest hover:text-metallic-gold transition-colors"
-              >
-                <span>${item.link !== '#' ? 'View Asset Dossier' : 'Request Private Dossier'}</span>
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+            <div>
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">Total Scale</span>
+              <span class="text-base font-bold text-forest-deep">84 Freehold Plots</span>
+            </div>
+            <div>
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">Starting Outlay</span>
+              <span class="text-base font-bold text-forest-deep">₹1.10 Cr onwards</span>
+            </div>
+            <div>
+              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">RERA & Title</span>
+              <span class="text-base font-bold text-metallic-gold">100% Clear Freehold</span>
             </div>
           </div>
-        </article>
-      `;
-    }).join('');
+        </div>
 
-    initPartnerModal();
-    initScrollAnimations();
-  };
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a 
+            href="/veda-park.html" 
+            class="flex-1 text-center bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 btn-luxury"
+          >
+            <span>Explore Veda Park Master Plan</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <button 
+            data-open-partner-modal 
+            class="flex-1 text-center border border-forest-deep text-forest-deep py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-colors"
+          >
+            Schedule Site Visit
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
 
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => {
-        b.classList.remove('border-forest-deep', 'text-forest-deep', 'font-bold');
-        b.classList.add('border-transparent', 'text-on-surface-variant');
-      });
-      btn.classList.add('border-forest-deep', 'text-forest-deep', 'font-bold');
-      btn.classList.remove('border-transparent', 'text-on-surface-variant');
-      currentCategory = btn.dataset.assetFilter;
-      render();
-    });
-  });
-
-  searchInput?.addEventListener('input', (e) => {
-    searchQuery = e.target.value.toLowerCase().trim();
-    render();
-  });
-
-  sortSelect?.addEventListener('change', (e) => {
-    currentSort = e.target.value;
-    render();
-  });
-
-  render();
+  initPartnerModal();
+  initScrollAnimations();
 }
 
 /**
@@ -677,7 +573,7 @@ export function initFormHandlers() {
       const phone = siteVisitForm.querySelector('input[name="phone"]')?.value || '';
       
       showToast(
-        `Site visit itinerary scheduled for ${name}. Our partner team will reach out at ${phone} to coordinate chauffeur pickup.`,
+        `Site visit itinerary scheduled for ${name} at Veda Park. Our partner team will reach out at ${phone} to coordinate chauffeur pickup.`,
         'Site Visit Scheduled',
         'success'
       );
@@ -695,9 +591,9 @@ export function initFormHandlers() {
   document.querySelectorAll('[data-download-brochure]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const asset = btn.dataset.downloadBrochure || 'Alaya Realty Investment Prospectus';
+      const asset = btn.dataset.downloadBrochure || 'Veda Park Master Plan Prospectus';
       showToast(
-        `Downloading institutional dossier for "${asset}". (PDF generated)`,
+        `Downloading official master plan & investment prospectus for "${asset}". (PDF generated)`,
         'Dossier Generated',
         'success'
       );
