@@ -385,49 +385,6 @@ export function initVedaParkExplorer() {
       firstBtn?.click();
     }
   }
-
-  // Appreciation Calculator supporting up to 30% returns
-  if (roiCalculator) {
-    const sizeSelect = roiCalculator.querySelector('#calc-plot-size');
-    const horizonSlider = roiCalculator.querySelector('#calc-horizon');
-    const horizonLabel = roiCalculator.querySelector('#calc-horizon-val');
-    const cagrSlider = roiCalculator.querySelector('#calc-cagr');
-    const cagrLabel = roiCalculator.querySelector('#calc-cagr-val');
-
-    const resultCurrentVal = roiCalculator.querySelector('#calc-current-val');
-    const resultFutureVal = roiCalculator.querySelector('#calc-future-val');
-    const resultAppreciation = roiCalculator.querySelector('#calc-appreciation');
-
-    const recalculate = () => {
-      const size = parseFloat(sizeSelect?.value || '2658');
-      const years = parseInt(horizonSlider?.value || '3', 10);
-      const cagr = parseFloat(cagrSlider?.value || '22') / 100;
-
-      if (horizonLabel) horizonLabel.textContent = `${years} Year${years > 1 ? 's' : ''}`;
-      if (cagrLabel) cagrLabel.textContent = `${(cagr * 100).toFixed(0)}% YoY Return`;
-
-      const currentVal = size * 4250;
-      const futureVal = currentVal * Math.pow(1 + cagr, years);
-      const gain = futureVal - currentVal;
-
-      const formatCr = (val) => {
-        if (val >= 10000000) return `₹${(val / 10000000).toFixed(2)} Cr`;
-        return `₹${(val / 100000).toFixed(1)} Lakhs`;
-      };
-
-      if (resultCurrentVal) resultCurrentVal.textContent = formatCr(currentVal);
-      if (resultFutureVal) resultFutureVal.textContent = formatCr(futureVal);
-      if (resultAppreciation) {
-        const totalPct = ((gain / currentVal) * 100).toFixed(0);
-        resultAppreciation.textContent = `+${formatCr(gain)} (+${totalPct}% Total Return)`;
-      }
-    };
-
-    sizeSelect?.addEventListener('change', recalculate);
-    horizonSlider?.addEventListener('input', recalculate);
-    cagrSlider?.addEventListener('input', recalculate);
-    recalculate();
-  }
 }
 
 /**
