@@ -51,6 +51,9 @@ html {
   background-color: var(--color-surface);
   color: var(--color-on-surface);
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -62,10 +65,17 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
 }
 
 h1, h2, h3, h4, h5, h6, .font-serif, .display-font {
   font-family: 'EB Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .material-symbols-outlined {
@@ -84,7 +94,7 @@ h1, h2, h3, h4, h5, h6, .font-serif, .display-font {
 
 .header-scrolled {
   height: 56px !important;
-  background-color: rgba(253, 249, 235, 0.96) !important;
+  background-color: rgba(253, 249, 235, 0.98) !important;
   box-shadow: 0 4px 24px rgba(8, 31, 24, 0.08);
   border-bottom-color: rgba(166, 139, 91, 0.25) !important;
 }
@@ -120,39 +130,39 @@ h1, h2, h3, h4, h5, h6, .font-serif, .display-font {
 [data-animate] {
   opacity: 0;
   transition-property: opacity, transform;
-  transition-duration: 0.85s;
+  transition-duration: 0.7s;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
 }
 
 [data-animate="fade-up"] {
-  transform: translateY(40px);
+  transform: translateY(28px);
 }
 
 [data-animate="fade-down"] {
-  transform: translateY(-30px);
+  transform: translateY(-20px);
 }
 
 [data-animate="fade-left"] {
-  transform: translateX(-50px);
+  transform: translateX(-30px);
 }
 
 [data-animate="fade-right"] {
-  transform: translateX(50px);
+  transform: translateX(30px);
 }
 
 [data-animate="zoom-in"] {
-  transform: scale(0.92);
+  transform: scale(0.95);
 }
 
 [data-animate="zoom-out"] {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
-/* Revealed State */
+/* Revealed State - Drops transform matrix so text remains crisp */
 [data-animate].is-revealed {
   opacity: 1 !important;
-  transform: translate(0, 0) scale(1) !important;
+  transform: none !important;
+  will-change: auto !important;
 }
 
 /* Stagger Delays */

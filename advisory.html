@@ -125,8 +125,8 @@
     <section class="w-full py-4 sm:py-6 md:py-8 bg-forest-deep text-surface-bright px-4 sm:px-margin-edge border-b border-outline/20">
       <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4">
         <div>
-          <span class="font-body text-[9px] sm:text-[10px] font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Advisory Services & Framework</span>
-          <h1 class="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl text-surface-bright">Invest With Clarity</h1>
+          <h1 class="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl text-surface-bright">Advisory Framework</h1>
+          <p class="font-body text-xs text-surface-variant/80 mt-0.5">Quantitative depth and legal diligence for high-conviction decisions</p>
         </div>
         <div class="flex items-center gap-2.5 w-full sm:w-auto">
           <button data-open-partner-modal class="flex-1 sm:flex-initial text-center px-3.5 sm:px-4 py-2 bg-metallic-gold text-primary font-body text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-all btn-luxury">
@@ -142,10 +142,9 @@
     <!-- Advisory Framework Section -->
     <section class="px-margin-edge py-8 md:py-12 bg-surface">
       <div class="max-w-7xl mx-auto">
-        <div data-animate="fade-up" class="max-w-3xl mb-14 border-b border-outline/10 pb-6">
-          <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Underwriting Blueprint</span>
-          <h2 class="font-headline text-3xl md:text-4xl text-forest-deep mb-3">The 6-Pillar Alaya Advisory Framework</h2>
-          <p class="font-body text-base text-on-surface-variant">A systematic approach to evaluating real estate opportunities, mitigating legal and zoning risks, and structuring high-conviction portfolios.</p>
+        <div data-animate="fade-up" class="max-w-3xl mb-10 sm:mb-14 border-b border-outline/10 pb-6">
+          <h2 class="font-headline text-2xl sm:text-3xl md:text-4xl text-forest-deep mb-3">6-Pillar Underwriting & Due Diligence</h2>
+          <p class="font-body text-sm sm:text-base text-on-surface-variant">A systematic approach to evaluating real estate opportunities, mitigating legal and zoning risks, and structuring high-conviction portfolios.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -303,36 +302,40 @@
   </main>
 
   <!-- Global Footer -->
-  <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-10 sm:py-section-v-md px-4 sm:px-margin-edge">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-12 border-b border-outline/20 pb-8 sm:pb-12 mb-6 sm:mb-8">
-      <div class="sm:col-span-2 md:col-span-4" data-animate="fade-up">
+  <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col pt-10 pb-20 sm:py-section-v-md px-4 sm:px-margin-edge">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-12 border-b border-outline/20 pb-8 sm:pb-12 mb-6 sm:mb-8">
+      <!-- Brand & Summary -->
+      <div class="md:col-span-4" data-animate="fade-up">
         <img src="/images/alaya-logo-gold.png" alt="Alaya Realty — ज़मीन से आलय तक" class="h-10 sm:h-11 w-auto object-contain mb-3" />
-        <p class="font-body text-xs text-surface-variant/70 leading-relaxed mb-4 sm:mb-6">
+        <p class="font-body text-xs text-surface-variant/70 leading-relaxed max-w-sm">
           Quiet, thorough, measured real estate advisory. Real estate advice from the people actually doing the work.
         </p>
       </div>
 
-      <div class="md:col-span-2" data-animate="fade-up" data-delay="100">
-        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-3 sm:mb-4">Services</p>
-        <div class="flex flex-col gap-2.5 sm:gap-3 text-xs sm:text-sm text-surface-variant/70">
-          <a href="/advisory" class="hover:text-metallic-gold transition-colors">Leasing</a>
-          <a href="/advisory" class="hover:text-metallic-gold transition-colors">Home Loans</a>
-          <a href="/advisory" class="hover:text-metallic-gold transition-colors">Consultancy</a>
+      <!-- Services & Company: 2-column on mobile, separate on desktop -->
+      <div class="grid grid-cols-2 gap-6 md:col-span-4" data-animate="fade-up" data-delay="100">
+        <div>
+          <p class="font-body text-[11px] sm:text-xs font-bold text-surface-bright uppercase tracking-widest mb-3">Services</p>
+          <div class="flex flex-col gap-2 text-xs sm:text-sm text-surface-variant/75 font-body">
+            <a href="/advisory" class="hover:text-metallic-gold transition-colors">Leasing</a>
+            <a href="/advisory" class="hover:text-metallic-gold transition-colors">Home Loans</a>
+            <a href="/advisory" class="hover:text-metallic-gold transition-colors">Consultancy</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-body text-[11px] sm:text-xs font-bold text-surface-bright uppercase tracking-widest mb-3">Company</p>
+          <div class="flex flex-col gap-2 text-xs sm:text-sm text-surface-variant/75 font-body">
+            <a href="/about" class="hover:text-metallic-gold transition-colors">About</a>
+            <a href="/insights" class="hover:text-metallic-gold transition-colors">Insights</a>
+            <a href="/contact" class="hover:text-metallic-gold transition-colors">Contact</a>
+            <a href="/veda-park#masterplan-blueprint" class="hover:text-metallic-gold transition-colors">Brochure</a>
+          </div>
         </div>
       </div>
 
-      <div class="md:col-span-2" data-animate="fade-up" data-delay="200">
-        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-3 sm:mb-4">Company</p>
-        <div class="flex flex-col gap-2.5 sm:gap-3 text-xs sm:text-sm text-surface-variant/70">
-          <a href="/about" class="hover:text-metallic-gold transition-colors">About</a>
-          <a href="/insights" class="hover:text-metallic-gold transition-colors">Insights</a>
-          <a href="/contact" class="hover:text-metallic-gold transition-colors">Contact</a>
-          <a href="/veda-park#masterplan-blueprint" class="hover:text-metallic-gold transition-colors">Brochure</a>
-        </div>
-      </div>
-
-      <div class="md:col-span-4" data-animate="fade-up" data-delay="300">
-        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-3 sm:mb-4">Contact & Address</p>
+      <!-- Contact & Address -->
+      <div class="md:col-span-4" data-animate="fade-up" data-delay="200">
+        <p class="font-body text-[11px] sm:text-xs font-bold text-surface-bright uppercase tracking-widest mb-3">Contact Office</p>
         <div class="space-y-2 text-xs text-surface-variant/75 font-body">
           <p class="flex items-center gap-2">
             <span class="material-symbols-outlined text-metallic-gold text-sm">mail</span>
@@ -353,9 +356,10 @@
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-center text-xs text-surface-variant/50 gap-4">
+    <!-- Bottom Copyright & Legal -->
+    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-center text-xs text-surface-variant/50 gap-3 text-center sm:text-left">
       <p>© 2026 Alaya Realty. All rights reserved. Indore, India</p>
-      <div class="flex gap-6">
+      <div class="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 text-xs">
         <span class="text-metallic-gold/80">ज़मीन से आलय तक</span>
         <a href="#" class="hover:text-surface-bright transition-colors">Privacy Policy</a>
         <a href="#" class="hover:text-surface-bright transition-colors">Terms of Mandate</a>
