@@ -1,0 +1,6 @@
+# Alaya Realty - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.alayarealty.in/sitemap.xml

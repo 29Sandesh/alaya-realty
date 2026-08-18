@@ -3,9 +3,16 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Story & About Us | Alaya Realty</title>
+  <title>Our Story & About Us | Alaya Realty Indore</title>
   <meta name="description" content="Quiet, thorough, measured. Alaya Realty was built on a simple conviction — that real estate advice should come from the people actually doing the work, not the names on the deck."/>
-  
+  <link rel="canonical" href="https://www.alayarealty.in/about"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.alayarealty.in/about"/>
+  <meta property="og:title" content="Our Story & About Us | Alaya Realty Indore"/>
+  <meta property="og:description" content="Founded by Chirayu Agrawal & Ayush Agrawal. Real estate advice from the people actually doing the work."/>
+  <meta property="og:image" content="https://www.alayarealty.in/images/veda-park-masterplan.webp"/>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link rel="stylesheet" href="/src/css/main.css"/>
@@ -61,17 +68,18 @@
 
   <!-- Slim Top Global Header -->
   <header class="w-full top-0 sticky border-b border-outline-variant/30 flex justify-between items-center px-margin-edge header-slim bg-surface/90 backdrop-blur-md z-50 transition-all duration-300" id="main-header">
-    <a class="flex-shrink-0 flex items-center gap-3 group" href="/index.html">
-      <img alt="Alaya Realty" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvXmuV4oC7UnwoycjpVUAEK6yCgsGC8n8xt3GAOqobnUJ7Y4up9lRRrYow5T4gQBO-vBfIe5QPdpomX1jxNT-xdR0hZJuq4M0RQGtqSGwa66FRxDtCPSmCvLJkhCx5MEbryYKa27hyOuwMWQQZj7XK4eD-NvXrjGmndHLVxwjoTVvlkd4yH1hNiGz1XtOAJd90wWUYXvNSyVMb8-5RBQVW-GedvpLRSvNNBqB791yaeJuKvkPcx_-9MAA"/>
+    <a class="flex-shrink-0 flex flex-col justify-center group py-0.5" href="/">
+      <span class="logo-hindi text-2xl font-black text-forest-deep leading-none group-hover:text-metallic-gold transition-colors">आलय</span>
+      <span class="font-body text-[9px] font-bold text-metallic-gold tracking-wider mt-0.5">ज़मीन से आलय तक</span>
     </a>
     
     <nav class="hidden md:flex gap-7 items-center font-body text-xs font-semibold tracking-widest uppercase">
-      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/properties.html">Our Project</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/veda-park.html">Veda Park</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/advisory.html">Advisory</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/insights.html">Insights</a>
-      <a class="text-metallic-gold font-bold nav-link-anim active" href="/about.html">About</a>
-      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/contact.html">Contact</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/properties">Our Project</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/veda-park">Veda Park</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/advisory">Advisory</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/insights">Insights</a>
+      <a class="text-metallic-gold font-bold nav-link-anim active" href="/about">About</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold nav-link-anim" href="/contact">Contact</a>
     </nav>
     
     <div class="hidden lg:flex items-center gap-3">
@@ -80,30 +88,33 @@
       </button>
     </div>
 
-    <button id="mobile-menu-toggle" class="md:hidden text-primary p-1.5">
+    <button id="mobile-menu-toggle" class="md:hidden text-primary p-2">
       <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </header>
 
   <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-surface border-l border-outline-variant/30 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between shadow-2xl">
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-72 sm:w-80 bg-surface border-l border-outline-variant/30 z-50 transform translate-x-full transition-transform duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
     <div>
-      <div class="flex justify-between items-center mb-8 border-b border-outline-variant/20 pb-4">
-        <span class="font-headline text-2xl text-forest-deep">Alaya Realty</span>
-        <button id="mobile-drawer-close" class="text-outline hover:text-primary">
+      <div class="flex justify-between items-center mb-6 sm:mb-8 border-b border-outline-variant/20 pb-4">
+        <div>
+          <span class="logo-hindi text-2xl text-forest-deep font-bold block">आलय</span>
+          <span class="text-[9px] text-metallic-gold font-bold uppercase tracking-wider">ज़मीन से आलय तक</span>
+        </div>
+        <button id="mobile-drawer-close" class="text-outline hover:text-primary p-1">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
       </div>
-      <nav class="flex flex-col gap-6 text-xs font-bold tracking-widest uppercase">
-        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/properties.html">Our Project</a>
-        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/veda-park.html">Veda Park Plotted</a>
-        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/advisory.html">Advisory Framework</a>
-        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/insights.html">Research & Insights</a>
-        <a class="text-metallic-gold font-bold py-1" href="/about.html">About Us</a>
-        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/contact.html">Contact Office</a>
+      <nav class="flex flex-col gap-5 text-xs font-bold tracking-widest uppercase font-body">
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/properties">Our Project</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/veda-park">Veda Park Plotted</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/advisory">Advisory Framework</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/insights">Research & Insights</a>
+        <a class="text-metallic-gold font-bold py-1" href="/about">About Us</a>
+        <a class="text-forest-deep hover:text-metallic-gold py-1" href="/contact">Contact Office</a>
       </nav>
     </div>
-    <div class="border-t border-outline-variant/20 pt-6">
+    <div class="border-t border-outline-variant/20 pt-5">
       <button data-open-partner-modal class="w-full py-3 bg-forest-deep text-surface-bright text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors btn-luxury">
         Speak to a Partner
       </button>
@@ -112,17 +123,17 @@
 
   <main class="flex-grow">
     <!-- 1. Minimal About Hero -->
-    <section class="py-10 md:py-14 px-margin-edge border-b border-outline/10 bg-surface">
+    <section class="py-8 sm:py-10 md:py-14 px-4 sm:px-margin-edge border-b border-outline/10 bg-surface">
       <div class="max-w-5xl mx-auto">
-        <span data-animate="fade-down" class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.25em] block mb-3">
+        <span data-animate="fade-down" class="font-body text-[10px] sm:text-xs font-bold text-metallic-gold uppercase tracking-[0.2em] sm:tracking-[0.25em] block mb-2 sm:mb-3">
           Our story
         </span>
-        <h1 data-animate="fade-up" data-delay="100" class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[70px] leading-[1.08] text-forest-deep mb-6">
+        <h1 data-animate="fade-up" data-delay="100" class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-[70px] leading-[1.08] text-forest-deep mb-4 sm:mb-6">
           Quiet,<br/>
           thorough,<br/>
           measured.
         </h1>
-        <p data-animate="fade-up" data-delay="200" class="font-headline text-xl md:text-2xl text-forest-deep font-normal leading-snug max-w-3xl border-l-2 border-metallic-gold pl-5 mb-4">
+        <p data-animate="fade-up" data-delay="200" class="font-headline text-base sm:text-xl md:text-2xl text-forest-deep font-normal leading-snug max-w-3xl border-l-2 border-metallic-gold pl-4 sm:pl-5 mb-4">
           Alaya Realty was built on a simple conviction — that real estate advice should come from the people actually doing the work, not the names on the deck.
         </p>
       </div>
@@ -344,38 +355,40 @@
   </main>
 
   <!-- Global Footer -->
-  <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-section-v-md px-margin-edge">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-outline/20 pb-12 mb-8">
-      <div class="md:col-span-4" data-animate="fade-up">
-        <div class="font-display text-3xl text-metallic-gold mb-2">Alaya Realty</div>
-        <p class="font-headline text-lg text-surface-variant/90 italic mb-4">ज़मीन से आलय तक</p>
-        <p class="font-body text-xs text-surface-variant/70 leading-relaxed mb-6">
-          Quiet, thorough, measured real estate advisory. Advice from the people actually doing the work.
+  <footer class="w-full bg-forest-deep text-surface-bright border-t border-outline/20 flex flex-col py-10 sm:py-section-v-md px-4 sm:px-margin-edge">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-12 border-b border-outline/20 pb-8 sm:pb-12 mb-6 sm:mb-8">
+      <div class="sm:col-span-2 md:col-span-4" data-animate="fade-up">
+        <div class="mb-3">
+          <span class="logo-hindi text-3xl md:text-4xl text-metallic-gold font-bold tracking-tight block leading-none">आलय</span>
+          <span class="font-body text-xs text-surface-variant/90 font-semibold tracking-wider block mt-1">ज़मीन से आलय तक</span>
+        </div>
+        <p class="font-body text-xs text-surface-variant/70 leading-relaxed mb-4 sm:mb-6">
+          Quiet, thorough, measured real estate advisory. Real estate advice from the people actually doing the work.
         </p>
       </div>
 
       <div class="md:col-span-2" data-animate="fade-up" data-delay="100">
-        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Services</p>
-        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
-          <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Leasing</a>
-          <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Home Loans</a>
-          <a href="/advisory.html" class="hover:text-metallic-gold transition-colors">Consultancy</a>
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-3 sm:mb-4">Services</p>
+        <div class="flex flex-col gap-2.5 sm:gap-3 text-xs sm:text-sm text-surface-variant/70">
+          <a href="/advisory" class="hover:text-metallic-gold transition-colors">Leasing</a>
+          <a href="/advisory" class="hover:text-metallic-gold transition-colors">Home Loans</a>
+          <a href="/advisory" class="hover:text-metallic-gold transition-colors">Consultancy</a>
         </div>
       </div>
 
       <div class="md:col-span-2" data-animate="fade-up" data-delay="200">
-        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Company</p>
-        <div class="flex flex-col gap-3 text-sm text-surface-variant/70">
-          <a href="/about.html" class="hover:text-metallic-gold transition-colors">About</a>
-          <a href="/insights.html" class="hover:text-metallic-gold transition-colors">Insights</a>
-          <a href="/contact.html" class="hover:text-metallic-gold transition-colors">Contact</a>
-          <a href="/veda-park.html#masterplan-blueprint" class="hover:text-metallic-gold transition-colors">Brochure</a>
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-3 sm:mb-4">Company</p>
+        <div class="flex flex-col gap-2.5 sm:gap-3 text-xs sm:text-sm text-surface-variant/70">
+          <a href="/about" class="hover:text-metallic-gold transition-colors">About</a>
+          <a href="/insights" class="hover:text-metallic-gold transition-colors">Insights</a>
+          <a href="/contact" class="hover:text-metallic-gold transition-colors">Contact</a>
+          <a href="/veda-park#masterplan-blueprint" class="hover:text-metallic-gold transition-colors">Brochure</a>
         </div>
       </div>
 
       <div class="md:col-span-4" data-animate="fade-up" data-delay="300">
-        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-4">Contact & Address</p>
-        <div class="space-y-2.5 text-xs text-surface-variant/75 font-body">
+        <p class="font-body text-xs font-bold text-surface-bright uppercase tracking-widest mb-3 sm:mb-4">Contact & Address</p>
+        <div class="space-y-2 text-xs text-surface-variant/75 font-body">
           <p class="flex items-center gap-2">
             <span class="material-symbols-outlined text-metallic-gold text-sm">mail</span>
             <a href="mailto:ayush@alayarealty.in" class="hover:text-metallic-gold transition-colors">ayush@alayarealty.in</a>
@@ -388,8 +401,8 @@
             <span class="material-symbols-outlined text-metallic-gold text-sm">language</span>
             <span>www.alayarealty.in</span>
           </p>
-          <p class="pt-2 text-[11px] text-surface-variant/60 leading-relaxed">
-            Third Floor, Manas Mayfair 8/5, Opposite Nath Mandir Road, Near Princess Palace Hotel, South Tukoganj, Indore, Madhya Pradesh 452001
+          <p class="pt-1 text-[11px] text-surface-variant/60 leading-relaxed">
+            Third Floor, Manas Mayfair 8/5, Opposite Nath Mandir Road, Near Princess Palace Hotel, South Tukoganj, Indore, MP 452001
           </p>
         </div>
       </div>
