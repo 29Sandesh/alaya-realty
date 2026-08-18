@@ -414,7 +414,39 @@ export function initInsightsFilter() {
 }
 
 /**
- * Form Submit Helpers with Instant Toast Feedback
+ * Official Alaya Realty WhatsApp Integration
+ */
+export const OFFICIAL_WHATSAPP_PHONE = '919183388115';
+
+export function openWhatsAppLead(message) {
+  const text = message || "Hi Alaya Realty, I'd like to talk about a property decision.";
+  const url = `https://api.whatsapp.com/send/?phone=${OFFICIAL_WHATSAPP_PHONE}&text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`;
+  window.open(url, '_blank');
+}
+
+/**
+ * Floating WhatsApp Concierge Widget on All Pages
+ */
+export function initFloatingWhatsApp() {
+  if (document.getElementById('floating-whatsapp-widget')) return;
+
+  const btn = document.createElement('a');
+  btn.id = 'floating-whatsapp-widget';
+  btn.href = `https://api.whatsapp.com/send/?phone=${OFFICIAL_WHATSAPP_PHONE}&text=${encodeURIComponent("Hi Alaya Realty, I'd like to talk about a property decision.")}&type=phone_number&app_absent=0`;
+  btn.target = '_blank';
+  btn.rel = 'noopener noreferrer';
+  btn.className = 'fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#1b5e20] hover:bg-[#2e7d32] text-white px-4 py-2.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 border border-emerald-400/40 group';
+  btn.setAttribute('aria-label', 'Chat on WhatsApp with Alaya Realty');
+  btn.innerHTML = `
+    <span class="material-symbols-outlined text-lg text-emerald-300">chat</span>
+    <span class="font-body text-xs font-bold tracking-wider uppercase pr-1">Chat on WhatsApp</span>
+  `;
+
+  document.body.appendChild(btn);
+}
+
+/**
+ * Form Submit Helpers with Instant WhatsApp Routing & Toast Feedback
  */
 export function initFormHandlers() {
   document.querySelectorAll('.newsletter-form').forEach(form => {
@@ -424,7 +456,7 @@ export function initFormHandlers() {
       const email = input?.value || '';
       if (email) {
         showToast(
-          `You are subscribed to the Alaya Sovereign Editorial quarterly research briefings.`,
+          `You are subscribed to Alaya Realty quarterly intelligence briefings.`,
           'Subscription Confirmed',
           'success'
         );
@@ -440,12 +472,70 @@ export function initFormHandlers() {
       const name = siteVisitForm.querySelector('input[name="name"]')?.value || 'Investor';
       const phone = siteVisitForm.querySelector('input[name="phone"]')?.value || '';
       
+      const message = `Hi Alaya Realty, my name is ${name}${phone ? ` (${phone})` : ''}. I would like to schedule a private site visit for Veda Park on Khandwa Road.`;
+
       showToast(
-        `Site visit itinerary scheduled for ${name} at Veda Park. Our partner team will reach out at ${phone} to coordinate chauffeur pickup.`,
+        `Connecting directly to partner on WhatsApp...`,
         'Site Visit Scheduled',
         'success'
       );
+
+      setTimeout(() => {
+        openWhatsAppLead(message);
+      }, 500);
       siteVisitForm.reset();
+    });
+  }
+
+  const contactForm = document.getElementById('contact-mandate-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = contactForm.querySelector('input[name="name"]')?.value || 'Client';
+      const phone = contactForm.querySelector('input[name="phone"]')?.value || '';
+      const email = contactForm.querySelector('input[name="email"]')?.value || '';
+      const service = contactForm.querySelector('select[name="interest"]')?.value || 'General Advisory';
+      const notes = contactForm.querySelector('textarea[name="message"]')?.value || '';
+
+      const message = `Hi Alaya Realty, my name is ${name}${phone ? ` (${phone})` : ''}${email ? `, email: ${email}` : ''}. I would like to discuss: ${service}.${notes ? ` Details: ${notes}` : ''}`;
+
+      showToast(
+        `Connecting directly to Ayush Agrawal on WhatsApp...`,
+        'Mandate Submitted',
+        'success'
+      );
+
+      setTimeout(() => {
+        openWhatsAppLead(message);
+      }, 500);
+      contactForm.reset();
+    });
+  }
+
+  const partnerModalForm = document.getElementById('partner-modal-form');
+  if (partnerModalForm) {
+    partnerModalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = partnerModalForm.querySelector('input[name="name"]')?.value || 'Client';
+      const phone = partnerModalForm.querySelector('input[name="phone"]')?.value || '';
+      const email = partnerModalForm.querySelector('input[name="email"]')?.value || '';
+
+      const message = `Hi Alaya Realty, my name is ${name}${phone ? ` (${phone})` : ''}${email ? `, email: ${email}` : ''}. I'd like to consult a partner directly regarding a property decision.`;
+
+      showToast(
+        `Opening WhatsApp with your consultation brief...`,
+        'Partner Consultation',
+        'success'
+      );
+
+      const modal = document.getElementById('partner-modal');
+      modal?.classList.add('hidden');
+      modal?.classList.remove('flex');
+
+      setTimeout(() => {
+        openWhatsAppLead(message);
+      }, 500);
+      partnerModalForm.reset();
     });
   }
 
@@ -480,4 +570,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initPropertiesMarketplace();
   initInsightsFilter();
   initFormHandlers();
+  initFloatingWhatsApp();
 });
