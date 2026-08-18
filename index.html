@@ -232,11 +232,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
           <!-- Left: Official Master Plan Blueprint Frame -->
           <div data-animate="fade-right" data-delay="100" class="lg:col-span-8 group bg-paper-dark border-2 border-metallic-gold/40 overflow-hidden card-hover-lift flex flex-col justify-between shadow-xl">
-            <a href="/veda-park.html" class="block relative min-h-[460px] md:min-h-[520px] bg-forest-deep p-6 overflow-hidden flex items-center justify-center">
+            <a href="/veda-park.html" class="block relative min-h-[500px] md:min-h-[580px] bg-forest-deep p-6 overflow-hidden flex items-center justify-center h-full">
               <img 
                 src="/images/veda-park-masterplan.webp" 
                 alt="Veda Park Master Plan Blueprint" 
-                class="w-full h-full max-h-[480px] object-contain img-zoom-hover"
+                class="w-full h-full max-h-[540px] object-contain img-zoom-hover"
               />
               <div class="absolute top-6 left-6 flex gap-2">
                 <span class="px-3 py-1 bg-surface text-forest-deep font-body text-[10px] font-bold uppercase tracking-widest badge-floating">Sole Active Project</span>
@@ -254,42 +254,46 @@
                 </div>
               </div>
             </a>
-
-            <div class="p-6 grid grid-cols-3 gap-4 border-t border-outline/10 bg-surface-container-low">
-              <div>
-                <p class="font-body text-[10px] text-outline uppercase tracking-widest mb-1">Asset Class</p>
-                <p class="font-data-mono text-sm font-bold text-forest-deep">Plotted Development</p>
-              </div>
-              <div>
-                <p class="font-body text-[10px] text-outline uppercase tracking-widest mb-1">Scale</p>
-                <p class="font-data-mono text-sm font-bold text-forest-deep">84 Freehold Plots</p>
-              </div>
-              <div>
-                <p class="font-body text-[10px] text-outline uppercase tracking-widest mb-1">Appreciation Potential</p>
-                <p class="font-data-mono text-sm font-bold text-emerald-700">Up to 30% CAGR</p>
-              </div>
-            </div>
           </div>
 
-          <!-- Right: Key Highlights & Partner Booking -->
-          <div class="lg:col-span-4 flex flex-col gap-6">
+          <!-- Right: Key Metrics, Highlights & Partner Booking -->
+          <div class="lg:col-span-4 flex flex-col gap-5">
+            <!-- Key Asset Metrics Card (Moved to Right) -->
+            <div data-animate="fade-left" data-delay="150" class="bg-paper-dark border border-outline/20 p-5 shadow-sm card-hover-lift">
+              <span class="font-body text-[10px] font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-3">Key Project Metrics</span>
+              <div class="grid grid-cols-1 gap-3 text-xs">
+                <div class="flex justify-between items-center py-2 border-b border-outline/10">
+                  <span class="font-body text-outline uppercase tracking-wider">Asset Class</span>
+                  <span class="font-data-mono font-bold text-forest-deep text-sm">Plotted Development</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-outline/10">
+                  <span class="font-body text-outline uppercase tracking-wider">Scale</span>
+                  <span class="font-data-mono font-bold text-forest-deep text-sm">84 Freehold Plots</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span class="font-body text-outline uppercase tracking-wider">Appreciation Potential</span>
+                  <span class="font-data-mono font-bold text-emerald-700 text-sm">Up to 30% CAGR</span>
+                </div>
+              </div>
+            </div>
+
             <!-- Highlights Card -->
-            <div data-animate="fade-left" data-delay="200" class="bg-paper-dark border border-outline/10 p-6 flex flex-col justify-between card-hover-lift">
+            <div data-animate="fade-left" data-delay="200" class="bg-paper-dark border border-outline/10 p-5 flex flex-col justify-between card-hover-lift">
               <div>
                 <span class="font-body text-xs uppercase font-bold text-metallic-gold tracking-widest block mb-2">Architectural Standard</span>
-                <h4 class="font-headline text-xl text-forest-deep mb-3">Designed by Spacon Design</h4>
-                <ul class="space-y-2.5 text-xs text-on-surface-variant font-body">
+                <h4 class="font-headline text-xl text-forest-deep mb-2">Designed by Spacon Design</h4>
+                <ul class="space-y-2 text-xs text-on-surface-variant font-body">
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span>
-                    <span>13.72m × 21.00m & 18.00m standardized parcels</span>
+                    <span>13.72m × 21.00m & 18.00m parcels</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span>
-                    <span>9.0M and 10.5M wide internal concrete avenues</span>
+                    <span>9.0M & 10.5M wide internal avenues</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span>
-                    <span>Central clubhouse, pool, and green belt</span>
+                    <span>Central clubhouse & green belt</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-metallic-gold text-base">check_circle</span>
@@ -297,7 +301,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="mt-6 pt-4 border-t border-outline/10">
+              <div class="mt-4 pt-3 border-t border-outline/10">
                 <a class="inline-flex items-center text-forest-deep font-body text-xs font-bold uppercase tracking-widest hover:text-metallic-gold transition-colors" href="/veda-park.html">
                   View Full Asset Dossier <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
                 </a>
@@ -305,15 +309,15 @@
             </div>
 
             <!-- Institutional Mandate Card -->
-            <div data-animate="fade-left" data-delay="300" class="p-6 bg-forest-deep text-surface-bright border border-outline/20 flex flex-col justify-between card-hover-lift">
+            <div data-animate="fade-left" data-delay="300" class="p-5 bg-forest-deep text-surface-bright border border-outline/20 flex flex-col justify-between card-hover-lift">
               <div>
-                <div class="flex items-center gap-2 text-metallic-gold mb-3">
-                  <span class="material-symbols-outlined text-2xl">trending_up</span>
+                <div class="flex items-center gap-2 text-metallic-gold mb-2">
+                  <span class="material-symbols-outlined text-xl">trending_up</span>
                   <span class="font-body text-xs uppercase tracking-widest font-bold">High Growth Corridor</span>
                 </div>
-                <h4 class="font-headline text-xl text-surface-bright mb-2">Up to 30% Returns Trajectory</h4>
-                <p class="font-body text-xs text-surface-variant/80 mb-4 leading-relaxed">
-                  The Khandwa Road expansion and IIT Indore / Simrol corridor are driving accelerated capital appreciation. Book a direct partner session to review financial models.
+                <h4 class="font-headline text-lg text-surface-bright mb-1">Up to 30% Returns Trajectory</h4>
+                <p class="font-body text-xs text-surface-variant/80 mb-3 leading-relaxed">
+                  Khandwa Road expansion & IIT Indore corridor are accelerating capital appreciation.
                 </p>
               </div>
               <button data-open-partner-modal class="inline-flex items-center text-metallic-gold font-body text-xs uppercase font-bold tracking-widest border-b border-metallic-gold pb-0.5 self-start hover:text-white hover:border-white transition-colors">
