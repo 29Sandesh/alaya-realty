@@ -238,153 +238,64 @@ export function initMobileNav() {
  * Veda Park Interactive Plot Explorer & ROI Calculator (up to 30% returns)
  */
 export function initVedaParkExplorer() {
-  const plotGrid = document.getElementById('plot-grid-container');
-  const plotDetailCard = document.getElementById('selected-plot-details');
-  const plotSelectInput = document.getElementById('enquiry-plot-select');
-  const roiCalculator = document.getElementById('veda-roi-calculator');
+  const inspector = document.getElementById('masterplan-inspector');
+  const img = document.getElementById('masterplan-img');
 
-  if (!plotGrid && !roiCalculator) return;
+  if (!inspector || !img) return;
 
-  const plots = [];
-  const dimensions = [
-    { label: '13.72m × 21.00m (3,100 sq.ft)', size: 3100 },
-    { label: '13.72m × 18.00m (2,658 sq.ft)', size: 2658 },
-    { label: '13.72m × 17.60m (2,600 sq.ft)', size: 2600 },
-    { label: '13.72m × 19.00m (2,805 sq.ft)', size: 2805 },
-    { label: 'Signature Corner (4,500 sq.ft)', size: 4500 },
-    { label: 'Grand Executive (6,200 sq.ft)', size: 6200 }
-  ];
+  let isMaxZoom = false;
 
-  const facings = ['North (Vaastu Compliant)', 'East (Morning Light)', 'North-East (Ishanya)', 'North-West (Garden Facing)'];
+  const handleMove = (clientX, clientY) => {
+    const rect = inspector.getBoundingClientRect();
+    const x = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    const y = Math.max(0, Math.min(1, (clientY - rect.top) / rect.height));
 
-  // 84 numbered plots matching the architectural blueprint
-  for (let i = 1; i <= 84; i++) {
-    const dim = dimensions[i % dimensions.length];
-    let status = 'available';
-    if (i % 6 === 0) status = 'sold';
-    else if (i % 8 === 0) status = 'reserved';
+    const originX = (x * 100).toFixed(2);
+    const originY = (y * 100).toFixed(2);
 
-    const baseRatePerSqFt = 4250;
-    const price = (dim.size * baseRatePerSqFt) / 10000000;
-    const sectorLetter = i <= 20 ? 'A' : (i <= 44 ? 'B' : (i <= 66 ? 'C' : 'D'));
+    img.style.transformOrigin = `${originX}% ${originY}%`;
+    img.style.transform = isMaxZoom ? 'scale(4.5)' : 'scale(3.0)';
+  };
 
-    plots.push({
-      id: i,
-      plotNumber: `Plot ${String(i).padStart(2, '0')}`,
-      sector: `Sector ${sectorLetter}`,
-      dimensions: dim.label,
-      size: dim.size,
-      facing: facings[i % facings.length],
-      priceCr: price.toFixed(2),
-      status: status,
-      clubhouseDist: `${80 + (i % 7) * 35}m`
-    });
-  }
+  inspector.addEventListener('mouseenter', (e) => {
+    inspector.classList.add('is-zoomed');
+    handleMove(e.clientX, e.clientY);
+  });
 
-  if (plotGrid) {
-    plotGrid.innerHTML = plots.map(p => {
-      let statusClass = 'bg-surface-container hover:border-metallic-gold border border-outline-variant/40 text-primary cursor-pointer';
-      let badge = '<span class="text-[9px] font-bold text-metallic-gold uppercase">Avail</span>';
-      
-      if (p.status === 'reserved') {
-        statusClass = 'bg-outline-variant/20 border border-outline/30 text-on-surface-variant cursor-pointer';
-        badge = '<span class="text-[9px] font-medium text-outline uppercase">Hold</span>';
-      } else if (p.status === 'sold') {
-        statusClass = 'bg-surface-dim/40 border border-outline-variant/20 text-outline line-through cursor-not-allowed opacity-40';
-        badge = '<span class="text-[9px] text-outline uppercase">Sold</span>';
-      }
+  inspector.addEventListener('mousemove', (e) => {
+    handleMove(e.clientX, e.clientY);
+  });
 
-      return `
-        <button 
-          data-plot-id="${p.id}" 
-          class="plot-cell p-2 flex flex-col items-center justify-between text-left transition-all duration-200 rounded-none h-14 ${statusClass}"
-          ${p.status === 'sold' ? 'disabled' : ''}
-          title="${p.plotNumber} • ${p.size.toLocaleString()} sq.ft • ₹${p.priceCr} Cr"
-        >
-          <span class="font-data-mono text-[11px] font-bold">${p.plotNumber}</span>
-          <div class="flex justify-between items-center w-full">
-            <span class="text-[10px] text-outline">${p.size}sf</span>
-            ${badge}
-          </div>
-        </button>
-      `;
-    }).join('');
+  inspector.addEventListener('mouseleave', () => {
+    inspector.classList.remove('is-zoomed', 'is-max-zoomed');
+    isMaxZoom = false;
+    img.style.transformOrigin = 'center center';
+    img.style.transform = 'scale(1)';
+  });
 
-    plotGrid.addEventListener('click', (e) => {
-      const btn = e.target.closest('.plot-cell');
-      if (!btn || btn.disabled) return;
-
-      const plotId = parseInt(btn.dataset.plotId, 10);
-      const plot = plots.find(p => p.id === plotId);
-      if (!plot) return;
-
-      plotGrid.querySelectorAll('.plot-cell').forEach(c => c.classList.remove('ring-2', 'ring-metallic-gold', 'bg-metallic-gold/15'));
-      btn.classList.add('ring-2', 'ring-metallic-gold', 'bg-metallic-gold/15');
-
-      if (plotDetailCard) {
-        plotDetailCard.innerHTML = `
-          <div class="bg-surface-container-low p-6 border border-metallic-gold/40 fade-in">
-            <div class="flex justify-between items-start border-b border-outline-variant/30 pb-4 mb-4">
-              <div>
-                <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest">${plot.sector} • Concept Blueprint</span>
-                <h4 class="font-headline text-2xl text-forest-deep mt-1">${plot.plotNumber}</h4>
-              </div>
-              <span class="px-3 py-1 text-xs font-body uppercase font-bold tracking-wider ${plot.status === 'available' ? 'bg-metallic-gold/20 text-forest-deep border border-metallic-gold' : 'bg-outline-variant/30 text-outline'}">
-                ${plot.status}
-              </span>
-            </div>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-              <div>
-                <p class="text-xs text-outline uppercase font-body">Plot Dimensions</p>
-                <p class="font-data-mono font-bold text-xs text-primary">${plot.dimensions}</p>
-              </div>
-              <div>
-                <p class="text-xs text-outline uppercase font-body">Current Valuation</p>
-                <p class="font-data-mono font-bold text-base text-forest-deep">₹${plot.priceCr} Cr</p>
-              </div>
-              <div>
-                <p class="text-xs text-outline uppercase font-body">Facing & Vaastu</p>
-                <p class="font-body text-xs text-on-surface">${plot.facing}</p>
-              </div>
-              <div>
-                <p class="text-xs text-outline uppercase font-body">Clubhouse Proximity</p>
-                <p class="font-body text-xs text-on-surface">${plot.clubhouseDist} (9.0M Blvd)</p>
-              </div>
-            </div>
-            <button 
-              id="reserve-selected-plot-btn" 
-              class="w-full bg-forest-deep text-surface-bright py-3 text-xs font-body uppercase font-bold tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 btn-luxury"
-            >
-              <span>Enquire & Reserve ${plot.plotNumber}</span>
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
-          </div>
-        `;
-
-        const reserveBtn = document.getElementById('reserve-selected-plot-btn');
-        reserveBtn?.addEventListener('click', () => {
-          const nameInput = document.querySelector('#site-visit-form input[name="name"]');
-          if (nameInput) {
-            nameInput.scrollIntoView({ behavior: 'smooth' });
-            nameInput.focus();
-            showToast(`${plot.plotNumber} (${plot.dimensions}) selected for your private site visit.`, 'Plot Selected', 'info');
-          } else {
-            showToast(`Inquiry initiated for ${plot.plotNumber}.`, 'Selected', 'info');
-          }
-        });
-      }
-
-      if (plotSelectInput) {
-        plotSelectInput.value = `${plot.plotNumber} (${plot.sector})`;
-      }
-    });
-
-    const firstAvail = plots.find(p => p.status === 'available');
-    if (firstAvail) {
-      const firstBtn = plotGrid.querySelector(`[data-plot-id="${firstAvail.id}"]`);
-      firstBtn?.click();
+  inspector.addEventListener('click', (e) => {
+    isMaxZoom = !isMaxZoom;
+    if (isMaxZoom) {
+      inspector.classList.add('is-max-zoomed');
+      showToast('Super Magnification (4.5x) enabled. Move cursor to inspect.', 'Blueprint Zoom', 'info');
+    } else {
+      inspector.classList.remove('is-max-zoomed');
     }
-  }
+    handleMove(e.clientX, e.clientY);
+  });
+
+  // Touch support for tablets & mobile
+  inspector.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      const touch = e.touches[0];
+      handleMove(touch.clientX, touch.clientY);
+    }
+  }, { passive: true });
+
+  inspector.addEventListener('touchend', () => {
+    img.style.transformOrigin = 'center center';
+    img.style.transform = 'scale(1)';
+  });
 }
 
 /**

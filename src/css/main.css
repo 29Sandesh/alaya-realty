@@ -369,13 +369,38 @@ h1, h2, h3, h4, h5, h6, .font-serif, .display-font {
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* Plot Map Grid Interactive States */
-.plot-cell {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+/* ========================================================
+   HIGH-POWER BLUEPRINT HOVER ZOOM INSPECTOR
+   ======================================================== */
+.blueprint-inspector {
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+  background-color: #ffffff;
+  touch-action: none;
 }
 
-.plot-cell:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(166, 139, 91, 0.25);
-  border-color: var(--color-metallic-gold);
+.blueprint-inspector img {
+  transform-origin: center center;
+  transition: transform 0.12s ease-out;
+  will-change: transform, transform-origin;
+  user-select: none;
+  pointer-events: none;
+}
+
+.blueprint-inspector.is-zoomed img {
+  transform: scale(2.85);
+}
+
+.blueprint-inspector.is-max-zoomed img {
+  transform: scale(4.2);
+}
+
+.zoom-indicator-badge {
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.blueprint-inspector:hover .zoom-indicator-badge {
+  opacity: 0.25;
 }

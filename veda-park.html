@@ -75,11 +75,8 @@
     </nav>
     
     <div class="hidden lg:flex items-center gap-3">
-      <button data-download-brochure="Veda Park Master Plan Blueprint" class="inline-flex items-center justify-center px-3.5 py-1.5 border border-forest-deep text-forest-deep font-body text-[11px] font-bold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-all btn-luxury">
-        <span class="material-symbols-outlined text-xs mr-1">download</span> Master Plan PDF
-      </button>
-      <button data-open-partner-modal class="inline-flex items-center justify-center px-4 py-2 bg-forest-deep text-surface-bright font-body text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all btn-luxury">
-        Book Site Visit
+      <button data-open-partner-modal class="inline-flex items-center justify-center px-4 py-2 bg-forest-deep text-surface-bright font-body text-[11px] font-bold uppercase tracking-widest hover:bg-primary transition-all duration-300 btn-luxury">
+        Speak to a partner
       </button>
     </div>
 
@@ -196,8 +193,8 @@
           </div>
         </section>
 
-        <!-- 2. OFFICIAL MASTER PLAN BLUEPRINT INSPECTOR -->
-        <section id="masterplan-blueprint" data-animate="fade-up" class="bg-paper-dark border-2 border-metallic-gold/30 p-8 shadow-xl">
+        <!-- 2. OFFICIAL MASTER PLAN BLUEPRINT INSPECTOR WITH HOVER ZOOM -->
+        <section id="masterplan-blueprint" data-animate="fade-up" class="bg-paper-dark border-2 border-metallic-gold/30 p-6 md:p-8 shadow-xl">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b border-outline-variant/30 pb-4">
             <div>
               <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Architectural Layout</span>
@@ -214,100 +211,75 @@
             Designed by <strong>Spacon Design (India) Pvt. Ltd.</strong> (Concept-8, Feb 2026), the master plan integrates 9.0-meter and 10.5-meter wide internal concrete boulevards, a dedicated Central Clubhouse & Lounge, deep green recreational zones, and seamless access to Khandwa Road and the Simrol connector.
           </p>
 
-          <!-- Masterplan High-Res Display Frame -->
-          <div class="relative bg-white border border-outline/20 p-4 md:p-6 overflow-hidden shadow-inner group">
-            <div class="max-h-[620px] overflow-auto flex items-center justify-center bg-surface-container-lowest">
-              <img 
-                src="/images/veda-park-masterplan.webp" 
-                alt="Veda Park Master Plan Architectural Blueprint" 
-                class="w-full h-auto max-h-[600px] object-contain transition-transform duration-500 hover:scale-105"
-              />
+          <!-- Masterplan Interactive Hover Zoom Inspector -->
+          <div id="masterplan-inspector" class="blueprint-inspector relative border border-outline/20 p-2 overflow-hidden shadow-inner select-none h-[580px] md:h-[720px] flex items-center justify-center bg-white">
+            <img 
+              id="masterplan-img"
+              src="/images/veda-park-masterplan.webp" 
+              alt="Veda Park Master Plan Architectural Blueprint" 
+              class="w-full h-full object-contain cursor-crosshair transition-transform duration-100"
+            />
+            
+            <!-- Zoom Helper Badge -->
+            <div class="zoom-indicator-badge absolute top-4 left-4 bg-forest-deep/90 text-surface-bright px-3.5 py-1.5 text-xs font-body flex items-center gap-2 border border-metallic-gold/40 shadow-lg backdrop-blur-sm">
+              <span class="material-symbols-outlined text-metallic-gold text-base">zoom_in</span>
+              <span>Hover mouse over blueprint to zoom in</span>
             </div>
-            <div class="absolute bottom-6 right-6 bg-forest-deep/90 text-surface-bright px-3 py-1.5 text-xs font-data-mono backdrop-blur-sm">
+
+            <div class="absolute bottom-4 right-4 bg-forest-deep/90 text-surface-bright px-3 py-1.5 text-xs font-data-mono backdrop-blur-sm border border-outline/30">
               Khandwa Road Entry Gate → Simrol Corridor
             </div>
           </div>
 
           <!-- Blueprint Key Features Breakdown -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-outline-variant/30 text-xs">
-            <div class="p-3 bg-surface border border-outline/10">
+            <div class="p-4 bg-surface border border-outline/10">
               <span class="font-bold text-forest-deep block mb-1">Road Infrastructure</span>
-              <p class="text-on-surface-variant">9.0M & 10.50M wide internal avenues engineered for dual-lane luxury vehicle access.</p>
+              <p class="text-on-surface-variant leading-relaxed">9.0M & 10.50M wide internal avenues engineered for dual-lane luxury vehicle access.</p>
             </div>
-            <div class="p-3 bg-surface border border-outline/10">
+            <div class="p-4 bg-surface border border-outline/10">
               <span class="font-bold text-forest-deep block mb-1">Central Green & Club</span>
-              <p class="text-on-surface-variant">Centrally located community clubhouse and large landscaped parkland buffer.</p>
+              <p class="text-on-surface-variant leading-relaxed">Centrally located community clubhouse and large landscaped parkland buffer.</p>
             </div>
-            <div class="p-3 bg-surface border border-outline/10">
+            <div class="p-4 bg-surface border border-outline/10">
               <span class="font-bold text-forest-deep block mb-1">Plot Modular Grid</span>
-              <p class="text-on-surface-variant">Standardized 13.72m × 21.00m, 13.72m × 18.00m, and bespoke corner configurations.</p>
+              <p class="text-on-surface-variant leading-relaxed">Standardized 13.72m × 21.00m, 13.72m × 18.00m, and bespoke corner configurations.</p>
             </div>
           </div>
         </section>
 
-        <!-- 3. INTERACTIVE PLOT MAP & AVAILABILITY EXPLORER -->
-        <section data-animate="fade-up" class="bg-paper-dark border border-outline/20 p-8 shadow-md">
-          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b border-outline-variant/30 pb-4">
-            <div>
-              <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-[0.2em] block mb-1">Live Availability Grid</span>
-              <h3 class="font-headline text-2xl text-forest-deep">Interactive Plot Selector (Plots 01–84)</h3>
-            </div>
-            <div class="flex items-center gap-4 text-xs font-data-mono">
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-surface-container border border-metallic-gold"></span> Available</span>
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-outline-variant/40 border border-outline"></span> On Hold</span>
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-surface-dim/40 opacity-50"></span> Sold</span>
-            </div>
-          </div>
-
-          <p class="font-body text-xs text-on-surface-variant mb-6">
-            Click on any available plot matching the master plan layout below to view exact dimensions, pricing, and orientation.
-          </p>
-
-          <!-- Plot Grid (Numbered 1 to 84 matching masterplan) -->
-          <div id="plot-grid-container" class="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 gap-2 mb-8 max-h-[360px] overflow-y-auto pr-1">
-            <!-- Rendered by JS with interactive states -->
-          </div>
-
-          <!-- Dynamic Selected Plot Detail Preview -->
-          <div id="selected-plot-details">
-            <!-- Mounted dynamically by JS -->
-          </div>
-        </section>
-
-        <!-- 4. Location Context & Highway Connectivity -->
+        <!-- 3. Location Context & Highway Connectivity -->
         <section data-animate="fade-up">
           <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
             <span class="font-display text-3xl text-metallic-gold font-bold">02</span>
             <h2 class="font-headline text-3xl text-forest-deep">Strategic Highway Connectivity</h2>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <ul class="flex flex-col border-t border-outline/10 text-sm">
-              <li class="py-3 border-b border-outline/10 flex justify-between">
-                <span class="font-bold text-forest-deep">Khandwa Main Highway</span>
-                <span class="font-data-mono text-outline">Direct 4-Lane Access</span>
-              </li>
-              <li class="py-3 border-b border-outline/10 flex justify-between">
-                <span class="font-bold text-forest-deep">Simrol / IIT Indore Growth Zone</span>
-                <span class="font-data-mono text-outline">10 Mins Transit</span>
-              </li>
-              <li class="py-3 border-b border-outline/10 flex justify-between">
-                <span class="font-bold text-forest-deep">Daly College & Residency Area</span>
-                <span class="font-data-mono text-outline">18 Mins Transit</span>
-              </li>
-              <li class="py-3 border-b border-outline/10 flex justify-between">
-                <span class="font-bold text-forest-deep">Indore Ring Road / Choithram</span>
-                <span class="font-data-mono text-outline">15 Mins Transit</span>
-              </li>
-            </ul>
-
-            <div class="h-64 md:h-full min-h-[260px] bg-paper-dark border border-outline/20 relative overflow-hidden card-hover-lift flex items-center justify-center">
-              <img src="/images/veda-park-masterplan.webp" alt="Location Layout" class="w-full h-full object-cover img-zoom-hover"/>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-5 bg-paper-dark border border-outline/15 card-hover-lift">
+              <span class="text-xs font-bold text-metallic-gold uppercase tracking-wider block mb-1">Primary Highway</span>
+              <h4 class="font-headline text-xl text-forest-deep mb-1">Khandwa Main Highway</h4>
+              <p class="font-data-mono text-xs text-outline">Direct 4-Lane Access at Entry Gate</p>
+            </div>
+            <div class="p-5 bg-paper-dark border border-outline/15 card-hover-lift">
+              <span class="text-xs font-bold text-metallic-gold uppercase tracking-wider block mb-1">Academic & Tech Hub</span>
+              <h4 class="font-headline text-xl text-forest-deep mb-1">Simrol / IIT Indore Growth Zone</h4>
+              <p class="font-data-mono text-xs text-outline">10 Mins Transit Corridor</p>
+            </div>
+            <div class="p-5 bg-paper-dark border border-outline/15 card-hover-lift">
+              <span class="text-xs font-bold text-metallic-gold uppercase tracking-wider block mb-1">Heritage Residential</span>
+              <h4 class="font-headline text-xl text-forest-deep mb-1">Daly College & Residency Area</h4>
+              <p class="font-data-mono text-xs text-outline">18 Mins Transit</p>
+            </div>
+            <div class="p-5 bg-paper-dark border border-outline/15 card-hover-lift">
+              <span class="text-xs font-bold text-metallic-gold uppercase tracking-wider block mb-1">City Connectivity</span>
+              <h4 class="font-headline text-xl text-forest-deep mb-1">Indore Ring Road / Choithram</h4>
+              <p class="font-data-mono text-xs text-outline">15 Mins Transit</p>
             </div>
           </div>
         </section>
 
-        <!-- 5. Infrastructure & Amenities -->
+        <!-- 4. Infrastructure & Amenities -->
         <section data-animate="fade-up">
           <div class="flex items-baseline gap-4 mb-6 border-b border-outline-variant/30 pb-3">
             <span class="font-display text-3xl text-metallic-gold font-bold">03</span>
@@ -359,11 +331,6 @@
           </ul>
 
           <form id="site-visit-form" class="flex flex-col gap-4">
-            <div>
-              <label class="font-body text-[11px] font-bold text-outline uppercase block mb-1">Selected Plot #</label>
-              <input id="enquiry-plot-select" type="text" name="plot_number" value="Plot 01 (Sector A)" class="w-full bg-surface-container-low border border-outline/20 px-3 py-2 text-xs font-data-mono font-bold text-forest-deep focus:border-forest-deep focus:outline-none"/>
-            </div>
-
             <div>
               <label class="font-body text-[11px] font-bold text-outline uppercase block mb-1">Your Full Name</label>
               <input type="text" name="name" required placeholder="e.g. Vikramaditya Singhania" class="w-full bg-surface-container-low border border-outline/20 px-3 py-2 text-xs focus:border-forest-deep focus:outline-none"/>
