@@ -137,39 +137,39 @@
     <!-- Main Grid: Form + Office Coordinates -->
     <div class="max-w-7xl mx-auto px-4 sm:px-margin-edge py-6 sm:py-8 md:py-12 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
       <!-- Consultation Form (Left 7 cols) -->
-      <div data-animate="fade-right" class="lg:col-span-7 bg-paper-dark p-8 md:p-12 border border-outline/20 shadow-lg card-hover-lift">
-        <h2 class="font-headline text-2xl md:text-3xl text-forest-deep mb-2">Institutional Advisory Inquiry</h2>
-        <p class="font-body text-xs text-on-surface-variant mb-8">
+      <div data-animate="fade-right" class="lg:col-span-7 bg-paper-dark p-5 sm:p-6 md:p-8 border border-outline/20 shadow-md card-hover-lift">
+        <h2 class="font-headline text-xl sm:text-2xl text-forest-deep mb-1.5">Institutional Advisory Inquiry</h2>
+        <p class="font-body text-xs text-on-surface-variant mb-5">
           Complete the mandate details below. A Managing Principal will review your submission and contact you within 4 business hours.
         </p>
 
-        <form id="contact-mandate-form" class="flex flex-col gap-5">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <form id="contact-mandate-form" class="flex flex-col gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div>
-              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Full Name *</label>
-              <input type="text" name="name" required placeholder="e.g. Vikramaditya Singhania" class="w-full bg-surface border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+              <label class="block font-body text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Full Name *</label>
+              <input type="text" name="name" required placeholder="e.g. Vikramaditya Singhania" class="w-full bg-surface border border-outline/20 px-3.5 py-2 text-xs sm:text-sm focus:border-forest-deep focus:outline-none"/>
             </div>
             <div>
-              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Family Office / Organization</label>
-              <input type="text" name="organization" placeholder="e.g. Singhania Capital" class="w-full bg-surface border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Contact Number *</label>
-              <input type="tel" name="phone" required placeholder="+91 98260 XXXXX" class="w-full bg-surface border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
-            </div>
-            <div>
-              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Email Address *</label>
-              <input type="email" name="email" required placeholder="principal@domain.com" class="w-full bg-surface border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"/>
+              <label class="block font-body text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Family Office / Organization</label>
+              <input type="text" name="organization" placeholder="e.g. Singhania Capital" class="w-full bg-surface border border-outline/20 px-3.5 py-2 text-xs sm:text-sm focus:border-forest-deep focus:outline-none"/>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div>
-              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Primary Interest</label>
-              <select name="interest" class="w-full bg-surface border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none">
+              <label class="block font-body text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Contact Number *</label>
+              <input type="tel" name="phone" required placeholder="+91 98260 XXXXX" class="w-full bg-surface border border-outline/20 px-3.5 py-2 text-xs sm:text-sm focus:border-forest-deep focus:outline-none"/>
+            </div>
+            <div>
+              <label class="block font-body text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Email Address *</label>
+              <input type="email" name="email" required placeholder="principal@domain.com" class="w-full bg-surface border border-outline/20 px-3.5 py-2 text-xs sm:text-sm focus:border-forest-deep focus:outline-none"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block font-body text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Primary Interest</label>
+              <select name="interest" class="w-full bg-surface border border-outline/20 px-3.5 py-2 text-xs sm:text-sm focus:border-forest-deep focus:outline-none">
                 <option value="veda-park">Veda Park Plotted Development</option>
                 <option value="commercial">Grade-A Pre-Leased Commercial</option>
                 <option value="industrial">Industrial Land / Logistics Park</option>
@@ -178,8 +178,8 @@
               </select>
             </div>
             <div>
-              <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Capital Outlay Bracket</label>
-              <select name="budget" class="w-full bg-surface border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none">
+              <label class="block font-body text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Capital Outlay Bracket</label>
+              <select name="budget" class="w-full bg-surface border border-outline/20 px-3.5 py-2 text-xs sm:text-sm focus:border-forest-deep focus:outline-none">
                 <option value="1cr-3cr">₹1.0 Cr – ₹3.0 Cr</option>
                 <option value="3cr-10cr">₹3.0 Cr – ₹10.0 Cr</option>
                 <option value="10cr-50cr">₹10.0 Cr – ₹50.0 Cr</option>
@@ -189,11 +189,11 @@
           </div>
 
           <div>
-            <label class="block font-body text-xs font-bold uppercase tracking-wider text-outline mb-1.5">Mandate Overview & Objectives</label>
-            <textarea name="message" rows="4" placeholder="Describe the asset profile, corridor preference, or diligence requirements you wish to discuss..." class="w-full bg-surface border border-outline/20 px-4 py-2.5 text-sm focus:border-forest-deep focus:outline-none"></textarea>
+            <label class="block font-body text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Mandate Overview & Objectives</label>
+            <textarea name="message" rows="3" placeholder="Describe the asset profile, corridor preference, or diligence requirements you wish to discuss..." class="w-full bg-surface border border-outline/20 px-3.5 py-2 text-xs sm:text-sm focus:border-forest-deep focus:outline-none"></textarea>
           </div>
 
-          <button type="submit" class="w-full bg-forest-deep text-surface-bright py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-md btn-luxury">
+          <button type="submit" class="w-full bg-forest-deep text-surface-bright py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-sm btn-luxury">
             <span>Submit Mandate to Principals</span>
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
           </button>
@@ -201,16 +201,16 @@
       </div>
 
       <!-- Office Coordinates & Direct Partner Access (Right 5 cols) -->
-      <div class="lg:col-span-5 flex flex-col gap-6">
+      <div class="lg:col-span-5 flex flex-col gap-4 sm:gap-6">
         <!-- Indore HQ Card -->
-        <div data-animate="fade-left" data-delay="100" class="bg-forest-deep text-surface-bright p-8 border border-outline/20 flex flex-col justify-between card-hover-lift shadow-xl">
+        <div data-animate="fade-left" data-delay="100" class="bg-forest-deep text-surface-bright p-5 sm:p-6 border border-outline/20 flex flex-col justify-between card-hover-lift shadow-lg">
           <div>
-            <span class="font-body text-xs font-bold text-metallic-gold uppercase tracking-widest block mb-2">Central India Office</span>
-            <h3 class="font-headline text-2xl text-surface-bright mb-4">Indore Headquarters</h3>
+            <span class="font-body text-[10px] font-bold text-metallic-gold uppercase tracking-widest block mb-1.5">Central India Office</span>
+            <h3 class="font-headline text-xl text-surface-bright mb-3">Indore Headquarters</h3>
             
-            <div class="space-y-4 text-sm text-surface-variant/80 font-body">
-              <div class="flex items-start gap-3">
-                <span class="material-symbols-outlined text-metallic-gold text-xl">location_on</span>
+            <div class="space-y-3 text-xs sm:text-sm text-surface-variant/80 font-body">
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-metallic-gold text-lg">location_on</span>
                 <div>
                   <p class="font-bold text-surface-bright">Alaya Realty Office</p>
                   <p>Third Floor, Manas Mayfair 8/5</p>
