@@ -6,31 +6,33 @@
 }
 
 :root {
-  --color-surface: #fdf9eb;
-  --color-surface-dim: #dedacc;
-  --color-surface-bright: #fdf9eb;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f8f4e6;
-  --color-surface-container: #f2eee0;
-  --color-surface-container-high: #ece8da;
-  --color-surface-container-highest: #e6e2d5;
-  --color-on-surface: #1d1c14;
-  --color-on-surface-variant: #45474b;
-  --color-inverse-surface: #323127;
-  --color-inverse-on-surface: #f5f1e3;
-  --color-outline: #76777b;
-  --color-outline-variant: #c6c6cb;
-  --color-primary: #010306;
-  --color-on-primary: #ffffff;
-  --color-primary-container: #1a1d23;
-  --color-on-primary-container: #82858c;
-  --color-secondary: #745a34;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #fedaaa;
+  --color-surface: #FBFAF6;
+  --color-surface-dim: #F2ECE0;
+  --color-surface-bright: #FFFFFF;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #F7F5EE;
+  --color-surface-container: #F1EBE0;
+  --color-surface-container-high: #EAE3D5;
+  --color-surface-container-highest: #DFD7C7;
+  --color-on-surface: #0B1713;
+  --color-on-surface-variant: #5E6660;
+  --color-inverse-surface: #122B22;
+  --color-inverse-on-surface: #FBFAF6;
+  --color-outline: #7A827C;
+  --color-outline-variant: #E5DFD1;
+  --color-primary: #0B1713;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #173930;
+  --color-on-primary-container: #FBFAF6;
+  --color-secondary: #A9814E;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #F5EEDF;
   --color-on-secondary-container: #795e38;
-  --color-paper-dark: #E6E1D1;
-  --color-metallic-gold: #A68B5B;
-  --color-forest-deep: #081F18;
+  --color-paper-dark: #F1EBE0;
+  --color-metallic-gold: #A9814E;
+  --color-forest-deep: #173930;
+  --color-forest-darkest: #0C271A;
+  --color-forest-noir: #061812;
 
   /* Fluid typography */
   --font-hero: clamp(1.85rem, 5.5vw, 4.25rem);
@@ -94,9 +96,9 @@ h1, h2, h3, h4, h5, h6, .font-serif, .display-font {
 
 .header-scrolled {
   height: 56px !important;
-  background-color: rgba(253, 249, 235, 0.98) !important;
-  box-shadow: 0 4px 24px rgba(8, 31, 24, 0.08);
-  border-bottom-color: rgba(166, 139, 91, 0.25) !important;
+  background-color: rgba(251, 250, 246, 0.98) !important;
+  box-shadow: 0 4px 24px rgba(11, 23, 19, 0.06);
+  border-bottom-color: rgba(229, 223, 209, 0.8) !important;
 }
 
 .nav-link-anim {
