@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/projects/veda-park", "destination": "/veda-park.html" },
+    { "source": "/projects/veda-commune", "destination": "/veda-commune.html" },
+    { "source": "/projects/urban-shivashish", "destination": "/urban-shivashish.html" }
+  ]
+}

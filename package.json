@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite --port 7999 --host",
     "build": "vite build",
+    "postbuild": "node scripts/prepare-dist.js",
     "preview": "vite preview --port 7999"
   },
   "devDependencies": {

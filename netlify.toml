@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/projects/veda-park"
+  to = "/veda-park.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects/veda-commune"
+  to = "/veda-commune.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects/urban-shivashish"
+  to = "/urban-shivashish.html"
+  status = 200

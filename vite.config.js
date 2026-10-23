@@ -44,6 +44,7 @@ function cleanUrlsPlugin() {
 }
 
 export default defineConfig({
+  base: process.env.GITHUB_PAGES === 'true' ? '/alaya-realty/' : '/',
   root: resolve(__dirname),
   plugins: [cleanUrlsPlugin()],
   server: {
