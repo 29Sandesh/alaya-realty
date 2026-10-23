@@ -16,19 +16,24 @@ function cleanUrlsPlugin() {
 
           // Skip assets, node_modules, API, or URLs with existing file extensions
           if (!pathname.includes('.') && pathname !== '/') {
-            const knownPages = [
-              '/veda-park',
-              '/properties',
-              '/advisory',
-              '/insights',
-              '/about',
-              '/contact',
-              '/article-industrial'
-            ];
+            const routeMap = {
+              '/veda-park': '/veda-park.html',
+              '/projects/veda-park': '/veda-park.html',
+              '/veda-commune': '/veda-commune.html',
+              '/projects/veda-commune': '/veda-commune.html',
+              '/urban-shivashish': '/urban-shivashish.html',
+              '/projects/urban-shivashish': '/urban-shivashish.html',
+              '/properties': '/properties.html',
+              '/advisory': '/advisory.html',
+              '/insights': '/insights.html',
+              '/about': '/about.html',
+              '/contact': '/contact.html',
+              '/article-industrial': '/article-industrial.html'
+            };
 
-            const match = knownPages.find(page => pathname === page || pathname === `${page}/`);
-            if (match) {
-              req.url = `${match.replace(/\/$/, '')}.html${queryString}`;
+            const cleanPath = pathname.replace(/\/$/, '');
+            if (routeMap[cleanPath]) {
+              req.url = `${routeMap[cleanPath]}${queryString}`;
             }
           }
         }
@@ -39,6 +44,7 @@ function cleanUrlsPlugin() {
 }
 
 export default defineConfig({
+  root: resolve(__dirname),
   plugins: [cleanUrlsPlugin()],
   server: {
     port: 7999,
@@ -54,6 +60,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         properties: resolve(__dirname, 'properties.html'),
         vedaPark: resolve(__dirname, 'veda-park.html'),
+        vedaCommune: resolve(__dirname, 'veda-commune.html'),
+        urbanShivashish: resolve(__dirname, 'urban-shivashish.html'),
         advisory: resolve(__dirname, 'advisory.html'),
         insights: resolve(__dirname, 'insights.html'),
         articleIndustrial: resolve(__dirname, 'article-industrial.html'),

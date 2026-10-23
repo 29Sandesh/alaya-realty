@@ -300,79 +300,222 @@ export function initVedaParkExplorer() {
 }
 
 /**
- * Properties Marketplace — Focusing Solely on Veda Park as Open Project
+ * Properties Marketplace — All Curated Projects (Veda Park, Veda Commune, Urban Shivashish)
  */
 export function initPropertiesMarketplace() {
   const container = document.getElementById('marketplace-grid');
   if (!container) return;
 
-  // Sole active project: Veda Park with official masterplan blueprint
   container.innerHTML = `
-    <!-- Sole Active Project: Veda Park -->
-    <article data-animate="fade-up" class="col-span-12 group bg-paper-dark border-2 border-metallic-gold/50 flex flex-col lg:flex-row overflow-hidden card-hover-lift shadow-xl">
-      <div class="w-full lg:w-7/12 relative min-h-[420px] lg:min-h-[520px] bg-forest-deep flex items-center justify-center p-4">
+    <!-- Project 1: Veda Park Plotted Development -->
+    <article data-animate="fade-up" data-project-type="plotted" class="col-span-12 group bg-paper-dark border-2 border-metallic-gold/50 flex flex-col lg:flex-row overflow-hidden card-hover-lift shadow-xl mb-4 sm:mb-8">
+      <div class="w-full lg:w-7/12 relative min-h-[360px] lg:min-h-[480px] bg-forest-deep flex items-center justify-center p-4">
         <img 
           src="/images/veda-park-masterplan.webp" 
           alt="Veda Park Master Plan Blueprint" 
-          class="w-full h-full max-h-[500px] object-contain img-zoom-hover" 
+          class="w-full h-full max-h-[460px] object-contain img-zoom-hover" 
         />
         <div class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm px-3 py-1 border border-metallic-gold/30">
-          <span class="font-body text-[10px] font-bold text-forest-deep uppercase tracking-widest">SOLE ACTIVE PROJECT • MASTER PLAN BLUEPRINT</span>
+          <span class="font-body text-[10px] font-bold text-forest-deep uppercase tracking-widest">PLOTTED DEVELOPMENT • BLUEPRINT</span>
         </div>
         <div class="absolute top-4 right-4 bg-metallic-gold text-primary px-3 py-1 font-data-mono text-[10px] font-bold uppercase tracking-wider badge-floating">
           Up to 30% Returns Potential
         </div>
       </div>
       
-      <div class="w-full lg:w-5/12 p-8 md:p-10 flex flex-col justify-between bg-surface-container-low">
+      <div class="w-full lg:w-5/12 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-surface-container-low">
         <div>
           <div class="flex items-center gap-2 mb-2 text-metallic-gold font-body text-xs font-bold uppercase tracking-widest">
             <span class="material-symbols-outlined text-sm">location_on</span>
             <span>Khandwa Road Highway Corridor, Indore</span>
           </div>
           
-          <h2 class="font-headline text-3xl md:text-4xl text-forest-deep mb-3 leading-tight">
+          <h2 class="font-headline text-2xl sm:text-3xl md:text-4xl text-forest-deep mb-2 sm:mb-3 leading-tight">
             Veda Park Plotted Development
           </h2>
           
-          <p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">
-            Our sole open acquisition project. A master-planned sanctuary of 84 freehold residential plots designed by Spacon Design with 9.0M & 10.5M wide boulevards, central green park, clubhouse, and direct gateway access to Simrol and IIT Indore corridor.
+          <p class="font-body text-xs sm:text-sm text-on-surface-variant mb-5 sm:mb-6 leading-relaxed">
+            A master-planned sanctuary of 84 freehold residential plots designed by Spacon Design with 9.0M & 10.5M wide concrete boulevards, central green parkland, clubhouse, and gateway access to Simrol and IIT Indore.
           </p>
           
-          <div class="grid grid-cols-2 gap-4 py-4 border-y border-outline/15 text-xs mb-6 font-data-mono">
+          <div class="grid grid-cols-2 gap-3 py-3 border-y border-outline/15 text-xs mb-5 font-data-mono">
             <div>
-              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">Projected Return</span>
-              <span class="text-base font-bold text-emerald-700">Up to 30% CAGR</span>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Projected Return</span>
+              <span class="text-sm sm:text-base font-bold text-emerald-700">Up to 30% CAGR</span>
             </div>
             <div>
-              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">Total Scale</span>
-              <span class="text-base font-bold text-forest-deep">84 Freehold Plots</span>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Total Scale</span>
+              <span class="text-sm sm:text-base font-bold text-forest-deep">84 Freehold Plots</span>
             </div>
             <div>
-              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">Starting Outlay</span>
-              <span class="text-base font-bold text-forest-deep">₹1.10 Cr onwards</span>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Starting Outlay</span>
+              <span class="text-sm sm:text-base font-bold text-forest-deep">₹1.10 Cr onwards</span>
             </div>
             <div>
-              <span class="block font-body text-[10px] text-outline uppercase tracking-wider">RERA & Title</span>
-              <span class="text-base font-bold text-metallic-gold">100% Clear Freehold</span>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">RERA & Title</span>
+              <span class="text-sm sm:text-base font-bold text-metallic-gold">100% Clear Freehold</span>
             </div>
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+        <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
           <a 
             href="/veda-park" 
-            class="flex-1 text-center bg-forest-deep text-surface-bright py-3.5 px-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 whitespace-nowrap btn-luxury"
+            class="flex-1 text-center bg-forest-deep text-surface-bright py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 whitespace-nowrap btn-luxury"
           >
             <span>Explore Veda Park</span>
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
           </a>
-          <button 
-            data-open-partner-modal 
-            class="flex-1 text-center border border-forest-deep text-forest-deep py-3.5 px-4 text-xs font-bold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-colors"
+          <a 
+            href="https://api.whatsapp.com/send/?phone=919183388115&text=Hi+Alaya+Realty%2C+I%27d+like+to+schedule+a+site+visit+for+Veda+Park.&type=phone_number&app_absent=0"
+            target="_blank"
+            class="flex-1 text-center border border-forest-deep text-forest-deep py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-colors flex items-center justify-center gap-1.5"
           >
-            Schedule Site Visit
-          </button>
+            <span class="material-symbols-outlined text-sm text-emerald-600">chat</span>
+            <span>WhatsApp Visit</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2: Veda Commune (Commercial Super Corridor) -->
+    <article data-animate="fade-up" data-project-type="commercial" class="col-span-12 group bg-paper-dark border-2 border-outline/20 flex flex-col lg:flex-row overflow-hidden card-hover-lift shadow-xl mb-4 sm:mb-8">
+      <div class="w-full lg:w-7/12 relative min-h-[360px] lg:min-h-[480px] bg-forest-deep flex items-center justify-center p-4">
+        <img 
+          src="/images/veda-commune-hero.jpg" 
+          alt="Veda Commune Atrium Plaza on Super Corridor, Indore" 
+          class="w-full h-full max-h-[460px] object-cover img-zoom-hover" 
+        />
+        <div class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm px-3 py-1 border border-metallic-gold/30">
+          <span class="font-body text-[10px] font-bold text-forest-deep uppercase tracking-widest">OFFICES & RETAIL • SUPER CORRIDOR</span>
+        </div>
+        <div class="absolute top-4 right-4 bg-forest-deep/90 text-surface-bright border border-metallic-gold/40 px-3 py-1 font-data-mono text-[10px] font-bold uppercase tracking-wider badge-floating">
+          RERA P-IND-23-3857
+        </div>
+      </div>
+      
+      <div class="w-full lg:w-5/12 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-surface-container-low">
+        <div>
+          <div class="flex items-center gap-2 mb-2 text-metallic-gold font-body text-xs font-bold uppercase tracking-widest">
+            <span class="material-symbols-outlined text-sm">location_on</span>
+            <span>Super Corridor, Near Luv-Kush Square, Indore</span>
+          </div>
+          
+          <h2 class="font-headline text-2xl sm:text-3xl md:text-4xl text-forest-deep mb-2 sm:mb-3 leading-tight">
+            Veda Commune — The Atrium Plaza
+          </h2>
+          
+          <p class="font-body text-xs sm:text-sm text-on-surface-variant mb-5 sm:mb-6 leading-relaxed">
+            A world-class commercial landmark on a corner plot with roads on 3 sides, facing 2 acres of open garden space. Features a central atrium with escalators, retail podium, dining food court, and 50% offices with private terraces.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-3 py-3 border-y border-outline/15 text-xs mb-5 font-data-mono">
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Asset Class</span>
+              <span class="text-sm sm:text-base font-bold text-forest-deep">Offices & Retail</span>
+            </div>
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Road Frontage</span>
+              <span class="text-sm sm:text-base font-bold text-metallic-gold">Roads on 3 Sides</span>
+            </div>
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Metro Connectivity</span>
+              <span class="text-sm sm:text-base font-bold text-emerald-700">Walking Distance</span>
+            </div>
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Private Terraces</span>
+              <span class="text-sm sm:text-base font-bold text-forest-deep">50% Office Units</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
+          <a 
+            href="/veda-commune" 
+            class="flex-1 text-center bg-forest-deep text-surface-bright py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 whitespace-nowrap btn-luxury"
+          >
+            <span>Explore Veda Commune</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <a 
+            href="https://api.whatsapp.com/send/?phone=919183388115&text=Hi+Alaya+Realty%2C+I%27d+like+to+schedule+a+site+visit+for+Veda+Commune.&type=phone_number&app_absent=0"
+            target="_blank"
+            class="flex-1 text-center border border-forest-deep text-forest-deep py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-colors flex items-center justify-center gap-1.5"
+          >
+            <span class="material-symbols-outlined text-sm text-emerald-600">chat</span>
+            <span>WhatsApp Visit</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3: Urban Shivashish (Commercial Vijay Nagar) -->
+    <article data-animate="fade-up" data-project-type="commercial" class="col-span-12 group bg-paper-dark border-2 border-outline/20 flex flex-col lg:flex-row overflow-hidden card-hover-lift shadow-xl">
+      <div class="w-full lg:w-7/12 relative min-h-[360px] lg:min-h-[480px] bg-forest-deep flex items-center justify-center p-4">
+        <img 
+          src="/images/urban-shivashish-hero.jpg" 
+          alt="Urban Shivashish Commercial Spaces Vijay Nagar, Indore" 
+          class="w-full h-full max-h-[460px] object-cover img-zoom-hover" 
+        />
+        <div class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm px-3 py-1 border border-metallic-gold/30">
+          <span class="font-body text-[10px] font-bold text-forest-deep uppercase tracking-widest">PREMIUM COMMERCIAL • VIJAY NAGAR</span>
+        </div>
+        <div class="absolute top-4 right-4 bg-forest-deep/90 text-surface-bright border border-metallic-gold/40 px-3 py-1 font-data-mono text-[10px] font-bold uppercase tracking-wider badge-floating">
+          RERA P-IND-25-5937
+        </div>
+      </div>
+      
+      <div class="w-full lg:w-5/12 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-surface-container-low">
+        <div>
+          <div class="flex items-center gap-2 mb-2 text-metallic-gold font-body text-xs font-bold uppercase tracking-widest">
+            <span class="material-symbols-outlined text-sm">location_on</span>
+            <span>Behind Sayaji Hotel, Scheme 54, Vijay Nagar, Indore</span>
+          </div>
+          
+          <h2 class="font-headline text-2xl sm:text-3xl md:text-4xl text-forest-deep mb-2 sm:mb-3 leading-tight">
+            Urban Shivashish Commercial
+          </h2>
+          
+          <p class="font-body text-xs sm:text-sm text-on-surface-variant mb-5 sm:mb-6 leading-relaxed">
+            Premium commercial office spaces and showrooms adjacent to Sayaji Hotel. Sized from 440 to 1,182 sq ft for startups, corporate consultants, and growing enterprises, featuring 2,400 mm corridors, power backup, and contemporary glass facade.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-3 py-3 border-y border-outline/15 text-xs mb-5 font-data-mono">
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Unit Sizes</span>
+              <span class="text-sm sm:text-base font-bold text-forest-deep">440 – 1,182 sq ft</span>
+            </div>
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Corridors</span>
+              <span class="text-sm sm:text-base font-bold text-forest-deep">2,400 mm Wide</span>
+            </div>
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Prime Landmark</span>
+              <span class="text-sm sm:text-base font-bold text-metallic-gold">Adjacent Sayaji</span>
+            </div>
+            <div>
+              <span class="block font-body text-[9px] text-outline uppercase tracking-wider">Status</span>
+              <span class="text-sm sm:text-base font-bold text-emerald-700">RERA Approved</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
+          <a 
+            href="/urban-shivashish" 
+            class="flex-1 text-center bg-forest-deep text-surface-bright py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2 whitespace-nowrap btn-luxury"
+          >
+            <span>Explore Urban Shivashish</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <a 
+            href="https://api.whatsapp.com/send/?phone=919183388115&text=Hi+Alaya+Realty%2C+I%27d+like+to+schedule+a+site+visit+for+Urban+Shivashish.&type=phone_number&app_absent=0"
+            target="_blank"
+            class="flex-1 text-center border border-forest-deep text-forest-deep py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-forest-deep hover:text-surface transition-colors flex items-center justify-center gap-1.5"
+          >
+            <span class="material-symbols-outlined text-sm text-emerald-600">chat</span>
+            <span>WhatsApp Visit</span>
+          </a>
         </div>
       </div>
     </article>
